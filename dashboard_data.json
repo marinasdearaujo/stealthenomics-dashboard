@@ -1,0 +1,4636 @@
+{
+  "generated_at": "2026-03-31 18:37",
+  "current_week": {
+    "start": "2026-03-24",
+    "end": "2026-03-30"
+  },
+  "previous_week": {
+    "start": "2026-03-17",
+    "end": "2026-03-23"
+  },
+  "kpis": {
+    "facebook": {
+      "curr_reach": 272,
+      "curr_engagement": 2,
+      "curr_posts": 4,
+      "prev_reach": 12304,
+      "prev_engagement": 37,
+      "prev_posts": 9
+    },
+    "instagram": {
+      "curr_reach": 2,
+      "curr_engagement": 0,
+      "curr_posts": 1,
+      "prev_reach": 218,
+      "prev_engagement": 8,
+      "prev_posts": 7
+    },
+    "linkedin": {
+      "curr_reach": 130,
+      "curr_engagement": 12,
+      "curr_posts": 5,
+      "prev_reach": 203,
+      "prev_engagement": 49,
+      "prev_posts": 6
+    },
+    "total": {
+      "curr_reach": 404,
+      "curr_engagement": 14,
+      "curr_posts": 10,
+      "prev_reach": 12725,
+      "prev_engagement": 94,
+      "prev_posts": 22
+    },
+    "followers": {
+      "facebook": 1200,
+      "instagram": 142,
+      "linkedin": 414,
+      "total": 1756
+    },
+    "followers_prev": {
+      "facebook": 1155,
+      "instagram": 138,
+      "linkedin": 412,
+      "total": 1705
+    },
+    "ads": {
+      "spend": 5335.99,
+      "spend_prev": 0.0,
+      "results": 29842,
+      "results_prev": 0,
+      "cost_per_lead": 0.18,
+      "cost_per_lead_prev": 0,
+      "clicks": 2587
+    }
+  },
+  "platform_comparison": [
+    {
+      "platform": "Facebook",
+      "curr_engagement_rate": 0.7,
+      "prev_engagement_rate": 0.3,
+      "curr_reach": 272,
+      "prev_reach": 12304,
+      "curr_engagement": 2
+    },
+    {
+      "platform": "Instagram",
+      "curr_engagement_rate": 0.0,
+      "prev_engagement_rate": 3.7,
+      "curr_reach": 2,
+      "prev_reach": 218,
+      "curr_engagement": 0
+    },
+    {
+      "platform": "Linkedin",
+      "curr_engagement_rate": 9.2,
+      "prev_engagement_rate": 24.1,
+      "curr_reach": 130,
+      "prev_reach": 203,
+      "curr_engagement": 12
+    }
+  ],
+  "editorial_performance": [
+    {
+      "platform": "Facebook",
+      "category": "Relatable / Pain Point (Humor & POV)",
+      "posts": 10,
+      "avg_engagement_rate": 20.3,
+      "total_engagement": 38
+    },
+    {
+      "platform": "Facebook",
+      "category": "Thought Leadership (Founder POV)",
+      "posts": 11,
+      "avg_engagement_rate": 13.8,
+      "total_engagement": 25
+    },
+    {
+      "platform": "Facebook",
+      "category": "Promotional (Solution-Focused)",
+      "posts": 10,
+      "avg_engagement_rate": 12.1,
+      "total_engagement": 34
+    },
+    {
+      "platform": "Facebook",
+      "category": "Engagement (Interactive)",
+      "posts": 7,
+      "avg_engagement_rate": 9.6,
+      "total_engagement": 11
+    },
+    {
+      "platform": "Facebook",
+      "category": "Educational (Authority / Frameworks)",
+      "posts": 19,
+      "avg_engagement_rate": 5.3,
+      "total_engagement": 52
+    },
+    {
+      "platform": "Instagram",
+      "category": "Engagement (Interactive)",
+      "posts": 6,
+      "avg_engagement_rate": 8.1,
+      "total_engagement": 4
+    },
+    {
+      "platform": "Instagram",
+      "category": "Educational (Authority / Frameworks)",
+      "posts": 17,
+      "avg_engagement_rate": 7.2,
+      "total_engagement": 12
+    },
+    {
+      "platform": "Instagram",
+      "category": "Thought Leadership (Founder POV)",
+      "posts": 7,
+      "avg_engagement_rate": 6.7,
+      "total_engagement": 8
+    },
+    {
+      "platform": "Instagram",
+      "category": "Promotional (Solution-Focused)",
+      "posts": 9,
+      "avg_engagement_rate": 6.5,
+      "total_engagement": 17
+    },
+    {
+      "platform": "Instagram",
+      "category": "Relatable / Pain Point (Humor & POV)",
+      "posts": 10,
+      "avg_engagement_rate": 0.7,
+      "total_engagement": 10
+    },
+    {
+      "platform": "LinkedIn",
+      "category": "Engagement (Interactive)",
+      "posts": 6,
+      "avg_engagement_rate": 17.3,
+      "total_engagement": 35
+    },
+    {
+      "platform": "LinkedIn",
+      "category": "Thought Leadership (Founder POV)",
+      "posts": 10,
+      "avg_engagement_rate": 16.3,
+      "total_engagement": 61
+    },
+    {
+      "platform": "LinkedIn",
+      "category": "Promotional (Solution-Focused)",
+      "posts": 10,
+      "avg_engagement_rate": 14.1,
+      "total_engagement": 52
+    },
+    {
+      "platform": "LinkedIn",
+      "category": "Relatable / Pain Point (Humor & POV)",
+      "posts": 11,
+      "avg_engagement_rate": 13.5,
+      "total_engagement": 44
+    },
+    {
+      "platform": "LinkedIn",
+      "category": "Educational (Authority / Frameworks)",
+      "posts": 18,
+      "avg_engagement_rate": 13.4,
+      "total_engagement": 83
+    }
+  ],
+  "audience_performance": [
+    {
+      "platform": "Facebook",
+      "audience": "Brokers",
+      "posts": 4,
+      "avg_engagement_rate": 18.3
+    },
+    {
+      "platform": "Facebook",
+      "audience": "Higher Ed",
+      "posts": 9,
+      "avg_engagement_rate": 13.6
+    },
+    {
+      "platform": "Facebook",
+      "audience": "SMB/Startup",
+      "posts": 26,
+      "avg_engagement_rate": 11.3
+    },
+    {
+      "platform": "Facebook",
+      "audience": "IT Business",
+      "posts": 16,
+      "avg_engagement_rate": 8.1
+    },
+    {
+      "platform": "Instagram",
+      "audience": "Higher Ed",
+      "posts": 7,
+      "avg_engagement_rate": 7.8
+    },
+    {
+      "platform": "Instagram",
+      "audience": "SMB/Startup",
+      "posts": 22,
+      "avg_engagement_rate": 6.1
+    },
+    {
+      "platform": "Instagram",
+      "audience": "Brokers",
+      "posts": 3,
+      "avg_engagement_rate": 5.5
+    },
+    {
+      "platform": "Instagram",
+      "audience": "IT Business",
+      "posts": 15,
+      "avg_engagement_rate": 3.8
+    },
+    {
+      "platform": "LinkedIn",
+      "audience": "SMB/Startup",
+      "posts": 23,
+      "avg_engagement_rate": 15.9
+    },
+    {
+      "platform": "LinkedIn",
+      "audience": "Brokers",
+      "posts": 2,
+      "avg_engagement_rate": 14.1
+    },
+    {
+      "platform": "LinkedIn",
+      "audience": "IT Business",
+      "posts": 17,
+      "avg_engagement_rate": 13.4
+    },
+    {
+      "platform": "LinkedIn",
+      "audience": "Higher Ed",
+      "posts": 10,
+      "avg_engagement_rate": 11.0
+    }
+  ],
+  "top_posts": [
+    {
+      "platform": "Facebook",
+      "text": "Stop Wasting Time. Launch Your Business The Right Way.\n\nDid you know that 20% of",
+      "link": "https://www.facebook.com/stealthenomics/posts/pfbid0fJkPJkazUiecn3e7NPoFeU6C1GLdJpy5sNL75UK6KV5Y8cMWV5jewqtFD2NMGPDvl",
+      "engagement": 13,
+      "engagement_rate": 0.1,
+      "reach": 11926,
+      "editorial": "Educational (Authority / Frameworks)",
+      "date": "2026-03-19",
+      "comments": 2,
+      "shares": 6,
+      "likes": 5,
+      "boosted": true
+    },
+    {
+      "platform": "Facebook",
+      "text": "50% of Businesses Fail Within 5 Years | Here's Why",
+      "link": "https://www.facebook.com/reel/2028045981387973/",
+      "engagement": 26,
+      "engagement_rate": 0.8,
+      "reach": 3455,
+      "editorial": "Educational (Authority / Frameworks)",
+      "date": "2026-03-16",
+      "comments": 0,
+      "shares": 0,
+      "likes": 26,
+      "boosted": true
+    },
+    {
+      "platform": "LinkedIn",
+      "text": "Laid off. Battling with cancer. Today, I am a COO. Want To Know How? Join Our Fr",
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7437906582027431936",
+      "engagement": 30,
+      "engagement_rate": 25.2,
+      "reach": 119,
+      "editorial": "Promotional (Solution-Focused)",
+      "date": "2026-03-12",
+      "comments": 2,
+      "shares": 1,
+      "likes": 10
+    },
+    {
+      "platform": "LinkedIn",
+      "text": "Your network is powerful. But is it working for you\u2014or just with you? \ud83e\udd14\n\nYou've ",
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7417244013906255872",
+      "engagement": 20,
+      "engagement_rate": 18.2,
+      "reach": 110,
+      "editorial": "Thought Leadership (Founder POV)",
+      "date": "2026-01-14",
+      "comments": 2,
+      "shares": 0,
+      "likes": 8
+    },
+    {
+      "platform": "Facebook",
+      "text": "Do You Have One More Mountain Left? \u26f0\ufe0f\ud83d\ude0f| Free Live Webinar",
+      "link": "https://www.facebook.com/reel/4303182803287412/",
+      "engagement": 6,
+      "engagement_rate": 4.2,
+      "reach": 142,
+      "editorial": "Promotional (Solution-Focused)",
+      "date": "2026-03-19",
+      "comments": 0,
+      "shares": 1,
+      "likes": 5,
+      "boosted": false
+    },
+    {
+      "platform": "Instagram",
+      "text": "We take your campus back to the future \ud83d\ude80\nBecause campus IT shouldn't feel stuck ",
+      "link": "https://www.instagram.com/reel/DUVkDqPFcUv/",
+      "engagement": 3,
+      "engagement_rate": 1.1,
+      "reach": 264,
+      "editorial": "Relatable / Pain Point (Humor & POV)",
+      "date": "2026-02-04",
+      "comments": 0,
+      "shares": 0,
+      "likes": 3,
+      "saves": 0
+    },
+    {
+      "platform": "LinkedIn",
+      "text": "Here's the truth most IT leaders don't talk about: we carry manual processes way",
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7424135575609253888",
+      "engagement": 19,
+      "engagement_rate": 46.3,
+      "reach": 41,
+      "editorial": "Engagement (Interactive)",
+      "date": "2026-02-02",
+      "comments": 2,
+      "shares": 1,
+      "likes": 3
+    },
+    {
+      "platform": "LinkedIn",
+      "text": "Stop Wasting Time. Launch Your Business The Right Way.\n\nDid you know that 20% of",
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7440441153872846848",
+      "engagement": 17,
+      "engagement_rate": 48.6,
+      "reach": 35,
+      "editorial": "Educational (Authority / Frameworks)",
+      "date": "2026-03-19",
+      "comments": 4,
+      "shares": 8,
+      "likes": 3
+    },
+    {
+      "platform": "LinkedIn",
+      "text": "Paul's Hickeyisms \ud83d\udca1\n\nHickeyisms = words to live by from StealthEnomics CFO Paul ",
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7427003611353911296",
+      "engagement": 11,
+      "engagement_rate": 20.4,
+      "reach": 54,
+      "editorial": "Thought Leadership (Founder POV)",
+      "date": "2026-02-10",
+      "comments": 2,
+      "shares": 2,
+      "likes": 2
+    },
+    {
+      "platform": "Instagram",
+      "text": "Lost in a maze of vendor proposals? Picked the \"wrong\" solution and paid the pri",
+      "link": "https://www.instagram.com/reel/DUEc13vANu-/",
+      "engagement": 2,
+      "engagement_rate": 1.1,
+      "reach": 188,
+      "editorial": "Relatable / Pain Point (Humor & POV)",
+      "date": "2026-01-28",
+      "comments": 0,
+      "shares": 0,
+      "likes": 2,
+      "saves": 0
+    }
+  ],
+  "all_posts": [
+    {
+      "platform": "Facebook",
+      "date": "2026-01-30",
+      "reach": 0,
+      "engagement": 2,
+      "er": 0.0,
+      "editorial": "",
+      "audience": "All",
+      "text": "StealthEnomics updated their cover photo.",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-01-30",
+      "reach": 10,
+      "engagement": 2,
+      "er": 20.0,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "Brokers",
+      "text": "Did you know that over 70% of organizations juggle multiple ",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-01-29",
+      "reach": 11,
+      "engagement": 3,
+      "er": 27.3,
+      "editorial": "Thought Leadership (Founder POV)",
+      "audience": "SMB/Startup",
+      "text": "Your network is powerful. But is it working for you - or jus",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-01-28",
+      "reach": 21,
+      "engagement": 5,
+      "er": 23.8,
+      "editorial": "Relatable / Pain Point (Humor & POV)",
+      "audience": "IT Business",
+      "text": "Lost in a maze of vendor proposals? Picked the \"wrong\" solut",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-01-28",
+      "reach": 18,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "",
+      "audience": "IT Business",
+      "text": "More clarity in IT decisions? Fewer vendor headaches? More t",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-01-26",
+      "reach": 16,
+      "engagement": 3,
+      "er": 18.8,
+      "editorial": "",
+      "audience": "Higher Ed",
+      "text": "Ever felt overwhelmed trying to choose the right IT solution",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-01-23",
+      "reach": 18,
+      "engagement": 2,
+      "er": 11.1,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "IT Business",
+      "text": "Did You Know?\n\n43% of universities report at least one ranso",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-01-22",
+      "reach": 1,
+      "engagement": 1,
+      "er": 100.0,
+      "editorial": "",
+      "audience": "All",
+      "text": "StealthEnomics updated their cover photo.",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-01-22",
+      "reach": 18,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Thought Leadership (Founder POV)",
+      "audience": "Higher Ed",
+      "text": "Improve campus operations & student experience.\nToday\u2019s stud",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-01-21",
+      "reach": 17,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "Higher Ed",
+      "text": "Higher Ed tech choices shouldn\u2019t be overwhelming.\nFrom data ",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-01-19",
+      "reach": 18,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Promotional (Solution-Focused)",
+      "audience": "IT Business",
+      "text": "Check this story....  x University got qualified to receive ",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-01-15",
+      "reach": 21,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Engagement (Interactive)",
+      "audience": "All",
+      "text": "It\u2019s that time of year when we start thinking about New Year",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-01-14",
+      "reach": 22,
+      "engagement": 3,
+      "er": 13.6,
+      "editorial": "Thought Leadership (Founder POV)",
+      "audience": "SMB/Startup",
+      "text": "Your network is powerful. But is it working for you\u2014or just ",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-01-08",
+      "reach": 21,
+      "engagement": 1,
+      "er": 4.8,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "SMB/Startup",
+      "text": "Too many tools\u2026 and no idea where to start in your business?",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-02-23",
+      "reach": 8,
+      "engagement": 1,
+      "er": 12.5,
+      "editorial": "Thought Leadership (Founder POV)",
+      "audience": "Brokers",
+      "text": "How To Generate Revenue Through Technology Acquisition",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-02-23",
+      "reach": 7,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Engagement (Interactive)",
+      "audience": "IT Business",
+      "text": "What's one tech decision you'd redo if you could? \ud83e\udd14\n\nNo sham",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-02-24",
+      "reach": 18,
+      "engagement": 2,
+      "er": 11.1,
+      "editorial": "Thought Leadership (Founder POV)",
+      "audience": "All",
+      "text": "Change Nothing",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-02-25",
+      "reach": 27,
+      "engagement": 6,
+      "er": 22.2,
+      "editorial": "Relatable / Pain Point (Humor & POV)",
+      "audience": "All",
+      "text": "Just one more tool should fix it..right?",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-02-27",
+      "reach": 14,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "SMB/Startup",
+      "text": "Friday Facts: Did you know?\n\nSMBs that automate and streamli",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-02-26",
+      "reach": 13,
+      "engagement": 1,
+      "er": 7.7,
+      "editorial": "Relatable / Pain Point (Humor & POV)",
+      "audience": "IT Business",
+      "text": "\"Complexity is the enemy of scale.\" \ud83c\udfaf\n\nTranslation: If your ",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-02-02",
+      "reach": 12,
+      "engagement": 5,
+      "er": 41.7,
+      "editorial": "Relatable / Pain Point (Humor & POV)",
+      "audience": "Higher Ed",
+      "text": "We Take Your Campus Back To The Future... Don't Believe Us? ",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-02-20",
+      "reach": 6,
+      "engagement": 1,
+      "er": 16.7,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "IT Business",
+      "text": "Friday Facts: Did you know? \ud83d\udcca\n\nCompanies with scalable IT sy",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-02-19",
+      "reach": 39,
+      "engagement": 4,
+      "er": 10.3,
+      "editorial": "Promotional (Solution-Focused)",
+      "audience": "Brokers",
+      "text": "Is your powerful IT network truly working for you? \ud83e\udd14 Many le",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-02-19",
+      "reach": 6,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "SMB/Startup",
+      "text": "Here's the hard truth most SMB founders don't realize until ",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-02-18",
+      "reach": 8,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Relatable / Pain Point (Humor & POV)",
+      "audience": "Higher Ed",
+      "text": "When your campus tech stack is more tangled than freshman or",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-02-17",
+      "reach": 8,
+      "engagement": 1,
+      "er": 12.5,
+      "editorial": "Thought Leadership (Founder POV)",
+      "audience": "All",
+      "text": "Competence & Kindness",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-02-17",
+      "reach": 13,
+      "engagement": 1,
+      "er": 7.7,
+      "editorial": "Engagement (Interactive)",
+      "audience": "IT Business",
+      "text": "Strong systems make strong teams.",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-02-16",
+      "reach": 11,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Promotional (Solution-Focused)",
+      "audience": "IT Business",
+      "text": "What if you could get a professional vendor analysis\u2026 for FR",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-02-16",
+      "reach": 7,
+      "engagement": 2,
+      "er": 28.6,
+      "editorial": "Thought Leadership (Founder POV)",
+      "audience": "SMB/Startup",
+      "text": "This President's Day, let's talk about what real leadership ",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-02-12",
+      "reach": 14,
+      "engagement": 1,
+      "er": 7.1,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "IT Business",
+      "text": "Think about it:\n\nWhen was the last time your team praised th",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-02-11",
+      "reach": 22,
+      "engagement": 3,
+      "er": 13.6,
+      "editorial": "Relatable / Pain Point (Humor & POV)",
+      "audience": "SMB/Startup",
+      "text": "What happens when your system is just vibes and memory?",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-02-10",
+      "reach": 20,
+      "engagement": 4,
+      "er": 20.0,
+      "editorial": "Relatable / Pain Point (Humor & POV)",
+      "audience": "Higher Ed",
+      "text": "When your campus tech doesn't talk to each other\u2026",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-02-10",
+      "reach": 26,
+      "engagement": 5,
+      "er": 19.2,
+      "editorial": "Thought Leadership (Founder POV)",
+      "audience": "All",
+      "text": "Share the Why",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-02-09",
+      "reach": 14,
+      "engagement": 2,
+      "er": 14.3,
+      "editorial": "",
+      "audience": "SMB/Startup",
+      "text": "Sometimes the biggest breakthroughs come from subtraction, n",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-02-09",
+      "reach": 14,
+      "engagement": 2,
+      "er": 14.3,
+      "editorial": "Promotional (Solution-Focused)",
+      "audience": "SMB/Startup",
+      "text": "How to Turn Your Idea Into a Real Business in 45 Days",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-02-06",
+      "reach": 11,
+      "engagement": 1,
+      "er": 9.1,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "SMB/Startup",
+      "text": "SMBs using integrated systems see up to 30% faster decision-",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-02-05",
+      "reach": 16,
+      "engagement": 2,
+      "er": 12.5,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "IT Business",
+      "text": "IT leaders aren't hired to maintain chaos.\n\nYet most spend t",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-02-04",
+      "reach": 23,
+      "engagement": 7,
+      "er": 30.4,
+      "editorial": "Promotional (Solution-Focused)",
+      "audience": "Brokers",
+      "text": "Forget cold calls. THIS is how real money is made in 2026.",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-02-04",
+      "reach": 21,
+      "engagement": 6,
+      "er": 28.6,
+      "editorial": "Relatable / Pain Point (Humor & POV)",
+      "audience": "Higher Ed",
+      "text": "We Take Your Campus Back To The Future... Don't Believe Us? ",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-02-03",
+      "reach": 16,
+      "engagement": 7,
+      "er": 43.8,
+      "editorial": "Relatable / Pain Point (Humor & POV)",
+      "audience": "SMB/Startup",
+      "text": "Chaos doesn't scale. Systems do.",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-02-02",
+      "reach": 12,
+      "engagement": 2,
+      "er": 16.7,
+      "editorial": "Engagement (Interactive)",
+      "audience": "IT Business",
+      "text": "Here's the truth most IT leaders don't talk about: we carry ",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-03-02",
+      "reach": 43,
+      "engagement": 6,
+      "er": 14.0,
+      "editorial": "Thought Leadership (Founder POV)",
+      "audience": "IT Business",
+      "text": "Why StealthEnomics? Because the Dark Web has a Help desk | #",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-03-30",
+      "reach": 14,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "SMB/Startup",
+      "text": "She Thought Starting a Business Was Easy\u2026 Until This Happene",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-03-27",
+      "reach": 15,
+      "engagement": 2,
+      "er": 13.3,
+      "editorial": "Thought Leadership (Founder POV)",
+      "audience": "Higher Ed",
+      "text": "$200M+ in responsibility. 30 years of leadership. One philos",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-03-26",
+      "reach": 149,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "SMB/Startup",
+      "text": "3 Signs Your Business Operations Are Broken",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-03-25",
+      "reach": 94,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Thought Leadership (Founder POV)",
+      "audience": "All",
+      "text": "Life Lesson I Learned Too Late #Hickeyisms\ud83d\udca1",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-03-23",
+      "reach": 11,
+      "engagement": 1,
+      "er": 9.1,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "SMB/Startup",
+      "text": "TOMORROW WE ARE LIVE - You're Invited!\n\nIt's not too late to",
+      "boosted": true
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-03-23",
+      "reach": 138,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Promotional (Solution-Focused)",
+      "audience": "SMB/Startup",
+      "text": "Manipulation Loves Speed \u2013 Launch Your Business in 45 Days",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-03-23",
+      "reach": 8,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Engagement (Interactive)",
+      "audience": "SMB/Startup",
+      "text": "Finish the sentence: If I could automate one thing in my bus",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-03-22",
+      "reach": 16,
+      "engagement": 2,
+      "er": 12.5,
+      "editorial": "Engagement (Interactive)",
+      "audience": "All",
+      "text": "Simple Scales, Complication Fails. Do you agree? Share your ",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-03-20",
+      "reach": 13,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "Higher Ed",
+      "text": "Friday Facts: 66% of Higher Education institutions reported ",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-03-19",
+      "reach": 142,
+      "engagement": 6,
+      "er": 4.2,
+      "editorial": "Promotional (Solution-Focused)",
+      "audience": "SMB/Startup",
+      "text": "Do You Have One More Mountain Left? \u26f0\ufe0f\ud83d\ude0f| Free Live Webinar",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-03-19",
+      "reach": 11926,
+      "engagement": 13,
+      "er": 0.1,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "SMB/Startup",
+      "text": "Stop Wasting Time. Launch Your Business The Right Way.\n\nDid ",
+      "boosted": true
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-03-18",
+      "reach": 23,
+      "engagement": 5,
+      "er": 21.7,
+      "editorial": "Promotional (Solution-Focused)",
+      "audience": "SMB/Startup",
+      "text": "Most People Don't Know Which One They Are\u2026 | Free Live Webin",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-03-17",
+      "reach": 27,
+      "engagement": 10,
+      "er": 37.0,
+      "editorial": "",
+      "audience": "All",
+      "text": "Most business books get collected.\nFew actually get used.\n\nB",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-03-16",
+      "reach": 3455,
+      "engagement": 26,
+      "er": 0.8,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "SMB/Startup",
+      "text": "50% of Businesses Fail Within 5 Years | Here's Why",
+      "boosted": true
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-03-13",
+      "reach": 21,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "All",
+      "text": "Friday Facts: Organizations that invest in integrated data a",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-03-12",
+      "reach": 21,
+      "engagement": 4,
+      "er": 19.0,
+      "editorial": "Promotional (Solution-Focused)",
+      "audience": "SMB/Startup",
+      "text": "Laid off. Battling cancer. And today\u2026 I am COO. Want To Know",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-03-12",
+      "reach": 29,
+      "engagement": 6,
+      "er": 20.7,
+      "editorial": "Promotional (Solution-Focused)",
+      "audience": "SMB/Startup",
+      "text": "Laid off. Battling cancer. And today\u2026 I am COO. Want To Know",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-03-11",
+      "reach": 28,
+      "engagement": 5,
+      "er": 17.9,
+      "editorial": "",
+      "audience": "SMB/Startup",
+      "text": "How a 2020 Quick Fix Became a 2026 Business Disaster \ud83d\udd25 | #En",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-03-09",
+      "reach": 25,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "IT Business",
+      "text": "Guess the number:\nHow much of your SaaS budget is actually b",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-03-06",
+      "reach": 20,
+      "engagement": 2,
+      "er": 10.0,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "IT Business",
+      "text": "Friday Facts: 70% of B2B buyers have already eliminated vend",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-03-05",
+      "reach": 54,
+      "engagement": 1,
+      "er": 1.9,
+      "editorial": "Relatable / Pain Point (Humor & POV)",
+      "audience": "IT Business",
+      "text": "POV: \"Seamless Integration\" in IT Meetings vs Reality \ud83d\ude05 | #C",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-03-05",
+      "reach": 20,
+      "engagement": 3,
+      "er": 15.0,
+      "editorial": "",
+      "audience": "All",
+      "text": "nan",
+      "boosted": false
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-03-03",
+      "reach": 0,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "",
+      "audience": "SMB/Startup",
+      "text": "Launch Your Business Successfully within 45 days | June",
+      "boosted": true
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-03-03",
+      "reach": 0,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "",
+      "audience": "SMB/Startup",
+      "text": "Launch Your Business Successfully within 45 days",
+      "boosted": true
+    },
+    {
+      "platform": "Facebook",
+      "date": "2026-03-03",
+      "reach": 20,
+      "engagement": 6,
+      "er": 30.0,
+      "editorial": "Engagement (Interactive)",
+      "audience": "SMB/Startup",
+      "text": "\"Fill in the blank: The worst tech decision I ever made was ",
+      "boosted": false
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-02-02",
+      "reach": 7,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Engagement (Interactive)",
+      "audience": "IT Business",
+      "text": "Here's the truth most IT leaders don't talk about: we carry "
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-02-03",
+      "reach": 182,
+      "engagement": 2,
+      "er": 1.1,
+      "editorial": "Relatable / Pain Point (Humor & POV)",
+      "audience": "SMB/Startup",
+      "text": "Growth doesn't break businesses. Disorganization does.\n\nMost"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-02-04",
+      "reach": 264,
+      "engagement": 3,
+      "er": 1.1,
+      "editorial": "Relatable / Pain Point (Humor & POV)",
+      "audience": "Higher Ed",
+      "text": "We take your campus back to the future \ud83d\ude80\nBecause campus IT s"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-02-04",
+      "reach": 31,
+      "engagement": 2,
+      "er": 6.5,
+      "editorial": "Promotional (Solution-Focused)",
+      "audience": "Brokers",
+      "text": "Ever heard someone say, \"I'm not a salesperson\u2026 I just know "
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-02-06",
+      "reach": 8,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "SMB/Startup",
+      "text": "SMBs using integrated systems see up to 30% faster decision-"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-02-09",
+      "reach": 18,
+      "engagement": 1,
+      "er": 5.6,
+      "editorial": "Promotional (Solution-Focused)",
+      "audience": "SMB/Startup",
+      "text": "One Stop-Shop For Successful Business Launch. \ud83d\udca5\n\nIf you've b"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-02-09",
+      "reach": 11,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "",
+      "audience": "SMB/Startup",
+      "text": "Sometimes the biggest breakthroughs come from subtraction, n"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-02-10",
+      "reach": 12,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Thought Leadership (Founder POV)",
+      "audience": "All",
+      "text": "Paul's Hickeyisms \ud83d\udca1\n\nHickeyisms = words to live by from Stea"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-02-10",
+      "reach": 48,
+      "engagement": 1,
+      "er": 2.1,
+      "editorial": "Relatable / Pain Point (Humor & POV)",
+      "audience": "Higher Ed",
+      "text": "Student records in one system. Advising notes in another. Co"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-02-11",
+      "reach": 100,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Relatable / Pain Point (Humor & POV)",
+      "audience": "SMB/Startup",
+      "text": "If your business runs on memory and sticky notes, you don't "
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-02-12",
+      "reach": 8,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "IT Business",
+      "text": "Think about it:\n\nWhen was the last time your team praised th"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-02-16",
+      "reach": 8,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Thought Leadership (Founder POV)",
+      "audience": "SMB/Startup",
+      "text": "This President's Day, let's talk about what real leadership "
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-02-16",
+      "reach": 39,
+      "engagement": 3,
+      "er": 7.7,
+      "editorial": "Promotional (Solution-Focused)",
+      "audience": "IT Business",
+      "text": "Ever felt overwhelmed by technology decisions?\n\nVendor optio"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-02-17",
+      "reach": 11,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Engagement (Interactive)",
+      "audience": "IT Business",
+      "text": "You can have the most talented people in the room, but witho"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-02-17",
+      "reach": 108,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Thought Leadership (Founder POV)",
+      "audience": "All",
+      "text": "Paul's Hickeyism \ud83d\udca1\n\n\"As you strive to gain competence, compe"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-02-18",
+      "reach": 105,
+      "engagement": 1,
+      "er": 1.0,
+      "editorial": "Relatable / Pain Point (Humor & POV)",
+      "audience": "Higher Ed",
+      "text": "Meet Sarah. She's an academic advisor at a mid-sized univers"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-02-19",
+      "reach": 8,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "SMB/Startup",
+      "text": "Here's the hard truth most SMB founders don't realize until "
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-02-19",
+      "reach": 10,
+      "engagement": 1,
+      "er": 10.0,
+      "editorial": "Promotional (Solution-Focused)",
+      "audience": "Brokers",
+      "text": "Is your powerful IT network truly working for you? \ud83e\udd14 Many le"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-02-23",
+      "reach": 16,
+      "engagement": 3,
+      "er": 18.8,
+      "editorial": "Thought Leadership (Founder POV)",
+      "audience": "SMB/Startup",
+      "text": "Your network is powerful. But is it working for you\u2014or just "
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-02-23",
+      "reach": 7,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Engagement (Interactive)",
+      "audience": "IT Business",
+      "text": "What's one tech decision you'd redo if you could? \ud83e\udd14\n\nNo sham"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-02-24",
+      "reach": 42,
+      "engagement": 2,
+      "er": 4.8,
+      "editorial": "Thought Leadership (Founder POV)",
+      "audience": "All",
+      "text": "Paul's Hickeyism \ud83d\udca1\n\n\"If you change nothing, nothing changes."
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-02-20",
+      "reach": 8,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "IT Business",
+      "text": "Friday Facts: Did you know? \ud83d\udcca\n\nCompanies with scalable IT sy"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2025-12-31",
+      "reach": 11,
+      "engagement": 1,
+      "er": 9.1,
+      "editorial": "",
+      "audience": "SMB/Startup",
+      "text": "Ready to turn your ideas into a thriving business? \nOur blog"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-01-30",
+      "reach": 9,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "Brokers",
+      "text": "Did you know that over 70% of organizations juggle multiple "
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-01-29",
+      "reach": 9,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Thought Leadership (Founder POV)",
+      "audience": "SMB/Startup",
+      "text": "Your network is powerful. But is it working for you - or jus"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-01-28",
+      "reach": 188,
+      "engagement": 2,
+      "er": 1.1,
+      "editorial": "Relatable / Pain Point (Humor & POV)",
+      "audience": "IT Business",
+      "text": "Lost in a maze of vendor proposals? Picked the \"wrong\" solut"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-01-28",
+      "reach": 7,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "",
+      "audience": "IT Business",
+      "text": "More clarity in IT decisions? Fewer vendor headaches? More t"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-01-26",
+      "reach": 13,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "",
+      "audience": "Higher Ed",
+      "text": "Ever felt overwhelmed trying to choose the right IT solution"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-01-23",
+      "reach": 12,
+      "engagement": 2,
+      "er": 16.7,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "IT Business",
+      "text": "Did You Know?\n\n43% of universities report at least one ranso"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-01-22",
+      "reach": 13,
+      "engagement": 3,
+      "er": 23.1,
+      "editorial": "Thought Leadership (Founder POV)",
+      "audience": "Higher Ed",
+      "text": "Improve campus operations & student experience.\nToday\u2019s stud"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-01-21",
+      "reach": 14,
+      "engagement": 1,
+      "er": 7.1,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "Higher Ed",
+      "text": "Higher Ed tech choices shouldn\u2019t be overwhelming.\nFrom data "
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-01-19",
+      "reach": 11,
+      "engagement": 2,
+      "er": 18.2,
+      "editorial": "Promotional (Solution-Focused)",
+      "audience": "IT Business",
+      "text": "Check this story.... x University got qualified to receive f"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-01-15",
+      "reach": 9,
+      "engagement": 1,
+      "er": 11.1,
+      "editorial": "Engagement (Interactive)",
+      "audience": "All",
+      "text": "It's that time of year when we start thinking about New Year"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-01-08",
+      "reach": 10,
+      "engagement": 1,
+      "er": 10.0,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "SMB/Startup",
+      "text": "Too many tools\u2026 and no idea where to start in your business?"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2025-12-31",
+      "reach": 14,
+      "engagement": 1,
+      "er": 7.1,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "SMB/Startup",
+      "text": "Before the year ends, take a moment to:\n\nReflect on your win"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-03-24",
+      "reach": 2,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "SMB/Startup",
+      "text": "TOMORROW WE ARE LIVE. You're invited - it's not too late!\n\nW"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-03-23",
+      "reach": 5,
+      "engagement": 1,
+      "er": 20.0,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "SMB/Startup",
+      "text": "TOMORROW WE ARE LIVE. You're invited - it's not too late!\n\nW"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-03-23",
+      "reach": 90,
+      "engagement": 2,
+      "er": 2.2,
+      "editorial": "Promotional (Solution-Focused)",
+      "audience": "SMB/Startup",
+      "text": "Ever been so new to something you don't even know what to as"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-03-23",
+      "reach": 5,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Engagement (Interactive)",
+      "audience": "SMB/Startup",
+      "text": "Finish the sentence: If I could automate one thing in my bus"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-03-20",
+      "reach": 5,
+      "engagement": 1,
+      "er": 20.0,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "Higher Ed",
+      "text": "Friday Facts: 66% of Higher Education institutions reported "
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-03-19",
+      "reach": 49,
+      "engagement": 1,
+      "er": 2.0,
+      "editorial": "Promotional (Solution-Focused)",
+      "audience": "SMB/Startup",
+      "text": "It's not your age. It's your energy.\n\nAsk yourself this:\n\u2753Do"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-03-18",
+      "reach": 57,
+      "engagement": 2,
+      "er": 3.5,
+      "editorial": "Promotional (Solution-Focused)",
+      "audience": "SMB/Startup",
+      "text": "Most People Don't Know Which One They Are...\n\nAre you self-e"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-03-17",
+      "reach": 7,
+      "engagement": 1,
+      "er": 14.3,
+      "editorial": "",
+      "audience": "All",
+      "text": "Most business books get collected.\nFew actually get used.\n\nB"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-03-16",
+      "reach": 145,
+      "engagement": 2,
+      "er": 1.4,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "SMB/Startup",
+      "text": "50% of Businesses Fail Within 5 Years | Here's Why\n\nMost peo"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-03-13",
+      "reach": 7,
+      "engagement": 1,
+      "er": 14.3,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "All",
+      "text": "Friday Facts: Organizations that invest in integrated data a"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-03-12",
+      "reach": 118,
+      "engagement": 3,
+      "er": 2.5,
+      "editorial": "Promotional (Solution-Focused)",
+      "audience": "SMB/Startup",
+      "text": "Laid off. Battling with cancer. Today, I am a COO. Want To K"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-03-11",
+      "reach": 10,
+      "engagement": 1,
+      "er": 10.0,
+      "editorial": "",
+      "audience": "All",
+      "text": "nan"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-03-09",
+      "reach": 8,
+      "engagement": 1,
+      "er": 12.5,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "IT Business",
+      "text": "Guess the number:\nHow much of your SaaS budget is actually b"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-03-06",
+      "reach": 7,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "IT Business",
+      "text": "Friday Facts: 70% of B2B buyers have already eliminated vend"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-03-05",
+      "reach": 109,
+      "engagement": 1,
+      "er": 0.9,
+      "editorial": "Relatable / Pain Point (Humor & POV)",
+      "audience": "IT Business",
+      "text": "It's 2AM. \nYou've got 47 browser tabs open.\nStack Overflow i"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-03-03",
+      "reach": 8,
+      "engagement": 3,
+      "er": 37.5,
+      "editorial": "Engagement (Interactive)",
+      "audience": "SMB/Startup",
+      "text": "\"Fill in the blank: The worst tech decision I ever made was "
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-03-02",
+      "reach": 108,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Relatable / Pain Point (Humor & POV)",
+      "audience": "IT Business",
+      "text": "Why StealthEnomics?\nBecause the dark web has a help desk.\ud83c\udf11\ud83d\udd78\ufe0f"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-02-27",
+      "reach": 8,
+      "engagement": 1,
+      "er": 12.5,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "SMB/Startup",
+      "text": "Friday Facts: Did you know?\n\nSMBs that automate and streamli"
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-02-26",
+      "reach": 8,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Relatable / Pain Point (Humor & POV)",
+      "audience": "IT Business",
+      "text": "\"Complexity is the enemy of scale.\" \ud83c\udfaf\n\nTranslation: If your "
+    },
+    {
+      "platform": "Instagram",
+      "date": "2026-02-25",
+      "reach": 109,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Relatable / Pain Point (Humor & POV)",
+      "audience": "All",
+      "text": "IT confession: We've all been there - Slack + Trello + Jira "
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-01-31",
+      "reach": 14,
+      "engagement": 2,
+      "er": 14.3,
+      "editorial": "",
+      "audience": "All followers",
+      "text": "Ever felt overwhelmed trying to choose the right IT solution"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-01-30",
+      "reach": 39,
+      "engagement": 11,
+      "er": 28.2,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "All followers",
+      "text": "Did you know that over 70% of organizations juggle multiple "
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-01-29",
+      "reach": 60,
+      "engagement": 8,
+      "er": 13.3,
+      "editorial": "Thought Leadership (Founder POV)",
+      "audience": "All followers",
+      "text": "Your network is powerful. But is it working for you - or jus"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-01-28",
+      "reach": 20,
+      "engagement": 3,
+      "er": 15.0,
+      "editorial": "Relatable / Pain Point (Humor & POV)",
+      "audience": "All followers",
+      "text": "Lost in a maze of vendor proposals? Picked the \"wrong\" solut"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-01-28",
+      "reach": 12,
+      "engagement": 1,
+      "er": 8.3,
+      "editorial": "",
+      "audience": "All followers",
+      "text": "More clarity in IT decisions? Fewer vendor headaches? More t"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-01-26",
+      "reach": 22,
+      "engagement": 2,
+      "er": 9.1,
+      "editorial": "",
+      "audience": "All followers",
+      "text": "Ever felt overwhelmed trying to choose the right IT solution"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-01-25",
+      "reach": 12,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "All followers",
+      "text": "Higher Ed tech choices shouldn't be overwhelming.\nFrom data "
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-01-24",
+      "reach": 11,
+      "engagement": 2,
+      "er": 18.2,
+      "editorial": "Promotional (Solution-Focused)",
+      "audience": "All followers",
+      "text": "Check this story....  x University got qualified to receive "
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-01-23",
+      "reach": 8,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "All followers",
+      "text": "Did You Know?\n\n43% of universities report at least one ranso"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-01-22",
+      "reach": 11,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Thought Leadership (Founder POV)",
+      "audience": "All followers",
+      "text": "Improve campus operations & student experience.\nToday\u2019s stud"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-01-15",
+      "reach": 34,
+      "engagement": 1,
+      "er": 2.9,
+      "editorial": "Engagement (Interactive)",
+      "audience": "All followers",
+      "text": "It's that time of year when we start thinking about New Year"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-01-14",
+      "reach": 110,
+      "engagement": 20,
+      "er": 18.2,
+      "editorial": "Thought Leadership (Founder POV)",
+      "audience": "All followers",
+      "text": "Your network is powerful. But is it working for you\u2014or just "
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-01-08",
+      "reach": 34,
+      "engagement": 7,
+      "er": 20.6,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "All followers",
+      "text": "Too many tools\u2026 and no idea where to start in your business?"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-02-19",
+      "reach": 6,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Promotional (Solution-Focused)",
+      "audience": "All followers",
+      "text": "Is your powerful IT network truly working for you? \ud83e\udd14 Many le"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-02-19",
+      "reach": 33,
+      "engagement": 3,
+      "er": 9.1,
+      "editorial": "",
+      "audience": "All followers",
+      "text": "nan"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-02-19",
+      "reach": 52,
+      "engagement": 5,
+      "er": 9.6,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "All followers",
+      "text": "Here's the hard truth most SMB founders don't realize until "
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-02-18",
+      "reach": 13,
+      "engagement": 3,
+      "er": 23.1,
+      "editorial": "Relatable / Pain Point (Humor & POV)",
+      "audience": "All followers",
+      "text": "Meet Sarah. She's an academic advisor at a mid-sized univers"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-02-17",
+      "reach": 12,
+      "engagement": 4,
+      "er": 33.3,
+      "editorial": "Thought Leadership (Founder POV)",
+      "audience": "All followers",
+      "text": "Paul's Hickeyism \ud83d\udca1\n\n\"As you strive to gain competence, compe"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-02-17",
+      "reach": 48,
+      "engagement": 2,
+      "er": 4.2,
+      "editorial": "Engagement (Interactive)",
+      "audience": "All followers",
+      "text": "You can have the most talented people in the room, but witho"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-02-16",
+      "reach": 17,
+      "engagement": 4,
+      "er": 23.5,
+      "editorial": "Promotional (Solution-Focused)",
+      "audience": "All followers",
+      "text": "Ever felt overwhelmed by technology decisions?\n\nVendor optio"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-02-16",
+      "reach": 33,
+      "engagement": 2,
+      "er": 6.1,
+      "editorial": "Thought Leadership (Founder POV)",
+      "audience": "All followers",
+      "text": "This President's Day, let's talk about what real leadership "
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-02-12",
+      "reach": 11,
+      "engagement": 2,
+      "er": 18.2,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "All followers",
+      "text": "Think about it:\n\nWhen was the last time your team praised th"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-02-11",
+      "reach": 35,
+      "engagement": 4,
+      "er": 11.4,
+      "editorial": "Relatable / Pain Point (Humor & POV)",
+      "audience": "All followers",
+      "text": "If your business runs on memory and sticky notes, you don't "
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-02-10",
+      "reach": 18,
+      "engagement": 1,
+      "er": 5.6,
+      "editorial": "Relatable / Pain Point (Humor & POV)",
+      "audience": "All followers",
+      "text": "Student records in one system. Advising notes in another. Co"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-02-10",
+      "reach": 54,
+      "engagement": 11,
+      "er": 20.4,
+      "editorial": "Thought Leadership (Founder POV)",
+      "audience": "All followers",
+      "text": "Paul's Hickeyisms \ud83d\udca1\n\nHickeyisms = words to live by from Stea"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-02-09",
+      "reach": 24,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "",
+      "audience": "All followers",
+      "text": "Sometimes the biggest breakthroughs come from subtraction, n"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-02-09",
+      "reach": 59,
+      "engagement": 7,
+      "er": 11.9,
+      "editorial": "Promotional (Solution-Focused)",
+      "audience": "All followers",
+      "text": "One Stop-Shop For Successful Business Launch. \ud83d\udca5\n\nIf you've b"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-02-06",
+      "reach": 28,
+      "engagement": 2,
+      "er": 7.1,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "All followers",
+      "text": "SMBs using integrated systems see up to 30% faster decision-"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-02-05",
+      "reach": 43,
+      "engagement": 10,
+      "er": 23.3,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "All followers",
+      "text": "IT leaders aren't hired to maintain chaos.\n\nYet most spend t"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-02-04",
+      "reach": 53,
+      "engagement": 4,
+      "er": 7.5,
+      "editorial": "Relatable / Pain Point (Humor & POV)",
+      "audience": "All followers",
+      "text": "We take your campus back to the future \ud83d\ude80\nBecause campus IT s"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-02-03",
+      "reach": 32,
+      "engagement": 7,
+      "er": 21.9,
+      "editorial": "Relatable / Pain Point (Humor & POV)",
+      "audience": "All followers",
+      "text": "Growth doesn't break businesses. Disorganization does.\n\nMost"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-02-03",
+      "reach": 34,
+      "engagement": 3,
+      "er": 8.8,
+      "editorial": "",
+      "audience": "All followers",
+      "text": "nan"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-02-03",
+      "reach": 33,
+      "engagement": 5,
+      "er": 15.2,
+      "editorial": "",
+      "audience": "All followers",
+      "text": "nan"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-02-03",
+      "reach": 24,
+      "engagement": 1,
+      "er": 4.2,
+      "editorial": "",
+      "audience": "All followers",
+      "text": "nan"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-02-02",
+      "reach": 41,
+      "engagement": 19,
+      "er": 46.3,
+      "editorial": "Engagement (Interactive)",
+      "audience": "All followers",
+      "text": "Here's the truth most IT leaders don't talk about: we carry "
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-02-02",
+      "reach": 27,
+      "engagement": 5,
+      "er": 18.5,
+      "editorial": "Relatable / Pain Point (Humor & POV)",
+      "audience": "All followers",
+      "text": "We take your campus back to the future \ud83d\ude80\nBecause campus IT s"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-02-01",
+      "reach": 16,
+      "engagement": 2,
+      "er": 12.5,
+      "editorial": "",
+      "audience": "All followers",
+      "text": "More clarity in IT decisions? Fewer vendor headaches? More t"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-02-20",
+      "reach": 8,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "All followers",
+      "text": "Friday Facts: Did you know? \ud83d\udcca\n\nCompanies with scalable IT sy"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-02-23",
+      "reach": 6,
+      "engagement": 1,
+      "er": 16.7,
+      "editorial": "Engagement (Interactive)",
+      "audience": "All followers",
+      "text": "What's one tech decision you'd redo if you could? \ud83e\udd14\n\nNo sham"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-02-23",
+      "reach": 23,
+      "engagement": 3,
+      "er": 13.0,
+      "editorial": "Thought Leadership (Founder POV)",
+      "audience": "All followers",
+      "text": "Your network is powerful. But is it working for you\u2014or just "
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-02-24",
+      "reach": 14,
+      "engagement": 1,
+      "er": 7.1,
+      "editorial": "Thought Leadership (Founder POV)",
+      "audience": "All followers",
+      "text": "Paul's Hickeyism \ud83d\udca1\n\n\"If you change nothing, nothing changes."
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-02-25",
+      "reach": 31,
+      "engagement": 6,
+      "er": 19.4,
+      "editorial": "Relatable / Pain Point (Humor & POV)",
+      "audience": "All followers",
+      "text": "IT confession: We've all been there - Slack + Trello + Jira "
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-02-26",
+      "reach": 64,
+      "engagement": 7,
+      "er": 10.9,
+      "editorial": "Relatable / Pain Point (Humor & POV)",
+      "audience": "All followers",
+      "text": "\"Complexity is the enemy of scale.\" \ud83c\udfaf\n\nTranslation: If your "
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-02-27",
+      "reach": 30,
+      "engagement": 4,
+      "er": 13.3,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "All followers",
+      "text": "Friday Facts: Did you know?\n\nSMBs that automate and streamli"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-03-27",
+      "reach": 43,
+      "engagement": 10,
+      "er": 23.3,
+      "editorial": "Thought Leadership (Founder POV)",
+      "audience": "All followers",
+      "text": "$200M+ in responsibility. 30 years of leadership. One philos"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-03-26",
+      "reach": 22,
+      "engagement": 6,
+      "er": 27.3,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "All followers",
+      "text": "3 Signs Your Business Operations Are Broken #BusinessOperati"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-03-25",
+      "reach": 7,
+      "engagement": 2,
+      "er": 28.6,
+      "editorial": "Thought Leadership (Founder POV)",
+      "audience": "All followers",
+      "text": "Life Lesson I Learned Too Late #Hickeyisms\ud83d\udca1\n\nEver notice how"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-03-24",
+      "reach": 10,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Promotional (Solution-Focused)",
+      "audience": "All followers",
+      "text": "TOMORROW WE ARE LIVE - You're Invited!\n\nIt's not too late to"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-03-24",
+      "reach": 8,
+      "engagement": 2,
+      "er": 25.0,
+      "editorial": "Promotional (Solution-Focused)",
+      "audience": "All followers",
+      "text": "Ever been so new to something you don't even know what to as"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-03-23",
+      "reach": 30,
+      "engagement": 8,
+      "er": 26.7,
+      "editorial": "Engagement (Interactive)",
+      "audience": "All followers",
+      "text": "Finish the sentence: If I could automate one thing in my bus"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-03-20",
+      "reach": 36,
+      "engagement": 3,
+      "er": 8.3,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "All followers",
+      "text": "Friday Facts: 66% of Higher Education institutions reported "
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-03-19",
+      "reach": 35,
+      "engagement": 17,
+      "er": 48.6,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "All followers",
+      "text": "Stop Wasting Time. Launch Your Business The Right Way.\n\nDid "
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-03-19",
+      "reach": 13,
+      "engagement": 1,
+      "er": 7.7,
+      "editorial": "Promotional (Solution-Focused)",
+      "audience": "All followers",
+      "text": "It's not your age. It's your energy.\n\nAsk yourself this:\n\u2753Do"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-03-18",
+      "reach": 20,
+      "engagement": 6,
+      "er": 30.0,
+      "editorial": "Promotional (Solution-Focused)",
+      "audience": "All followers",
+      "text": "Most People Don't Know Which One They Are...\n\nAre you self-e"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-03-17",
+      "reach": 39,
+      "engagement": 7,
+      "er": 17.9,
+      "editorial": "",
+      "audience": "All followers",
+      "text": "Most business books get collected.\nFew actually get used.\n\nB"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-03-16",
+      "reach": 34,
+      "engagement": 6,
+      "er": 17.6,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "All followers",
+      "text": "50% of Businesses Fail Within 5 Years | Here's Why\n\nMost peo"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-03-13",
+      "reach": 60,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "All followers",
+      "text": "Friday Facts: Organizations that invest in integrated data a"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-03-12",
+      "reach": 119,
+      "engagement": 30,
+      "er": 25.2,
+      "editorial": "Promotional (Solution-Focused)",
+      "audience": "All followers",
+      "text": "Laid off. Battling with cancer. Today, I am a COO. Want To K"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-03-11",
+      "reach": 24,
+      "engagement": 3,
+      "er": 12.5,
+      "editorial": "",
+      "audience": "All followers",
+      "text": "nan"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-03-09",
+      "reach": 117,
+      "engagement": 4,
+      "er": 3.4,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "All followers",
+      "text": "Guess the number:\nHow much of your SaaS budget is actually b"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-03-06",
+      "reach": 40,
+      "engagement": 5,
+      "er": 12.5,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "All followers",
+      "text": "Friday Facts: 70% of B2B buyers have already eliminated vend"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-03-05",
+      "reach": 45,
+      "engagement": 1,
+      "er": 2.2,
+      "editorial": "Relatable / Pain Point (Humor & POV)",
+      "audience": "All followers",
+      "text": "It's 2AM. \nYou've got 47 browser tabs open.\nStack Overflow i"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-03-03",
+      "reach": 35,
+      "engagement": 0,
+      "er": 0.0,
+      "editorial": "Promotional (Solution-Focused)",
+      "audience": "All followers",
+      "text": "If you prefer to join us earlier, see you at 12 PM on March "
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-03-03",
+      "reach": 27,
+      "engagement": 1,
+      "er": 3.7,
+      "editorial": "Educational (Authority / Frameworks)",
+      "audience": "All followers",
+      "text": "Stop scrolling.\nIf you\u2019re launching a business this year, th"
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-03-03",
+      "reach": 56,
+      "engagement": 4,
+      "er": 7.1,
+      "editorial": "Engagement (Interactive)",
+      "audience": "All followers",
+      "text": "\"Fill in the blank: The worst tech decision I ever made was "
+    },
+    {
+      "platform": "LinkedIn",
+      "date": "2026-03-03",
+      "reach": 24,
+      "engagement": 3,
+      "er": 12.5,
+      "editorial": "Relatable / Pain Point (Humor & POV)",
+      "audience": "All followers",
+      "text": "Why StealthEnomics?\nBecause the dark web has a help desk.\ud83c\udf11\ud83d\udd78\ufe0f"
+    }
+  ],
+  "campaigns": [
+    {
+      "name": "Technology Acquisition Services -Instant Lead From",
+      "status": "active",
+      "spend": 2378.67,
+      "results": 41,
+      "cpr": 58.02,
+      "impressions": 43691,
+      "reach": 22514,
+      "cpm": 54.44,
+      "clicks": 401
+    },
+    {
+      "name": "SMB Startup Services - Instant Lead From Campaign",
+      "status": "active",
+      "spend": 1685.06,
+      "results": 63,
+      "cpr": 26.75,
+      "impressions": 15868,
+      "reach": 8233,
+      "cpm": 106.19,
+      "clicks": 241
+    },
+    {
+      "name": "Webinar - Traffic",
+      "status": "active",
+      "spend": 403.29,
+      "results": 1372,
+      "cpr": 0.29,
+      "impressions": 51949,
+      "reach": 33505,
+      "cpm": 7.76,
+      "clicks": 1543
+    },
+    {
+      "name": "Technology Acquisition Broker Program - Instant Le",
+      "status": "active",
+      "spend": 377.8,
+      "results": 55,
+      "cpr": 6.87,
+      "impressions": 4894,
+      "reach": 2259,
+      "cpm": 77.2,
+      "clicks": 190
+    },
+    {
+      "name": "Engagement Campaign for IT Business/Technology Acq",
+      "status": "active",
+      "spend": 243.09,
+      "results": 515,
+      "cpr": 0.47,
+      "impressions": 19938,
+      "reach": 9190,
+      "cpm": 12.19,
+      "clicks": 204
+    },
+    {
+      "name": "Engagement Campaign for SMB/Start-ups and Technolo",
+      "status": "active",
+      "spend": 236.57,
+      "results": 27794,
+      "cpr": 0.01,
+      "impressions": 55399,
+      "reach": 30245,
+      "cpm": 4.27,
+      "clicks": 0
+    },
+    {
+      "name": "SMB Startup Services - LPV",
+      "status": "inactive",
+      "spend": 11.51,
+      "results": 2,
+      "cpr": 5.75,
+      "impressions": 1740,
+      "reach": 1725,
+      "cpm": 6.61,
+      "clicks": 8
+    }
+  ],
+  "campaign_drill": {
+    "Technology Acquisition Services -Instant Lead From Campaign": [
+      {
+        "name": "General - Interest",
+        "status": "active",
+        "spend": 2378.67,
+        "results": 41,
+        "cpr": 71.09,
+        "impressions": 43691,
+        "reach": 24653,
+        "clicks": 401,
+        "delivery": "",
+        "recs": "",
+        "rec_detail": "",
+        "ads": [
+          {
+            "name": "General - Interest - Ad 3",
+            "status": "active",
+            "spend": 1249.4,
+            "results": 26,
+            "cpr": 48.05,
+            "impressions": 27753,
+            "reach": 14921,
+            "clicks": 204,
+            "preview": "nan"
+          },
+          {
+            "name": "General - Interest - Ad 2 - A",
+            "status": "active",
+            "spend": 736.08,
+            "results": 11,
+            "cpr": 66.92,
+            "impressions": 9859,
+            "reach": 5574,
+            "clicks": 124,
+            "preview": "nan"
+          },
+          {
+            "name": "General - Interest - Ad 2 \u2014 B",
+            "status": "active",
+            "spend": 393.19,
+            "results": 4,
+            "cpr": 98.3,
+            "impressions": 6079,
+            "reach": 4158,
+            "clicks": 73,
+            "preview": "nan"
+          }
+        ]
+      }
+    ],
+    "SMB Startup Services - Instant Lead From Campaign": [
+      {
+        "name": "General - Interest - Lead Form Campaign",
+        "status": "active",
+        "spend": 1685.06,
+        "results": 63,
+        "cpr": 28.92,
+        "impressions": 15868,
+        "reach": 8902,
+        "clicks": 241,
+        "delivery": "Learning",
+        "recs": "1 recommendation",
+        "rec_detail": "",
+        "ads": [
+          {
+            "name": "General - Interest - Ad 2",
+            "status": "active",
+            "spend": 1397.39,
+            "results": 54,
+            "cpr": 25.88,
+            "impressions": 12435,
+            "reach": 6602,
+            "clicks": 194,
+            "preview": "thumbs/General - Interest - Ad 2.jpg"
+          },
+          {
+            "name": "General - Interest - Ad 1",
+            "status": "active",
+            "spend": 287.67,
+            "results": 9,
+            "cpr": 31.96,
+            "impressions": 3433,
+            "reach": 2300,
+            "clicks": 47,
+            "preview": "thumbs/General - Interest - Ad 1.jpg"
+          }
+        ]
+      }
+    ],
+    "Webinar - Traffic": [
+      {
+        "name": "SMB/Start-up",
+        "status": "active",
+        "spend": 403.47,
+        "results": 1372,
+        "cpr": 0.26,
+        "impressions": 51963,
+        "reach": 34154,
+        "clicks": 1544,
+        "delivery": "?",
+        "recs": "",
+        "rec_detail": "",
+        "ads": [
+          {
+            "name": "Video Chris",
+            "status": "active",
+            "spend": 387.8,
+            "results": 1301,
+            "cpr": 0.3,
+            "impressions": 46786,
+            "reach": 28977,
+            "clicks": 1472,
+            "preview": "thumbs/Video Chris.jpg"
+          },
+          {
+            "name": "45 day business launch program",
+            "status": "active",
+            "spend": 15.67,
+            "results": 71,
+            "cpr": 0.22,
+            "impressions": 5177,
+            "reach": 5177,
+            "clicks": 72,
+            "preview": "thumbs/45 day business launch program.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Brokers",
+        "status": "inactive",
+        "spend": 0.0,
+        "results": 0,
+        "cpr": 0.0,
+        "impressions": 0,
+        "reach": 0,
+        "clicks": 0,
+        "delivery": "nan",
+        "recs": "",
+        "rec_detail": "",
+        "ads": [
+          {
+            "name": "How To Generate Revenue Through The StealthEnomics Acquisiti",
+            "status": "inactive",
+            "spend": 0.0,
+            "results": 0,
+            "cpr": 0.0,
+            "impressions": 0,
+            "reach": 0,
+            "clicks": 0,
+            "preview": "nan"
+          }
+        ]
+      },
+      {
+        "name": "IT Business",
+        "status": "inactive",
+        "spend": 0.0,
+        "results": 0,
+        "cpr": 0.0,
+        "impressions": 0,
+        "reach": 0,
+        "clicks": 0,
+        "delivery": "nan",
+        "recs": "",
+        "rec_detail": "",
+        "ads": [
+          {
+            "name": "Free vendor analysis program",
+            "status": "inactive",
+            "spend": 0.0,
+            "results": 0,
+            "cpr": 0.0,
+            "impressions": 0,
+            "reach": 0,
+            "clicks": 0,
+            "preview": "nan"
+          }
+        ]
+      }
+    ],
+    "Technology Acquisition Broker Program - Instant Lead Campaign": [
+      {
+        "name": "\u200b\u200bThe Quiet Opportunity\u200b\u200b - Leads Ad Set",
+        "status": "active",
+        "spend": 377.8,
+        "results": 55,
+        "cpr": 6.87,
+        "impressions": 4894,
+        "reach": 2259,
+        "clicks": 190,
+        "delivery": "",
+        "recs": "",
+        "rec_detail": "",
+        "ads": [
+          {
+            "name": "\u200b\u200bThe Quiet Opportunity\u200b\u200b - Ad 1",
+            "status": "active",
+            "spend": 377.8,
+            "results": 55,
+            "cpr": 6.87,
+            "impressions": 4894,
+            "reach": 2259,
+            "clicks": 190,
+            "preview": "nan"
+          }
+        ]
+      },
+      {
+        "name": "\u200b\u200bThe Your Network\u200b\u200b\u200b\u200b - Leads Ad Set",
+        "status": "not_delivering",
+        "spend": 0.0,
+        "results": 0,
+        "cpr": 0.0,
+        "impressions": 0,
+        "reach": 0,
+        "clicks": 0,
+        "delivery": "nan",
+        "recs": "",
+        "rec_detail": "",
+        "ads": [
+          {
+            "name": "\u200b\u200bThe Your Network\u200b\u200b - Ad 1",
+            "status": "not_delivering",
+            "spend": 0.0,
+            "results": 0,
+            "cpr": 0.0,
+            "impressions": 0,
+            "reach": 0,
+            "clicks": 0,
+            "preview": "nan"
+          }
+        ]
+      }
+    ],
+    "Engagement Campaign for IT Business/Technology Acquisition Services": [
+      {
+        "name": "Ad Set 2 IT Business/Technology Acquisition Services",
+        "status": "active",
+        "spend": 243.18,
+        "results": 515,
+        "cpr": 0.41,
+        "impressions": 19940,
+        "reach": 9275,
+        "clicks": 204,
+        "delivery": "Active",
+        "recs": "2 recommendations",
+        "rec_detail": "",
+        "ads": [
+          {
+            "name": "Ad 1: test A (Problem Hook)",
+            "status": "active",
+            "spend": 203.99,
+            "results": 353,
+            "cpr": 0.58,
+            "impressions": 19348,
+            "reach": 8785,
+            "clicks": 173,
+            "preview": "nan"
+          },
+          {
+            "name": "Ad 2: test B (Frustration Hook)",
+            "status": "active",
+            "spend": 39.19,
+            "results": 162,
+            "cpr": 0.24,
+            "impressions": 592,
+            "reach": 490,
+            "clicks": 31,
+            "preview": "nan"
+          }
+        ]
+      }
+    ],
+    "Engagement Campaign for SMB/Start-ups and Technology Acquisition Broker": [
+      {
+        "name": "Ad Set 3: Technology Acquisition Broker",
+        "status": "active",
+        "spend": 236.37,
+        "results": 27688,
+        "cpr": 0.0,
+        "impressions": 55163,
+        "reach": 29937,
+        "clicks": 0,
+        "delivery": "Active",
+        "recs": "2 recommendations",
+        "rec_detail": "",
+        "ads": [
+          {
+            "name": "Ad 2: test B (Professional Hook)",
+            "status": "active",
+            "spend": 236.37,
+            "results": 27688,
+            "cpr": 0.01,
+            "impressions": 55163,
+            "reach": 29937,
+            "clicks": 0,
+            "preview": "nan"
+          },
+          {
+            "name": "Ad 1: test A (Opportunity Hook)",
+            "status": "active",
+            "spend": 0.0,
+            "results": 0,
+            "cpr": 0.0,
+            "impressions": 0,
+            "reach": 0,
+            "clicks": 0,
+            "preview": "nan"
+          }
+        ]
+      },
+      {
+        "name": "Ad Set 1: SMB/Start-ups",
+        "status": "active",
+        "spend": 0.26,
+        "results": 107,
+        "cpr": 0.0,
+        "impressions": 245,
+        "reach": 222,
+        "clicks": 0,
+        "delivery": "Learning limited",
+        "recs": "1 recommendation",
+        "rec_detail": "",
+        "ads": [
+          {
+            "name": "Ad 2: test B (Pain Point Hook)",
+            "status": "active",
+            "spend": 0.26,
+            "results": 107,
+            "cpr": 0.0,
+            "impressions": 245,
+            "reach": 222,
+            "clicks": 0,
+            "preview": "thumbs/Ad 2_ test B _Pain Point Hook_.jpg"
+          },
+          {
+            "name": "Ad 1: test A (Question Hook)",
+            "status": "active",
+            "spend": 0.0,
+            "results": 0,
+            "cpr": 0.0,
+            "impressions": 0,
+            "reach": 0,
+            "clicks": 0,
+            "preview": "thumbs/Ad 1_ test A _Question Hook_.jpg"
+          }
+        ]
+      }
+    ],
+    "SMB Startup Services - LPV": [
+      {
+        "name": "Ad Set 1 - a/b testing (static)",
+        "status": "not_delivering",
+        "spend": 11.51,
+        "results": 2,
+        "cpr": 2.88,
+        "impressions": 1740,
+        "reach": 1725,
+        "clicks": 8,
+        "delivery": "",
+        "recs": "",
+        "rec_detail": "",
+        "ads": [
+          {
+            "name": "Ad 2: test B (Myth Debunking & Empowerment)",
+            "status": "not_delivering",
+            "spend": 11.51,
+            "results": 2,
+            "cpr": 5.75,
+            "impressions": 1740,
+            "reach": 1725,
+            "clicks": 8,
+            "preview": "nan"
+          },
+          {
+            "name": "Ad 1: test A (Direct Pain Point & Relief)",
+            "status": "not_delivering",
+            "spend": 0.0,
+            "results": 0,
+            "cpr": 0.0,
+            "impressions": 0,
+            "reach": 0,
+            "clicks": 0,
+            "preview": "nan"
+          }
+        ]
+      },
+      {
+        "name": "General - Interest - General",
+        "status": "not_delivering",
+        "spend": 0.0,
+        "results": 0,
+        "cpr": 0.0,
+        "impressions": 0,
+        "reach": 0,
+        "clicks": 0,
+        "delivery": "",
+        "recs": "",
+        "rec_detail": "",
+        "ads": []
+      }
+    ],
+    "Technology Acquisition Services - LPV": [
+      {
+        "name": "General - Interest - A/B Testing",
+        "status": "not_delivering",
+        "spend": 0.0,
+        "results": 0,
+        "cpr": 0.0,
+        "impressions": 0,
+        "reach": 0,
+        "clicks": 0,
+        "delivery": "",
+        "recs": "",
+        "rec_detail": "",
+        "ads": []
+      },
+      {
+        "name": "Ad set 1: a/b testing (static)",
+        "status": "not_delivering",
+        "spend": 0.0,
+        "results": 0,
+        "cpr": 0.0,
+        "impressions": 0,
+        "reach": 0,
+        "clicks": 0,
+        "delivery": "nan",
+        "recs": "",
+        "rec_detail": "",
+        "ads": [
+          {
+            "name": "Ad 2: test B (Future-proof)",
+            "status": "not_delivering",
+            "spend": 0.0,
+            "results": 0,
+            "cpr": 0.0,
+            "impressions": 0,
+            "reach": 0,
+            "clicks": 0,
+            "preview": "nan"
+          },
+          {
+            "name": "Ad 1: test A (Vendor Maze)",
+            "status": "not_delivering",
+            "spend": 0.0,
+            "results": 0,
+            "cpr": 0.0,
+            "impressions": 0,
+            "reach": 0,
+            "clicks": 0,
+            "preview": "nan"
+          }
+        ]
+      },
+      {
+        "name": "Ad set 1: a/b testing (video)",
+        "status": "not_delivering",
+        "spend": 0.0,
+        "results": 0,
+        "cpr": 0.0,
+        "impressions": 0,
+        "reach": 0,
+        "clicks": 0,
+        "delivery": "nan",
+        "recs": "",
+        "rec_detail": "",
+        "ads": [
+          {
+            "name": "Ad 1: test A (Future Tech)",
+            "status": "not_delivering",
+            "spend": 0.0,
+            "results": 0,
+            "cpr": 0.0,
+            "impressions": 0,
+            "reach": 0,
+            "clicks": 0,
+            "preview": "nan"
+          },
+          {
+            "name": "Ad 2: test B (Founder Who Tried to Build a Flux)",
+            "status": "not_delivering",
+            "spend": 0.0,
+            "results": 0,
+            "cpr": 0.0,
+            "impressions": 0,
+            "reach": 0,
+            "clicks": 0,
+            "preview": "nan"
+          }
+        ]
+      }
+    ]
+  },
+  "ad_sets": [
+    {
+      "name": "General - Interest",
+      "status": "active",
+      "spend": 2378.67,
+      "results": 41,
+      "cpr": 71.09,
+      "impressions": 43691,
+      "reach": 24653,
+      "clicks": 401,
+      "delivery": "",
+      "recs": "",
+      "rec_detail": "",
+      "ads": [
+        {
+          "name": "General - Interest - Ad 3",
+          "status": "active",
+          "spend": 1249.4,
+          "results": 26,
+          "cpr": 48.05,
+          "impressions": 27753,
+          "reach": 14921,
+          "clicks": 204,
+          "preview": "nan"
+        },
+        {
+          "name": "General - Interest - Ad 2 - A",
+          "status": "active",
+          "spend": 736.08,
+          "results": 11,
+          "cpr": 66.92,
+          "impressions": 9859,
+          "reach": 5574,
+          "clicks": 124,
+          "preview": "nan"
+        },
+        {
+          "name": "General - Interest - Ad 2 \u2014 B",
+          "status": "active",
+          "spend": 393.19,
+          "results": 4,
+          "cpr": 98.3,
+          "impressions": 6079,
+          "reach": 4158,
+          "clicks": 73,
+          "preview": "nan"
+        }
+      ]
+    },
+    {
+      "name": "General - Interest - Lead Form Campaign",
+      "status": "active",
+      "spend": 1685.06,
+      "results": 63,
+      "cpr": 28.92,
+      "impressions": 15868,
+      "reach": 8902,
+      "clicks": 241,
+      "delivery": "Learning",
+      "recs": "1 recommendation",
+      "rec_detail": "",
+      "ads": [
+        {
+          "name": "General - Interest - Ad 2",
+          "status": "active",
+          "spend": 1397.39,
+          "results": 54,
+          "cpr": 25.88,
+          "impressions": 12435,
+          "reach": 6602,
+          "clicks": 194,
+          "preview": "thumbs/General - Interest - Ad 2.jpg"
+        },
+        {
+          "name": "General - Interest - Ad 1",
+          "status": "active",
+          "spend": 287.67,
+          "results": 9,
+          "cpr": 31.96,
+          "impressions": 3433,
+          "reach": 2300,
+          "clicks": 47,
+          "preview": "thumbs/General - Interest - Ad 1.jpg"
+        }
+      ]
+    },
+    {
+      "name": "SMB/Start-up",
+      "status": "active",
+      "spend": 403.47,
+      "results": 1372,
+      "cpr": 0.26,
+      "impressions": 51963,
+      "reach": 34154,
+      "clicks": 1544,
+      "delivery": "?",
+      "recs": "",
+      "rec_detail": "",
+      "ads": [
+        {
+          "name": "Video Chris",
+          "status": "active",
+          "spend": 387.8,
+          "results": 1301,
+          "cpr": 0.3,
+          "impressions": 46786,
+          "reach": 28977,
+          "clicks": 1472,
+          "preview": "thumbs/Video Chris.jpg"
+        },
+        {
+          "name": "45 day business launch program",
+          "status": "active",
+          "spend": 15.67,
+          "results": 71,
+          "cpr": 0.22,
+          "impressions": 5177,
+          "reach": 5177,
+          "clicks": 72,
+          "preview": "thumbs/45 day business launch program.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Brokers",
+      "status": "inactive",
+      "spend": 0.0,
+      "results": 0,
+      "cpr": 0.0,
+      "impressions": 0,
+      "reach": 0,
+      "clicks": 0,
+      "delivery": "nan",
+      "recs": "",
+      "rec_detail": "",
+      "ads": [
+        {
+          "name": "How To Generate Revenue Through The StealthEnomics Acquisiti",
+          "status": "inactive",
+          "spend": 0.0,
+          "results": 0,
+          "cpr": 0.0,
+          "impressions": 0,
+          "reach": 0,
+          "clicks": 0,
+          "preview": "nan"
+        }
+      ]
+    },
+    {
+      "name": "IT Business",
+      "status": "inactive",
+      "spend": 0.0,
+      "results": 0,
+      "cpr": 0.0,
+      "impressions": 0,
+      "reach": 0,
+      "clicks": 0,
+      "delivery": "nan",
+      "recs": "",
+      "rec_detail": "",
+      "ads": [
+        {
+          "name": "Free vendor analysis program",
+          "status": "inactive",
+          "spend": 0.0,
+          "results": 0,
+          "cpr": 0.0,
+          "impressions": 0,
+          "reach": 0,
+          "clicks": 0,
+          "preview": "nan"
+        }
+      ]
+    },
+    {
+      "name": "\u200b\u200bThe Quiet Opportunity\u200b\u200b - Leads Ad Set",
+      "status": "active",
+      "spend": 377.8,
+      "results": 55,
+      "cpr": 6.87,
+      "impressions": 4894,
+      "reach": 2259,
+      "clicks": 190,
+      "delivery": "",
+      "recs": "",
+      "rec_detail": "",
+      "ads": [
+        {
+          "name": "\u200b\u200bThe Quiet Opportunity\u200b\u200b - Ad 1",
+          "status": "active",
+          "spend": 377.8,
+          "results": 55,
+          "cpr": 6.87,
+          "impressions": 4894,
+          "reach": 2259,
+          "clicks": 190,
+          "preview": "nan"
+        }
+      ]
+    },
+    {
+      "name": "\u200b\u200bThe Your Network\u200b\u200b\u200b\u200b - Leads Ad Set",
+      "status": "not_delivering",
+      "spend": 0.0,
+      "results": 0,
+      "cpr": 0.0,
+      "impressions": 0,
+      "reach": 0,
+      "clicks": 0,
+      "delivery": "nan",
+      "recs": "",
+      "rec_detail": "",
+      "ads": [
+        {
+          "name": "\u200b\u200bThe Your Network\u200b\u200b - Ad 1",
+          "status": "not_delivering",
+          "spend": 0.0,
+          "results": 0,
+          "cpr": 0.0,
+          "impressions": 0,
+          "reach": 0,
+          "clicks": 0,
+          "preview": "nan"
+        }
+      ]
+    },
+    {
+      "name": "Ad Set 2 IT Business/Technology Acquisition Services",
+      "status": "active",
+      "spend": 243.18,
+      "results": 515,
+      "cpr": 0.41,
+      "impressions": 19940,
+      "reach": 9275,
+      "clicks": 204,
+      "delivery": "Active",
+      "recs": "2 recommendations",
+      "rec_detail": "",
+      "ads": [
+        {
+          "name": "Ad 1: test A (Problem Hook)",
+          "status": "active",
+          "spend": 203.99,
+          "results": 353,
+          "cpr": 0.58,
+          "impressions": 19348,
+          "reach": 8785,
+          "clicks": 173,
+          "preview": "nan"
+        },
+        {
+          "name": "Ad 2: test B (Frustration Hook)",
+          "status": "active",
+          "spend": 39.19,
+          "results": 162,
+          "cpr": 0.24,
+          "impressions": 592,
+          "reach": 490,
+          "clicks": 31,
+          "preview": "nan"
+        }
+      ]
+    },
+    {
+      "name": "Ad Set 3: Technology Acquisition Broker",
+      "status": "active",
+      "spend": 236.37,
+      "results": 27688,
+      "cpr": 0.0,
+      "impressions": 55163,
+      "reach": 29937,
+      "clicks": 0,
+      "delivery": "Active",
+      "recs": "2 recommendations",
+      "rec_detail": "",
+      "ads": [
+        {
+          "name": "Ad 2: test B (Professional Hook)",
+          "status": "active",
+          "spend": 236.37,
+          "results": 27688,
+          "cpr": 0.01,
+          "impressions": 55163,
+          "reach": 29937,
+          "clicks": 0,
+          "preview": "nan"
+        },
+        {
+          "name": "Ad 1: test A (Opportunity Hook)",
+          "status": "active",
+          "spend": 0.0,
+          "results": 0,
+          "cpr": 0.0,
+          "impressions": 0,
+          "reach": 0,
+          "clicks": 0,
+          "preview": "nan"
+        }
+      ]
+    },
+    {
+      "name": "Ad Set 1: SMB/Start-ups",
+      "status": "active",
+      "spend": 0.26,
+      "results": 107,
+      "cpr": 0.0,
+      "impressions": 245,
+      "reach": 222,
+      "clicks": 0,
+      "delivery": "Learning limited",
+      "recs": "1 recommendation",
+      "rec_detail": "",
+      "ads": [
+        {
+          "name": "Ad 2: test B (Pain Point Hook)",
+          "status": "active",
+          "spend": 0.26,
+          "results": 107,
+          "cpr": 0.0,
+          "impressions": 245,
+          "reach": 222,
+          "clicks": 0,
+          "preview": "thumbs/Ad 2_ test B _Pain Point Hook_.jpg"
+        },
+        {
+          "name": "Ad 1: test A (Question Hook)",
+          "status": "active",
+          "spend": 0.0,
+          "results": 0,
+          "cpr": 0.0,
+          "impressions": 0,
+          "reach": 0,
+          "clicks": 0,
+          "preview": "thumbs/Ad 1_ test A _Question Hook_.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Ad Set 1 - a/b testing (static)",
+      "status": "not_delivering",
+      "spend": 11.51,
+      "results": 2,
+      "cpr": 2.88,
+      "impressions": 1740,
+      "reach": 1725,
+      "clicks": 8,
+      "delivery": "",
+      "recs": "",
+      "rec_detail": "",
+      "ads": [
+        {
+          "name": "Ad 2: test B (Myth Debunking & Empowerment)",
+          "status": "not_delivering",
+          "spend": 11.51,
+          "results": 2,
+          "cpr": 5.75,
+          "impressions": 1740,
+          "reach": 1725,
+          "clicks": 8,
+          "preview": "nan"
+        },
+        {
+          "name": "Ad 1: test A (Direct Pain Point & Relief)",
+          "status": "not_delivering",
+          "spend": 0.0,
+          "results": 0,
+          "cpr": 0.0,
+          "impressions": 0,
+          "reach": 0,
+          "clicks": 0,
+          "preview": "nan"
+        }
+      ]
+    },
+    {
+      "name": "General - Interest - General",
+      "status": "not_delivering",
+      "spend": 0.0,
+      "results": 0,
+      "cpr": 0.0,
+      "impressions": 0,
+      "reach": 0,
+      "clicks": 0,
+      "delivery": "",
+      "recs": "",
+      "rec_detail": "",
+      "ads": []
+    },
+    {
+      "name": "General - Interest - A/B Testing",
+      "status": "not_delivering",
+      "spend": 0.0,
+      "results": 0,
+      "cpr": 0.0,
+      "impressions": 0,
+      "reach": 0,
+      "clicks": 0,
+      "delivery": "",
+      "recs": "",
+      "rec_detail": "",
+      "ads": []
+    },
+    {
+      "name": "Ad set 1: a/b testing (static)",
+      "status": "not_delivering",
+      "spend": 0.0,
+      "results": 0,
+      "cpr": 0.0,
+      "impressions": 0,
+      "reach": 0,
+      "clicks": 0,
+      "delivery": "nan",
+      "recs": "",
+      "rec_detail": "",
+      "ads": [
+        {
+          "name": "Ad 2: test B (Future-proof)",
+          "status": "not_delivering",
+          "spend": 0.0,
+          "results": 0,
+          "cpr": 0.0,
+          "impressions": 0,
+          "reach": 0,
+          "clicks": 0,
+          "preview": "nan"
+        },
+        {
+          "name": "Ad 1: test A (Vendor Maze)",
+          "status": "not_delivering",
+          "spend": 0.0,
+          "results": 0,
+          "cpr": 0.0,
+          "impressions": 0,
+          "reach": 0,
+          "clicks": 0,
+          "preview": "nan"
+        }
+      ]
+    },
+    {
+      "name": "Ad set 1: a/b testing (video)",
+      "status": "not_delivering",
+      "spend": 0.0,
+      "results": 0,
+      "cpr": 0.0,
+      "impressions": 0,
+      "reach": 0,
+      "clicks": 0,
+      "delivery": "nan",
+      "recs": "",
+      "rec_detail": "",
+      "ads": [
+        {
+          "name": "Ad 1: test A (Future Tech)",
+          "status": "not_delivering",
+          "spend": 0.0,
+          "results": 0,
+          "cpr": 0.0,
+          "impressions": 0,
+          "reach": 0,
+          "clicks": 0,
+          "preview": "nan"
+        },
+        {
+          "name": "Ad 2: test B (Founder Who Tried to Build a Flux)",
+          "status": "not_delivering",
+          "spend": 0.0,
+          "results": 0,
+          "cpr": 0.0,
+          "impressions": 0,
+          "reach": 0,
+          "clicks": 0,
+          "preview": "nan"
+        }
+      ]
+    }
+  ],
+  "ads_monthly": {
+    "2026-02": [
+      {
+        "name": "Technology Acquisition Services -Instant Lead From",
+        "status": "inactive",
+        "spend": 2544.95,
+        "results": 37,
+        "result_type": "actions:leadgen.other",
+        "cpr": 68.78,
+        "impressions": 23852,
+        "reach": 14012,
+        "cpm": 106.7,
+        "clicks": 345
+      },
+      {
+        "name": "SMB Startup Services - Instant Lead From Campaign",
+        "status": "active",
+        "spend": 1940.39,
+        "results": 72,
+        "result_type": "actions:leadgen.other",
+        "cpr": 26.95,
+        "impressions": 13133,
+        "reach": 6878,
+        "cpm": 147.75,
+        "clicks": 270
+      },
+      {
+        "name": "Technology Acquisition Broker Program - Instant Le",
+        "status": "inactive",
+        "spend": 492.82,
+        "results": 75,
+        "result_type": "actions:leadgen.other",
+        "cpr": 6.57,
+        "impressions": 7006,
+        "reach": 3659,
+        "cpm": 70.34,
+        "clicks": 235
+      },
+      {
+        "name": "Webinar - Traffic",
+        "status": "inactive",
+        "spend": 77.9,
+        "results": 20,
+        "result_type": "actions:omni_landing_page_view",
+        "cpr": 3.9,
+        "impressions": 17241,
+        "reach": 15945,
+        "cpm": 4.52,
+        "clicks": 147
+      },
+      {
+        "name": "Engagement Campaign for IT Business/Technology Acq",
+        "status": "active",
+        "spend": 0.0,
+        "results": 0,
+        "result_type": "nan",
+        "cpr": 0.0,
+        "impressions": 0,
+        "reach": 0,
+        "cpm": 0.0,
+        "clicks": 0
+      },
+      {
+        "name": "Engagement Campaign for SMB/Start-ups and Technolo",
+        "status": "active",
+        "spend": 0.0,
+        "results": 0,
+        "result_type": "nan",
+        "cpr": 0.0,
+        "impressions": 0,
+        "reach": 0,
+        "cpm": 0.0,
+        "clicks": 0
+      },
+      {
+        "name": "SMB Startup Services - LPV",
+        "status": "inactive",
+        "spend": 0.0,
+        "results": 0,
+        "result_type": "nan",
+        "cpr": 0.0,
+        "impressions": 0,
+        "reach": 0,
+        "cpm": 0.0,
+        "clicks": 0
+      },
+      {
+        "name": "Technology Acquisition Services - LPV",
+        "status": "inactive",
+        "spend": 0.0,
+        "results": 0,
+        "result_type": "nan",
+        "cpr": 0.0,
+        "impressions": 0,
+        "reach": 0,
+        "cpm": 0.0,
+        "clicks": 0
+      }
+    ],
+    "2026-03": [
+      {
+        "name": "Technology Acquisition Services -Instant Lead From",
+        "status": "active",
+        "spend": 2378.67,
+        "results": 41,
+        "result_type": "actions:leadgen.other",
+        "cpr": 58.02,
+        "impressions": 43691,
+        "reach": 22514,
+        "cpm": 54.44,
+        "clicks": 401
+      },
+      {
+        "name": "SMB Startup Services - Instant Lead From Campaign",
+        "status": "active",
+        "spend": 1685.06,
+        "results": 63,
+        "result_type": "actions:leadgen.other",
+        "cpr": 26.75,
+        "impressions": 15868,
+        "reach": 8233,
+        "cpm": 106.19,
+        "clicks": 241
+      },
+      {
+        "name": "Webinar - Traffic",
+        "status": "active",
+        "spend": 403.47,
+        "results": 1372,
+        "result_type": "actions:omni_landing_page_view",
+        "cpr": 0.29,
+        "impressions": 51963,
+        "reach": 33505,
+        "cpm": 7.76,
+        "clicks": 1544
+      },
+      {
+        "name": "Technology Acquisition Broker Program - Instant Le",
+        "status": "active",
+        "spend": 377.8,
+        "results": 55,
+        "result_type": "actions:leadgen.other",
+        "cpr": 6.87,
+        "impressions": 4894,
+        "reach": 2259,
+        "cpm": 77.2,
+        "clicks": 190
+      },
+      {
+        "name": "Engagement Campaign for IT Business/Technology Acq",
+        "status": "active",
+        "spend": 243.18,
+        "results": 515,
+        "result_type": "total_profile_visits",
+        "cpr": 0.47,
+        "impressions": 19940,
+        "reach": 9190,
+        "cpm": 12.2,
+        "clicks": 204
+      },
+      {
+        "name": "Engagement Campaign for SMB/Start-ups and Technolo",
+        "status": "active",
+        "spend": 236.61,
+        "results": 27796,
+        "result_type": "actions:post_engagement",
+        "cpr": 0.01,
+        "impressions": 55407,
+        "reach": 30245,
+        "cpm": 4.27,
+        "clicks": 0
+      },
+      {
+        "name": "SMB Startup Services - LPV",
+        "status": "inactive",
+        "spend": 11.51,
+        "results": 2,
+        "result_type": "actions:landing_page_view",
+        "cpr": 5.75,
+        "impressions": 1740,
+        "reach": 1725,
+        "cpm": 6.61,
+        "clicks": 8
+      },
+      {
+        "name": "Technology Acquisition Services - LPV",
+        "status": "inactive",
+        "spend": 0.0,
+        "results": 0,
+        "result_type": "nan",
+        "cpr": 0.0,
+        "impressions": 0,
+        "reach": 0,
+        "cpm": 0.0,
+        "clicks": 0
+      }
+    ]
+  },
+  "meta_recommendations": [
+    {
+      "title": "Connect CRM with Conversions API",
+      "detail": "Connect your CRM with the Conversions API to help optimize the quality of your leads, which can lead to more conversions. This can lower your cost per quality lead by 19%.",
+      "points": 4,
+      "outcome": "19% lower cost per quality lead",
+      "applies_to": "Account level (Data source: StealthEnomics)",
+      "count": 1
+    },
+    {
+      "title": "Optimize Reels format (9:16 vertical video with audio)",
+      "detail": "Including a fullscreen vertical video (9:16) with audio in your Reels ads can improve performance.",
+      "points": 2,
+      "outcome": "8% lower cost per result",
+      "applies_to": "Ad set (1)",
+      "count": 1
+    },
+    {
+      "title": "Automatically add music to 2 eligible ads",
+      "detail": "Let us automatically select and add music to your ads at no cost to you, based on their content.",
+      "points": 2,
+      "outcome": "Higher clickthrough rate",
+      "applies_to": "Ads (2)",
+      "count": 2
+    },
+    {
+      "title": "Combine 2 similar ad sets impacted by fragmentation",
+      "detail": "2 of your ad sets have similar setups, but different audiences. As a result, they may take longer to exit the learning phase and spend more budget before performance has optimized. To avoid this, combine your 2 similar ad sets into one ad set.",
+      "points": 1,
+      "outcome": "More Engagement",
+      "applies_to": "Ad sets (2)",
+      "count": 2
+    },
+    {
+      "title": "Advantage+ creative enhancement (text improvements)",
+      "detail": "We will deliver different creative variations of your ad when we predict it could help improve performance with: text improvements.",
+      "points": 1,
+      "outcome": "3% lower cost per result",
+      "applies_to": "Ads (2)",
+      "count": 2
+    }
+  ],
+  "meta_account": {
+    "opportunity_score": "90",
+    "active_campaigns": "3",
+    "last_7_days_spend": "1088.08",
+    "learning_phase_pct": "0"
+  },
+  "funnel": {
+    "traffic": {
+      "current": 772,
+      "previous": 92
+    },
+    "leads": {
+      "month_1": 122,
+      "month_2": 170,
+      "month_3": 140
+    },
+    "ads_contacts": {
+      "current": 62,
+      "previous": 17
+    }
+  },
+  "lead_sources": {
+    "labels": [
+      "Paid Social",
+      "Offline Sources",
+      "Direct Traffic",
+      "Organic Search",
+      "Referrals"
+    ],
+    "months": [
+      "Jan",
+      "Feb",
+      "Mar"
+    ],
+    "data": {
+      "Paid Social": [
+        115,
+        159,
+        96
+      ],
+      "Offline Sources": [
+        1,
+        1,
+        33
+      ],
+      "Direct Traffic": [
+        6,
+        9,
+        9
+      ],
+      "Organic Search": [
+        0,
+        1,
+        1
+      ],
+      "Referrals": [
+        0,
+        0,
+        1
+      ]
+    }
+  },
+  "trends": {
+    "weeks": [
+      "Feb 04",
+      "Feb 11",
+      "Feb 18",
+      "Feb 25",
+      "Mar 04",
+      "Mar 11",
+      "Mar 18",
+      "Mar 25"
+    ],
+    "facebook": [
+      {
+        "reach": 145,
+        "engagement": 29
+      },
+      {
+        "reach": 75,
+        "engagement": 8
+      },
+      {
+        "reach": 92,
+        "engagement": 8
+      },
+      {
+        "reach": 117,
+        "engagement": 19
+      },
+      {
+        "reach": 119,
+        "engagement": 6
+      },
+      {
+        "reach": 3581,
+        "engagement": 51
+      },
+      {
+        "reach": 12277,
+        "engagement": 27
+      },
+      {
+        "reach": 272,
+        "engagement": 2
+      }
+    ],
+    "instagram": [
+      {
+        "reach": 392,
+        "engagement": 7
+      },
+      {
+        "reach": 274,
+        "engagement": 3
+      },
+      {
+        "reach": 196,
+        "engagement": 7
+      },
+      {
+        "reach": 241,
+        "engagement": 4
+      },
+      {
+        "reach": 124,
+        "engagement": 2
+      },
+      {
+        "reach": 287,
+        "engagement": 8
+      },
+      {
+        "reach": 213,
+        "engagement": 7
+      },
+      {
+        "reach": 0,
+        "engagement": 0
+      }
+    ],
+    "linkedin": [
+      {
+        "reach": 240,
+        "engagement": 19
+      },
+      {
+        "reach": 287,
+        "engagement": 21
+      },
+      {
+        "reach": 247,
+        "engagement": 17
+      },
+      {
+        "reach": 207,
+        "engagement": 22
+      },
+      {
+        "reach": 277,
+        "engagement": 20
+      },
+      {
+        "reach": 290,
+        "engagement": 19
+      },
+      {
+        "reach": 206,
+        "engagement": 30
+      },
+      {
+        "reach": 98,
+        "engagement": 6
+      }
+    ]
+  },
+  "conclusions": {
+    "facebook": {
+      "status": "declining",
+      "text": "Engagement declining (-93% WoW). Review content and posting schedule."
+    },
+    "instagram": {
+      "status": "declining",
+      "text": "Engagement declining (-100% WoW). Review content and posting schedule."
+    },
+    "linkedin": {
+      "status": "declining",
+      "text": "Engagement declining (-80% WoW). Review content and posting schedule."
+    }
+  },
+  "growth_conclusion": {
+    "status": "down",
+    "text": "Overall engagement declining (64 -> 8 WoW). Check posting consistency."
+  },
+  "follower_history": [
+    {
+      "date": "2025-12-31",
+      "facebook": 1139,
+      "instagram": 100,
+      "linkedin": 408
+    },
+    {
+      "date": "2026-01-31",
+      "facebook": 1145,
+      "instagram": 117,
+      "linkedin": 411
+    },
+    {
+      "date": "2026-02-28",
+      "facebook": 1155,
+      "instagram": 138,
+      "linkedin": 412
+    },
+    {
+      "date": "2026-03-25",
+      "facebook": 1200,
+      "instagram": 142,
+      "linkedin": 414
+    }
+  ],
+  "follower_conclusion": {
+    "status": "up",
+    "text": "Total followers: 1756 (+109 since last snapshot).",
+    "platforms": [
+      {
+        "platform": "Facebook",
+        "diff": 61,
+        "pct": 5.4,
+        "status": "growing"
+      },
+      {
+        "platform": "Instagram",
+        "diff": 42,
+        "pct": 42.0,
+        "status": "growing"
+      },
+      {
+        "platform": "Linkedin",
+        "diff": 6,
+        "pct": 1.5,
+        "status": "growing"
+      }
+    ],
+    "fastest": "Facebook"
+  },
+  "monthly_overview": [
+    {
+      "platform": "Facebook",
+      "start_date": "2025-12-01",
+      "end_followers": 0,
+      "organic_views": 313,
+      "paid_views": 276930,
+      "interactions": 105
+    },
+    {
+      "platform": "Instagram",
+      "start_date": "2025-12-01",
+      "end_followers": 0,
+      "organic_views": 1491,
+      "paid_views": 66798,
+      "interactions": 71
+    },
+    {
+      "platform": "LinkedIn",
+      "start_date": "2025-12-01",
+      "end_followers": 0,
+      "organic_views": 170,
+      "paid_views": 0,
+      "interactions": 12
+    },
+    {
+      "platform": "Facebook",
+      "start_date": "2026-01-01",
+      "end_followers": 1145,
+      "organic_views": 1421,
+      "paid_views": 375434,
+      "interactions": 280
+    },
+    {
+      "platform": "Instagram",
+      "start_date": "2026-01-01",
+      "end_followers": 117,
+      "organic_views": 1073,
+      "paid_views": 12322,
+      "interactions": 95
+    },
+    {
+      "platform": "LinkedIn",
+      "start_date": "2026-01-01",
+      "end_followers": 411,
+      "organic_views": 434,
+      "paid_views": 0,
+      "interactions": 0
+    },
+    {
+      "platform": "Facebook",
+      "start_date": "2026-02-01",
+      "end_followers": 1155,
+      "organic_views": 2363,
+      "paid_views": 59003,
+      "interactions": 286
+    },
+    {
+      "platform": "Instagram",
+      "start_date": "2026-02-01",
+      "end_followers": 138,
+      "organic_views": 1692,
+      "paid_views": 6251,
+      "interactions": 89
+    },
+    {
+      "platform": "LinkedIn",
+      "start_date": "2026-02-01",
+      "end_followers": 412,
+      "organic_views": 823,
+      "paid_views": 0,
+      "interactions": 0
+    }
+  ],
+  "channel_detail": {
+    "Facebook": {
+      "editorial": [
+        {
+          "category": "Educational (Authority / Frameworks)",
+          "posts": 19,
+          "avg_er": 5.3,
+          "total_eng": 52
+        },
+        {
+          "category": "Relatable / Pain Point (Humor & POV)",
+          "posts": 10,
+          "avg_er": 20.3,
+          "total_eng": 38
+        },
+        {
+          "category": "Promotional (Solution-Focused)",
+          "posts": 10,
+          "avg_er": 12.1,
+          "total_eng": 34
+        },
+        {
+          "category": "Thought Leadership (Founder POV)",
+          "posts": 11,
+          "avg_er": 13.8,
+          "total_eng": 25
+        },
+        {
+          "category": "Engagement (Interactive)",
+          "posts": 7,
+          "avg_er": 9.6,
+          "total_eng": 11
+        }
+      ],
+      "format": [
+        {
+          "format": "Videos",
+          "posts": 28,
+          "avg_er": 14.3,
+          "total_eng": 114
+        },
+        {
+          "format": "Photos",
+          "posts": 35,
+          "avg_er": 12.4,
+          "total_eng": 57
+        },
+        {
+          "format": "Links",
+          "posts": 1,
+          "avg_er": 0.1,
+          "total_eng": 13
+        },
+        {
+          "format": "Text",
+          "posts": 3,
+          "avg_er": 4.2,
+          "total_eng": 2
+        }
+      ],
+      "hours": [
+        {
+          "hour": 8,
+          "posts": 3,
+          "avg_eng": 9.7
+        },
+        {
+          "hour": 10,
+          "posts": 4,
+          "avg_eng": 5.8
+        },
+        {
+          "hour": 16,
+          "posts": 2,
+          "avg_eng": 4.0
+        },
+        {
+          "hour": 13,
+          "posts": 3,
+          "avg_eng": 3.0
+        },
+        {
+          "hour": 6,
+          "posts": 3,
+          "avg_eng": 3.0
+        },
+        {
+          "hour": 7,
+          "posts": 13,
+          "avg_eng": 2.7
+        },
+        {
+          "hour": 9,
+          "posts": 12,
+          "avg_eng": 2.5
+        },
+        {
+          "hour": 11,
+          "posts": 14,
+          "avg_eng": 1.9
+        },
+        {
+          "hour": 4,
+          "posts": 3,
+          "avg_eng": 1.7
+        },
+        {
+          "hour": 5,
+          "posts": 4,
+          "avg_eng": 1.5
+        },
+        {
+          "hour": 19,
+          "posts": 1,
+          "avg_eng": 1.0
+        },
+        {
+          "hour": 15,
+          "posts": 2,
+          "avg_eng": 1.0
+        },
+        {
+          "hour": 14,
+          "posts": 2,
+          "avg_eng": 1.0
+        },
+        {
+          "hour": 17,
+          "posts": 1,
+          "avg_eng": 0.0
+        }
+      ],
+      "weekdays": [
+        {
+          "day": 2,
+          "day_name": "Wed",
+          "posts": 10,
+          "avg_eng": 3.6,
+          "avg_reach": 14.8
+        },
+        {
+          "day": 3,
+          "day_name": "Thu",
+          "posts": 12,
+          "avg_eng": 3.3,
+          "avg_reach": 27.0
+        },
+        {
+          "day": 1,
+          "day_name": "Tue",
+          "posts": 17,
+          "avg_eng": 2.9,
+          "avg_reach": 224.3
+        },
+        {
+          "day": 4,
+          "day_name": "Fri",
+          "posts": 17,
+          "avg_eng": 2.7,
+          "avg_reach": 735.4
+        },
+        {
+          "day": 0,
+          "day_name": "Mon",
+          "posts": 1,
+          "avg_eng": 2.0,
+          "avg_reach": 16.0
+        },
+        {
+          "day": 5,
+          "day_name": "Sat",
+          "posts": 10,
+          "avg_eng": 1.2,
+          "avg_reach": 12.8
+        }
+      ],
+      "audience": [
+        {
+          "audience": "Brokers",
+          "posts": 4,
+          "avg_er": 18.3
+        },
+        {
+          "audience": "Higher Ed",
+          "posts": 9,
+          "avg_er": 13.6
+        },
+        {
+          "audience": "SMB/Startup",
+          "posts": 26,
+          "avg_er": 11.3
+        },
+        {
+          "audience": "IT Business",
+          "posts": 16,
+          "avg_er": 8.1
+        }
+      ],
+      "top_posts": [
+        {
+          "text": "Stop Wasting Time. Launch Your Business The Right Way.\n\nDid ",
+          "link": "https://www.facebook.com/stealthenomics/posts/pfbid0fJkPJkazUiecn3e7NPoFeU6C1GLdJpy5sNL75UK6KV5Y8cMWV5jewqtFD2NMGPDvl",
+          "engagement": 13,
+          "er": 0.1,
+          "reach": 11926,
+          "date": "2026-03-19"
+        },
+        {
+          "text": "50% of Businesses Fail Within 5 Years | Here's Why",
+          "link": "https://www.facebook.com/reel/2028045981387973/",
+          "engagement": 26,
+          "er": 0.8,
+          "reach": 3455,
+          "date": "2026-03-16"
+        },
+        {
+          "text": "Do You Have One More Mountain Left? \u26f0\ufe0f\ud83d\ude0f| Free Live Webinar",
+          "link": "https://www.facebook.com/reel/4303182803287412/",
+          "engagement": 6,
+          "er": 4.2,
+          "reach": 142,
+          "date": "2026-03-19"
+        },
+        {
+          "text": "Most business books get collected.\nFew actually get used.\n\nB",
+          "link": "https://www.facebook.com/stealthenomics/posts/pfbid02TGMCoUA687DNspfdXhmMt79NSGCc1LPLx19oRbSNysaJ8XyM4Eo7xhFE41UXrjjLl",
+          "engagement": 10,
+          "er": 37.0,
+          "reach": 27,
+          "date": "2026-03-17"
+        },
+        {
+          "text": "Why StealthEnomics? Because the Dark Web has a Help desk | #",
+          "link": "https://www.facebook.com/reel/1655657888953984/",
+          "engagement": 6,
+          "er": 14.0,
+          "reach": 43,
+          "date": "2026-03-02"
+        }
+      ]
+    },
+    "Instagram": {
+      "editorial": [
+        {
+          "category": "Promotional (Solution-Focused)",
+          "posts": 9,
+          "avg_er": 6.5,
+          "total_eng": 17
+        },
+        {
+          "category": "Educational (Authority / Frameworks)",
+          "posts": 17,
+          "avg_er": 7.2,
+          "total_eng": 12
+        },
+        {
+          "category": "Relatable / Pain Point (Humor & POV)",
+          "posts": 10,
+          "avg_er": 0.7,
+          "total_eng": 10
+        },
+        {
+          "category": "Thought Leadership (Founder POV)",
+          "posts": 7,
+          "avg_er": 6.7,
+          "total_eng": 8
+        },
+        {
+          "category": "Engagement (Interactive)",
+          "posts": 6,
+          "avg_er": 8.1,
+          "total_eng": 4
+        }
+      ],
+      "format": [
+        {
+          "format": "IG reel",
+          "posts": 23,
+          "avg_er": 3.1,
+          "total_eng": 32
+        },
+        {
+          "format": "IG image",
+          "posts": 29,
+          "avg_er": 7.6,
+          "total_eng": 20
+        },
+        {
+          "format": "IG carousel",
+          "posts": 3,
+          "avg_er": 7.9,
+          "total_eng": 2
+        }
+      ],
+      "hours": [
+        {
+          "hour": 17,
+          "posts": 1,
+          "avg_eng": 2.0
+        },
+        {
+          "hour": 8,
+          "posts": 2,
+          "avg_eng": 2.0
+        },
+        {
+          "hour": 10,
+          "posts": 3,
+          "avg_eng": 1.7
+        },
+        {
+          "hour": 14,
+          "posts": 2,
+          "avg_eng": 1.5
+        },
+        {
+          "hour": 13,
+          "posts": 2,
+          "avg_eng": 1.5
+        },
+        {
+          "hour": 5,
+          "posts": 3,
+          "avg_eng": 1.3
+        },
+        {
+          "hour": 11,
+          "posts": 12,
+          "avg_eng": 1.1
+        },
+        {
+          "hour": 19,
+          "posts": 1,
+          "avg_eng": 1.0
+        },
+        {
+          "hour": 6,
+          "posts": 6,
+          "avg_eng": 1.0
+        },
+        {
+          "hour": 4,
+          "posts": 1,
+          "avg_eng": 1.0
+        },
+        {
+          "hour": 7,
+          "posts": 6,
+          "avg_eng": 0.7
+        },
+        {
+          "hour": 9,
+          "posts": 11,
+          "avg_eng": 0.6
+        },
+        {
+          "hour": 15,
+          "posts": 3,
+          "avg_eng": 0.3
+        },
+        {
+          "hour": 16,
+          "posts": 1,
+          "avg_eng": 0.0
+        },
+        {
+          "hour": 3,
+          "posts": 1,
+          "avg_eng": 0.0
+        }
+      ],
+      "weekdays": [
+        {
+          "day": 3,
+          "day_name": "Thu",
+          "posts": 12,
+          "avg_eng": 1.2,
+          "avg_reach": 75.8
+        },
+        {
+          "day": 4,
+          "day_name": "Fri",
+          "posts": 11,
+          "avg_eng": 1.0,
+          "avg_reach": 31.9
+        },
+        {
+          "day": 2,
+          "day_name": "Wed",
+          "posts": 9,
+          "avg_eng": 1.0,
+          "avg_reach": 46.7
+        },
+        {
+          "day": 1,
+          "day_name": "Tue",
+          "posts": 15,
+          "avg_eng": 1.0,
+          "avg_reach": 32.7
+        },
+        {
+          "day": 5,
+          "day_name": "Sat",
+          "posts": 8,
+          "avg_eng": 0.6,
+          "avg_reach": 8.0
+        }
+      ],
+      "audience": [
+        {
+          "audience": "Higher Ed",
+          "posts": 7,
+          "avg_er": 7.8
+        },
+        {
+          "audience": "SMB/Startup",
+          "posts": 22,
+          "avg_er": 6.1
+        },
+        {
+          "audience": "Brokers",
+          "posts": 3,
+          "avg_er": 5.5
+        },
+        {
+          "audience": "IT Business",
+          "posts": 15,
+          "avg_er": 3.8
+        }
+      ],
+      "top_posts": [
+        {
+          "text": "We take your campus back to the future \ud83d\ude80\nBecause campus IT s",
+          "link": "https://www.instagram.com/reel/DUVkDqPFcUv/",
+          "engagement": 3,
+          "er": 1.1,
+          "reach": 264,
+          "date": "2026-02-04"
+        },
+        {
+          "text": "Lost in a maze of vendor proposals? Picked the \"wrong\" solut",
+          "link": "https://www.instagram.com/reel/DUEc13vANu-/",
+          "engagement": 2,
+          "er": 1.1,
+          "reach": 188,
+          "date": "2026-01-28"
+        },
+        {
+          "text": "Growth doesn't break businesses. Disorganization does.\n\nMost",
+          "link": "https://www.instagram.com/reel/DUToeOwDc-b/",
+          "engagement": 2,
+          "er": 1.1,
+          "reach": 182,
+          "date": "2026-02-03"
+        },
+        {
+          "text": "Laid off. Battling with cancer. Today, I am a COO. Want To K",
+          "link": "https://www.instagram.com/reel/DVysdFbjVlp/",
+          "engagement": 3,
+          "er": 2.5,
+          "reach": 118,
+          "date": "2026-03-12"
+        },
+        {
+          "text": "50% of Businesses Fail Within 5 Years | Here's Why\n\nMost peo",
+          "link": "https://www.instagram.com/reel/DV8x_Y4CjtX/",
+          "engagement": 2,
+          "er": 1.4,
+          "reach": 145,
+          "date": "2026-03-16"
+        }
+      ]
+    },
+    "LinkedIn": {
+      "editorial": [
+        {
+          "category": "Educational (Authority / Frameworks)",
+          "posts": 18,
+          "avg_er": 13.4,
+          "total_eng": 83
+        },
+        {
+          "category": "Thought Leadership (Founder POV)",
+          "posts": 10,
+          "avg_er": 16.3,
+          "total_eng": 61
+        },
+        {
+          "category": "Promotional (Solution-Focused)",
+          "posts": 10,
+          "avg_er": 14.1,
+          "total_eng": 52
+        },
+        {
+          "category": "Relatable / Pain Point (Humor & POV)",
+          "posts": 11,
+          "avg_er": 13.5,
+          "total_eng": 44
+        },
+        {
+          "category": "Engagement (Interactive)",
+          "posts": 6,
+          "avg_er": 17.3,
+          "total_eng": 35
+        }
+      ],
+      "format": [
+        {
+          "format": "Organic",
+          "posts": 66,
+          "avg_er": 13.8,
+          "total_eng": 304
+        }
+      ],
+      "hours": [],
+      "weekdays": [
+        {
+          "day": 4,
+          "day_name": "Fri",
+          "posts": 15,
+          "avg_eng": 6.5
+        },
+        {
+          "day": 3,
+          "day_name": "Thu",
+          "posts": 10,
+          "avg_eng": 5.2
+        },
+        {
+          "day": 1,
+          "day_name": "Tue",
+          "posts": 12,
+          "avg_eng": 5.1
+        },
+        {
+          "day": 5,
+          "day_name": "Sat",
+          "posts": 9,
+          "avg_eng": 3.9
+        },
+        {
+          "day": 2,
+          "day_name": "Wed",
+          "posts": 16,
+          "avg_eng": 3.2
+        },
+        {
+          "day": 6,
+          "day_name": "Sun",
+          "posts": 2,
+          "avg_eng": 2.0
+        },
+        {
+          "day": 0,
+          "day_name": "Mon",
+          "posts": 2,
+          "avg_eng": 1.0
+        }
+      ],
+      "audience": [
+        {
+          "audience": "SMB/Startup",
+          "posts": 23,
+          "avg_er": 15.9
+        },
+        {
+          "audience": "Brokers",
+          "posts": 2,
+          "avg_er": 14.1
+        },
+        {
+          "audience": "IT Business",
+          "posts": 17,
+          "avg_er": 13.4
+        },
+        {
+          "audience": "Higher Ed",
+          "posts": 10,
+          "avg_er": 11.0
+        }
+      ],
+      "top_posts": [
+        {
+          "text": "Laid off. Battling with cancer. Today, I am a COO. Want To K",
+          "link": "https://www.linkedin.com/feed/update/urn:li:activity:7437906582027431936",
+          "engagement": 30,
+          "er": 25.2,
+          "reach": 119,
+          "date": "2026-03-12"
+        },
+        {
+          "text": "Your network is powerful. But is it working for you\u2014or just ",
+          "link": "https://www.linkedin.com/feed/update/urn:li:activity:7417244013906255872",
+          "engagement": 20,
+          "er": 18.2,
+          "reach": 110,
+          "date": "2026-01-14"
+        },
+        {
+          "text": "Here's the truth most IT leaders don't talk about: we carry ",
+          "link": "https://www.linkedin.com/feed/update/urn:li:activity:7424135575609253888",
+          "engagement": 19,
+          "er": 46.3,
+          "reach": 41,
+          "date": "2026-02-02"
+        },
+        {
+          "text": "Stop Wasting Time. Launch Your Business The Right Way.\n\nDid ",
+          "link": "https://www.linkedin.com/feed/update/urn:li:activity:7440441153872846848",
+          "engagement": 17,
+          "er": 48.6,
+          "reach": 35,
+          "date": "2026-03-19"
+        },
+        {
+          "text": "Paul's Hickeyisms \ud83d\udca1\n\nHickeyisms = words to live by from Stea",
+          "link": "https://www.linkedin.com/feed/update/urn:li:activity:7427003611353911296",
+          "engagement": 11,
+          "er": 20.4,
+          "reach": 54,
+          "date": "2026-02-10"
+        }
+      ]
+    }
+  },
+  "community": {
+    "current_members": 8,
+    "prev_members": 0,
+    "posts_this_month": 36,
+    "posts_prev_month": 0,
+    "qualified_leads": 0,
+    "launch_date": "2026-03-23",
+    "active_weekly": 2,
+    "avg_member_posts": null,
+    "response_rate": null,
+    "avg_reply_time": null,
+    "retention_30d": null,
+    "interested": null,
+    "meetings": null,
+    "deals": null,
+    "weekly": [
+      {
+        "date": "2026-03-09",
+        "members": 0,
+        "posts": 0,
+        "comments": 0
+      },
+      {
+        "date": "2026-03-16",
+        "members": 0,
+        "posts": 0,
+        "comments": 0
+      },
+      {
+        "date": "2026-03-23",
+        "members": 6,
+        "posts": 36,
+        "comments": 1
+      },
+      {
+        "date": "2026-03-30",
+        "members": 8,
+        "posts": 0,
+        "comments": 0
+      }
+    ]
+  }
+}
