@@ -386,13 +386,13 @@ function renderAll(){
   if(!prevSnap)prevSnap={facebook:0,instagram:0,linkedin:0};
   if(!currSnap)currSnap={facebook:0,instagram:0,linkedin:0};
 
-  var cfb=currSnap.facebook,cig=currSnap.instagram,cli=currSnap.linkedin;
-  var pfb=prevSnap.facebook,pig=prevSnap.instagram,pli=prevSnap.linkedin;
-  var ctf=cfb+cig+cli,ptf=pfb+pig+pli;
+  var cfb=currSnap.facebook,cig=currSnap.instagram,cli=currSnap.linkedin,cyt=currSnap.youtube||0;
+  var pfb=prevSnap.facebook,pig=prevSnap.instagram,pli=prevSnap.linkedin,pyt=prevSnap.youtube||0;
+  var ctf=cfb+cig+cli+cyt,ptf=pfb+pig+pli+pyt;
 
   var fSnapLabel=prevSnap.date?'vs '+fdate(prevSnap.date):'';
   fcEl.innerHTML='<div style="flex:1;padding:8px;background:#1975BB15;border:1px solid #1975BB40;border-radius:7px;text-align:center"><div style="font-size:8px;text-transform:uppercase;color:var(--dim);letter-spacing:1px;font-family:Montserrat;font-weight:600">Total</div><div style="font-size:20px;font-weight:800;color:#B3C234;font-family:Montserrat">'+fnum(ctf)+'</div><div style="font-size:9px" class="ch '+pch(ptf,ctf).c+'">'+arw(pch(ptf,ctf).c)+' '+pch(ptf,ctf).t+' '+fSnapLabel+'</div></div>';
-  [{n:'Facebook',v:cfb,p:pfb,c:CL.fb},{n:'Instagram',v:cig,p:pig,c:CL.ig},{n:'LinkedIn',v:cli,p:pli,c:CL.li}].forEach(function(fl){
+  [{n:'Facebook',v:cfb,p:pfb,c:CL.fb},{n:'Instagram',v:cig,p:pig,c:CL.ig},{n:'LinkedIn',v:cli,p:pli,c:CL.li},{n:'YouTube',v:currSnap.youtube||0,p:prevSnap.youtube||0,c:'#FF0000'}].forEach(function(fl){
     var ch=pch(fl.p,fl.v);
     var snapLabel=prevSnap.date?'vs '+fdate(prevSnap.date):'';
     fcEl.innerHTML+='<div style="flex:1;padding:8px;background:var(--a1);border:1px solid var(--cb);border-radius:7px;text-align:center"><div style="font-size:8px;text-transform:uppercase;color:var(--dim);letter-spacing:1px;font-family:Montserrat;font-weight:600">'+fl.n+'</div><div style="font-size:20px;font-weight:800;color:'+fl.c+';font-family:Montserrat">'+fnum(fl.v)+'</div><div style="font-size:9px" class="ch '+ch.c+'">'+arw(ch.c)+' '+ch.t+' '+snapLabel+'</div></div>';
@@ -515,6 +515,7 @@ function renderAll(){
       {label:'Facebook',data:fh.map(r=>r.facebook),backgroundColor:CL.fb+'90',borderColor:CL.fb,borderWidth:1,yAxisID:'y'},
       {label:'Instagram',data:fh.map(r=>r.instagram),backgroundColor:CL.ig+'90',borderColor:CL.ig,borderWidth:1,yAxisID:'y2'},
       {label:'LinkedIn',data:fh.map(r=>r.linkedin),backgroundColor:CL.li+'90',borderColor:CL.li,borderWidth:1,yAxisID:'y2'},
+      {label:'YouTube',data:fh.map(function(r){return r.youtube||0;}),backgroundColor:'#FF000090',borderColor:'#FF0000',borderWidth:1,yAxisID:'y2'},
     ]},options:{...chartOpts,scales:{x:{ticks:{color:'#6F90C8',font:{size:8}},grid:{display:false}},y:{position:'left',title:{display:true,text:'Facebook',color:CL.fb,font:{size:9}},ticks:{color:CL.fb},grid:{color:'#1a2a44'}},y2:{position:'right',title:{display:true,text:'IG / LI',color:CL.ig,font:{size:9}},ticks:{color:CL.ig},grid:{display:false}}}}});
   }
 
