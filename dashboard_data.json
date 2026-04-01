@@ -1,44 +1,44 @@
 {
-  "generated_at": "2026-03-31 18:37",
+  "generated_at": "2026-04-01 13:47",
   "current_week": {
-    "start": "2026-03-24",
-    "end": "2026-03-30"
+    "start": "2026-03-25",
+    "end": "2026-03-31"
   },
   "previous_week": {
-    "start": "2026-03-17",
-    "end": "2026-03-23"
+    "start": "2026-03-18",
+    "end": "2026-03-24"
   },
   "kpis": {
     "facebook": {
       "curr_reach": 272,
       "curr_engagement": 2,
       "curr_posts": 4,
-      "prev_reach": 12304,
-      "prev_engagement": 37,
-      "prev_posts": 9
+      "prev_reach": 12277,
+      "prev_engagement": 27,
+      "prev_posts": 8
     },
     "instagram": {
-      "curr_reach": 2,
+      "curr_reach": 0,
       "curr_engagement": 0,
-      "curr_posts": 1,
-      "prev_reach": 218,
-      "prev_engagement": 8,
+      "curr_posts": 0,
+      "prev_reach": 213,
+      "prev_engagement": 7,
       "prev_posts": 7
     },
     "linkedin": {
-      "curr_reach": 130,
-      "curr_engagement": 12,
-      "curr_posts": 5,
-      "prev_reach": 203,
-      "prev_engagement": 49,
-      "prev_posts": 6
+      "curr_reach": 98,
+      "curr_engagement": 7,
+      "curr_posts": 3,
+      "prev_reach": 206,
+      "prev_engagement": 48,
+      "prev_posts": 7
     },
     "total": {
-      "curr_reach": 404,
-      "curr_engagement": 14,
-      "curr_posts": 10,
-      "prev_reach": 12725,
-      "prev_engagement": 94,
+      "curr_reach": 370,
+      "curr_engagement": 9,
+      "curr_posts": 7,
+      "prev_reach": 12696,
+      "prev_engagement": 82,
       "prev_posts": 22
     },
     "followers": {
@@ -67,26 +67,26 @@
     {
       "platform": "Facebook",
       "curr_engagement_rate": 0.7,
-      "prev_engagement_rate": 0.3,
+      "prev_engagement_rate": 0.2,
       "curr_reach": 272,
-      "prev_reach": 12304,
+      "prev_reach": 12277,
       "curr_engagement": 2
     },
     {
       "platform": "Instagram",
       "curr_engagement_rate": 0.0,
-      "prev_engagement_rate": 3.7,
-      "curr_reach": 2,
-      "prev_reach": 218,
+      "prev_engagement_rate": 3.3,
+      "curr_reach": 0,
+      "prev_reach": 213,
       "curr_engagement": 0
     },
     {
       "platform": "Linkedin",
-      "curr_engagement_rate": 9.2,
-      "prev_engagement_rate": 24.1,
-      "curr_reach": 130,
-      "prev_reach": 203,
-      "curr_engagement": 12
+      "curr_engagement_rate": 7.1,
+      "prev_engagement_rate": 23.3,
+      "curr_reach": 98,
+      "prev_reach": 206,
+      "curr_engagement": 7
     }
   ],
   "editorial_performance": [
@@ -3659,9 +3659,9 @@
       "previous": 92
     },
     "leads": {
-      "month_1": 122,
+      "month_1": 119,
       "month_2": 170,
-      "month_3": 140
+      "month_3": 158
     },
     "ads_contacts": {
       "current": 62,
@@ -3685,7 +3685,7 @@
       "Paid Social": [
         115,
         159,
-        96
+        114
       ],
       "Offline Sources": [
         1,
@@ -3693,14 +3693,14 @@
         33
       ],
       "Direct Traffic": [
-        6,
+        3,
         9,
-        9
+        10
       ],
       "Organic Search": [
         0,
         1,
-        1
+        0
       ],
       "Referrals": [
         0,
@@ -3711,77 +3711,77 @@
   },
   "trends": {
     "weeks": [
-      "Feb 04",
-      "Feb 11",
-      "Feb 18",
-      "Feb 25",
-      "Mar 04",
-      "Mar 11",
-      "Mar 18",
-      "Mar 25"
+      "Feb 05",
+      "Feb 12",
+      "Feb 19",
+      "Feb 26",
+      "Mar 05",
+      "Mar 12",
+      "Mar 19",
+      "Mar 26"
     ],
     "facebook": [
       {
-        "reach": 145,
-        "engagement": 29
-      },
-      {
-        "reach": 75,
-        "engagement": 8
-      },
-      {
-        "reach": 92,
-        "engagement": 8
-      },
-      {
-        "reach": 117,
+        "reach": 123,
         "engagement": 19
       },
       {
-        "reach": 119,
-        "engagement": 6
+        "reach": 61,
+        "engagement": 5
       },
       {
-        "reach": 3581,
+        "reach": 111,
+        "engagement": 14
+      },
+      {
+        "reach": 90,
+        "engagement": 13
+      },
+      {
+        "reach": 147,
+        "engagement": 11
+      },
+      {
+        "reach": 3576,
         "engagement": 51
       },
       {
-        "reach": 12277,
-        "engagement": 27
+        "reach": 12348,
+        "engagement": 22
       },
       {
-        "reach": 272,
+        "reach": 178,
         "engagement": 2
       }
     ],
     "instagram": [
       {
-        "reach": 392,
-        "engagement": 7
-      },
-      {
-        "reach": 274,
-        "engagement": 3
-      },
-      {
-        "reach": 196,
-        "engagement": 7
-      },
-      {
-        "reach": 241,
-        "engagement": 4
-      },
-      {
-        "reach": 124,
+        "reach": 197,
         "engagement": 2
       },
       {
-        "reach": 287,
-        "engagement": 8
+        "reach": 279,
+        "engagement": 4
       },
       {
-        "reach": 213,
-        "engagement": 7
+        "reach": 200,
+        "engagement": 6
+      },
+      {
+        "reach": 132,
+        "engagement": 4
+      },
+      {
+        "reach": 134,
+        "engagement": 3
+      },
+      {
+        "reach": 334,
+        "engagement": 9
+      },
+      {
+        "reach": 156,
+        "engagement": 5
       },
       {
         "reach": 0,
@@ -3790,43 +3790,43 @@
     ],
     "linkedin": [
       {
-        "reach": 240,
-        "engagement": 19
+        "reach": 256,
+        "engagement": 16
       },
       {
-        "reach": 287,
-        "engagement": 21
+        "reach": 254,
+        "engagement": 23
       },
       {
-        "reach": 247,
-        "engagement": 17
+        "reach": 222,
+        "engagement": 14
       },
       {
-        "reach": 207,
-        "engagement": 22
+        "reach": 221,
+        "engagement": 29
       },
       {
         "reach": 277,
-        "engagement": 20
+        "engagement": 13
       },
       {
-        "reach": 290,
-        "engagement": 19
+        "reach": 277,
+        "engagement": 17
       },
       {
-        "reach": 206,
+        "reach": 205,
         "engagement": 30
       },
       {
-        "reach": 98,
-        "engagement": 6
+        "reach": 82,
+        "engagement": 5
       }
     ]
   },
   "conclusions": {
     "facebook": {
       "status": "declining",
-      "text": "Engagement declining (-93% WoW). Review content and posting schedule."
+      "text": "Engagement declining (-91% WoW). Review content and posting schedule."
     },
     "instagram": {
       "status": "declining",
@@ -3834,12 +3834,12 @@
     },
     "linkedin": {
       "status": "declining",
-      "text": "Engagement declining (-80% WoW). Review content and posting schedule."
+      "text": "Engagement declining (-83% WoW). Review content and posting schedule."
     }
   },
   "growth_conclusion": {
     "status": "down",
-    "text": "Overall engagement declining (64 -> 8 WoW). Check posting consistency."
+    "text": "Overall engagement declining (57 -> 7 WoW). Check posting consistency."
   },
   "follower_history": [
     {
