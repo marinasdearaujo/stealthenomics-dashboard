@@ -86,7 +86,7 @@ function fnum(n){if(!n&&n!==0)return'--';if(n>=1e6)return(n/1e6).toFixed(1)+'M';
 function fdate(d){if(!d)return'--';var p=String(d).split('-');return p.length>=3?MO[parseInt(p[1])-1]+' '+parseInt(p[2]):d;}
 function fdrange(s,e){return fdate(s)+' - '+fdate(e);}
 function arw(c){return c==='up'?'&#9650;':c==='dn'?'&#9660;':'&#9644;';}
-function pcolor(p){return p==='Facebook'?CL.fb:p==='Instagram'?CL.ig:CL.li;}
+function pcolor(p){return p==='Facebook'?CL.fb:p==='Instagram'?CL.ig:p==='YouTube'?'#FF0000':CL.li;}
 
 // ── Tab switching ──
 function switchTab(t,el){
@@ -148,29 +148,19 @@ function renderAll(){
     }
     if(p.platform==='Instagram'){weekBuckets[key].ig_r+=p.reach;weekBuckets[key].ig_e+=p.engagement;}
     if(p.platform==='LinkedIn'){weekBuckets[key].li_r+=p.reach;weekBuckets[key].li_e+=p.engagement;}
+    if(p.platform==='YouTube'){weekBuckets[key].yt_v+=p.reach;}
   });
-  // Add YouTube views to week buckets
-  if(D.youtube&&D.youtube.daily){
-    D.youtube.daily.forEach(function(d3){
-      if(d3.date>=range.s&&d3.date<=range.e){
-        var d4=new Date(d3.date);var ws2=new Date(d4);ws2.setDate(d4.getDate()-d4.getDay());
-        var key2=ws2.toISOString().slice(0,10);
-        if(!weekBuckets[key2])weekBuckets[key2]={fb_r:0,fb_e:0,fb_boost:0,ig_r:0,ig_e:0,li_r:0,li_e:0,yt_v:0};
-        weekBuckets[key2].yt_v+=d3.views;
-      }
-    });
-  }
   var weekKeys=Object.keys(weekBuckets).sort();
   var weekLabels=weekKeys.map(function(k2){return fdate(k2);});
 
-  // Stats from filtered posts — CURRENT period
-  var byP={Facebook:{r:0,e:0,n:0},Instagram:{r:0,e:0,n:0},LinkedIn:{r:0,e:0,n:0}};
+  // Stats from filtered posts — CURRENT period (including YouTube)
+  var byP={Facebook:{r:0,e:0,n:0},Instagram:{r:0,e:0,n:0},LinkedIn:{r:0,e:0,n:0},YouTube:{r:0,e:0,n:0}};
   posts.forEach(function(p){if(byP[p.platform]){byP[p.platform].r+=p.reach;byP[p.platform].e+=p.engagement;byP[p.platform].n++;}});
   var tot={r:0,e:0,n:0};Object.values(byP).forEach(function(v){tot.r+=v.r;tot.e+=v.e;tot.n+=v.n;});
 
-  // Stats from PREVIOUS period (same duration, shifted back)
+  // Stats from PREVIOUS period
   var prevPosts=filterPostsPrev(D.all_posts,range);
-  var byPP={Facebook:{r:0,e:0,n:0},Instagram:{r:0,e:0,n:0},LinkedIn:{r:0,e:0,n:0}};
+  var byPP={Facebook:{r:0,e:0,n:0},Instagram:{r:0,e:0,n:0},LinkedIn:{r:0,e:0,n:0},YouTube:{r:0,e:0,n:0}};
   prevPosts.forEach(function(p){if(byPP[p.platform]){byPP[p.platform].r+=p.reach;byPP[p.platform].e+=p.engagement;byPP[p.platform].n++;}});
   var totP={r:0,e:0,n:0};Object.values(byPP).forEach(function(v){totP.r+=v.r;totP.e+=v.e;totP.n+=v.n;});
   var hasPrev=range.label!=='all'&&prevPosts.length>0;
@@ -262,7 +252,7 @@ function renderAll(){
   var bd=safeEl('pbars');
   var mx=Math.max.apply(null,['Facebook','Instagram','LinkedIn'].map(function(n){var v=byP[n];return v.r>0?v.e/v.r*100:0;}).concat([1]));
   var bestP='',bestER=0,worstP='',worstER=999;
-  ['Facebook','Instagram','LinkedIn'].forEach(function(name){
+  ['Facebook','Instagram','LinkedIn','YouTube'].forEach(function(name){
     var v=byP[name];var vp=byPP[name];var co=pcolor(name);
     var er=v.r>0?(v.e/v.r*100).toFixed(1):0;
     var erp=vp.r>0?(vp.e/vp.r*100).toFixed(1):0;
@@ -515,6 +505,7 @@ function renderAll(){
     {label:'Facebook',data:weekKeys.map(function(k){return weekBuckets[k].fb_e;}),backgroundColor:CL.fb+'90'},
     {label:'Instagram',data:weekKeys.map(function(k){return weekBuckets[k].ig_e;}),backgroundColor:CL.ig+'90'},
     {label:'LinkedIn',data:weekKeys.map(function(k){return weekBuckets[k].li_e;}),backgroundColor:CL.li+'90'},
+    {label:'YouTube',data:weekKeys.map(function(k){return weekBuckets[k].yt_v||0;}),backgroundColor:'#FF000090'},
   ]},options:{...chartOpts,scales:{x:{stacked:true,ticks:{color:'#6F90C8',font:{size:8}},grid:{display:false}},y:{stacked:true,ticks:{color:'#6F90C8'},grid:{color:'#1a2a44'}}}}});
 
   // Follower growth
@@ -1065,20 +1056,27 @@ function showAdsDrill(campIdx){
 function renderYouTubeTab(container){
   var yt=D.youtube||{};
   var ytColor='#FF0000';
+  var range3=getRange();
+
+  // Filter YouTube posts from all_posts
+  var ytPosts=(D.all_posts||[]).filter(function(p){return p.platform==='YouTube'&&p.date>=range3.s&&p.date<=range3.e;});
+  var ytPrevPosts=(D.all_posts||[]).filter(function(p){return p.platform==='YouTube'&&p.date>=range3.ps&&p.date<=range3.pe;});
+  var currViews=ytPosts.reduce(function(s,p){return s+p.reach;},0);
+  var prevViews=ytPrevPosts.reduce(function(s,p){return s+p.reach;},0);
+  var currOrganic=ytPosts.reduce(function(s,p){return s+(p.yt_organic_views||0);},0);
+  var currPaid=ytPosts.reduce(function(s,p){return s+(p.yt_paid_views||0);},0);
+  var currPaidPct=currViews>0?(currPaid/currViews*100).toFixed(0):0;
 
   var h='<h2 style="font-family:Montserrat;font-size:16px;margin-bottom:14px"><span style="color:#FF0000">&#9654;</span> YouTube Deep Dive</h2>';
 
-  // KPIs
-  var marchViews=yt.monthly_views?yt.monthly_views.Mar||0:0;
-  var febViews=yt.monthly_views?yt.monthly_views.Feb||0:0;
-  var viewsCh=pch(febViews,marchViews);
+  var viewsCh=pch(prevViews,currViews);
 
   h+='<div class="kg" style="grid-template-columns:repeat(5,1fr);margin-bottom:14px">';
-  h+='<div class="kc"><div class="l">Total Views</div><div class="v">'+fnum(yt.total_views||0)+'</div></div>';
-  h+='<div class="kc"><div class="l">March Views</div><div class="v">'+fnum(marchViews)+'</div><div class="ch '+viewsCh.c+'">'+arw(viewsCh.c)+' '+viewsCh.t+' vs Feb</div></div>';
+  h+='<div class="kc"><div class="l">Views (this period)</div><div class="v">'+fnum(currViews)+'</div><div class="ch '+viewsCh.c+'">'+arw(viewsCh.c)+' '+viewsCh.t+' vs prev</div></div>';
+  h+='<div class="kc"><div class="l">Videos</div><div class="v">'+ytPosts.length+'</div></div>';
   h+='<div class="kc"><div class="l">Subscribers</div><div class="v">'+fnum(yt.subscribers||0)+'</div></div>';
-  h+='<div class="kc" style="border-color:var(--green)"><div class="l">Organic Views</div><div class="v">'+fnum(yt.organic_views||0)+'</div><div class="ch" style="color:var(--dim)">'+(100-(yt.paid_pct||0)).toFixed(0)+'% of total</div></div>';
-  h+='<div class="kc" style="border-color:#fbbf24"><div class="l">Paid Views (Ads)</div><div class="v">'+fnum(yt.paid_views||0)+'</div><div class="ch" style="color:var(--dim)">'+(yt.paid_pct||0)+'% of total</div></div>';
+  h+='<div class="kc" style="border-color:var(--green)"><div class="l">Organic Views</div><div class="v">'+fnum(currOrganic)+'</div><div class="ch" style="color:var(--dim)">'+(100-currPaidPct)+'% of total</div></div>';
+  h+='<div class="kc" style="border-color:#fbbf24"><div class="l">Paid Views (Ads)</div><div class="v">'+fnum(currPaid)+'</div><div class="ch" style="color:var(--dim)">'+currPaidPct+'% of total</div></div>';
   h+='</div>';
 
   // Charts
@@ -1099,7 +1097,7 @@ function renderYouTubeTab(container){
   h+='</tbody></table></div>';
 
   // Conclusion
-  h+='<div class="conc">&#9733; YouTube generated <strong>'+fnum(marchViews)+'</strong> views in March ('+viewsCh.t+' vs Feb). <strong>'+(yt.paid_pct||0)+'%</strong> came from YouTube Advertising. Top video: "'+(yt.top_videos&&yt.top_videos[0]?yt.top_videos[0].title:'?')+'" with '+fnum(yt.top_videos&&yt.top_videos[0]?yt.top_videos[0].views:0)+' views.</div>';
+  h+='<div class="conc">&#9733; YouTube: <strong>'+fnum(currViews)+'</strong> views this period ('+viewsCh.t+' vs prev). <strong>'+currPaidPct+'%</strong> from YouTube Advertising, <strong>'+(100-currPaidPct)+'%</strong> organic. Top video: "'+(yt.top_videos&&yt.top_videos[0]?yt.top_videos[0].title:'?')+'" with '+fnum(yt.top_videos&&yt.top_videos[0]?yt.top_videos[0].views:0)+' views.</div>';
 
   container.innerHTML=h;
 
