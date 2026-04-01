@@ -156,13 +156,14 @@ function renderAll(){
   // Stats from filtered posts — CURRENT period (including YouTube)
   var byP={Facebook:{r:0,e:0,n:0},Instagram:{r:0,e:0,n:0},LinkedIn:{r:0,e:0,n:0},YouTube:{r:0,e:0,n:0}};
   posts.forEach(function(p){if(byP[p.platform]){byP[p.platform].r+=p.reach;byP[p.platform].e+=p.engagement;byP[p.platform].n++;}});
-  var tot={r:0,e:0,n:0};Object.values(byP).forEach(function(v){tot.r+=v.r;tot.e+=v.e;tot.n+=v.n;});
+  // Totals exclude YouTube (views ≠ reach/engagement for social platforms)
+  var tot={r:0,e:0,n:0};['Facebook','Instagram','LinkedIn'].forEach(function(k){var v=byP[k];tot.r+=v.r;tot.e+=v.e;tot.n+=v.n;});
 
   // Stats from PREVIOUS period
   var prevPosts=filterPostsPrev(D.all_posts,range);
   var byPP={Facebook:{r:0,e:0,n:0},Instagram:{r:0,e:0,n:0},LinkedIn:{r:0,e:0,n:0},YouTube:{r:0,e:0,n:0}};
   prevPosts.forEach(function(p){if(byPP[p.platform]){byPP[p.platform].r+=p.reach;byPP[p.platform].e+=p.engagement;byPP[p.platform].n++;}});
-  var totP={r:0,e:0,n:0};Object.values(byPP).forEach(function(v){totP.r+=v.r;totP.e+=v.e;totP.n+=v.n;});
+  var totP={r:0,e:0,n:0};['Facebook','Instagram','LinkedIn'].forEach(function(k){var v=byPP[k];totP.r+=v.r;totP.e+=v.e;totP.n+=v.n;});
   var hasPrev=range.label!=='all'&&prevPosts.length>0;
   var periodLabel=range.label==='week'?'vs prev week':range.label==='month'?'vs prev month':range.label==='quarter'?'vs prev 90 days':'vs prev period';
 
@@ -252,10 +253,9 @@ function renderAll(){
   var bd=safeEl('pbars');
   var mx=Math.max.apply(null,['Facebook','Instagram','LinkedIn'].map(function(n){var v=byP[n];return v.r>0?v.e/v.r*100:0;}).concat([1]));
   var bestP='',bestER=0,worstP='',worstER=999;
-  ['Facebook','Instagram','LinkedIn','YouTube'].forEach(function(name){
+  ['Facebook','Instagram','LinkedIn'].forEach(function(name){
     var v=byP[name];var vp=byPP[name];var co=pcolor(name);
     var er=v.r>0?(v.e/v.r*100).toFixed(1):0;
-    var erp=vp.r>0?(vp.e/vp.r*100).toFixed(1):0;
     if(parseFloat(er)>bestER){bestER=parseFloat(er);bestP=name;}
     if(parseFloat(er)<worstER){worstER=parseFloat(er);worstP=name;}
     var w=Math.max(er/mx*100,8);
@@ -263,6 +263,13 @@ function renderAll(){
     var engCh=hasPrev?pch(vp.e,v.e):{t:'',c:'fl'};
     bd.innerHTML+='<div class="br"><div class="bl"><span class="pi" style="background:'+co+'"></span>'+name+'</div><div class="bt"><div class="bf" style="width:'+w+'%;background:'+co+'">'+er+'%</div><div class="bv">'+v.r.toLocaleString()+' reach ('+reachCh.t+') | '+v.e+' int. ('+engCh.t+') | '+v.n+' posts</div></div></div>';
   });
+  // YouTube separate — show views (not ER, which is meaningless for video views)
+  var ytV=byP['YouTube'];var ytVP=byPP['YouTube'];
+  if(ytV.r>0||ytV.n>0){
+    var ytViewCh=hasPrev?pch(ytVP.r,ytV.r):{t:'',c:'fl'};
+    var ytPaidPct=D.youtube&&D.youtube.paid_pct?D.youtube.paid_pct:0;
+    bd.innerHTML+='<div class="br"><div class="bl"><span class="pi" style="background:#FF0000"></span>YouTube</div><div class="bt"><div class="bf" style="width:60%;background:#FF0000">'+fnum(ytV.r)+' views</div><div class="bv">'+ytPaidPct+'% paid / '+(100-ytPaidPct).toFixed(1)+'% organic ('+ytViewCh.t+') | '+ytV.n+' videos</div></div></div>';
+  }
   // Focus conclusion
   var focusEl=safeEl('focus-conc');
   if(bestP){
@@ -405,11 +412,11 @@ function renderAll(){
   var currLabel=currSnap.date?fdate(currSnap.date):'current';
   var ft2=arw(fGrowth>0?'up':fGrowth<0?'dn':'fl')+' Total: <strong>'+fnum(ctf)+'</strong> ('+(fGrowth>0?'+':'')+fGrowth+', '+fGrowthPct+'% growth).';
   ft2+=' Comparing '+currLabel+' vs '+prevLabel+' (snapshots are monthly — weekly comparison will be available after more data is collected).';
-  [{n:'Facebook',v:cfb,p:pfb},{n:'Instagram',v:cig,p:pig},{n:'LinkedIn',v:cli,p:pli}].forEach(function(pl){
+  [{n:'Facebook',v:cfb,p:pfb},{n:'Instagram',v:cig,p:pig},{n:'LinkedIn',v:cli,p:pli},{n:'YouTube',v:cyt,p:pyt}].forEach(function(pl){
     var d3=pl.v-pl.p;var pct3=pl.p>0?((d3/pl.p)*100).toFixed(1):0;
     ft2+='<br><span class="pi" style="background:'+pcolor(pl.n)+'"></span><strong>'+pl.n+'</strong>: '+fnum(pl.v)+' ('+(d3>0?'+':'')+d3+', '+pct3+'%)';
   });
-  var fastest2=[{n:'Facebook',d:cfb-pfb},{n:'Instagram',d:cig-pig},{n:'LinkedIn',d:cli-pli}].sort(function(a,b){return b.d-a.d;})[0];
+  var fastest2=[{n:'Facebook',d:cfb-pfb},{n:'Instagram',d:cig-pig},{n:'LinkedIn',d:cli-pli},{n:'YouTube',d:cyt-pyt}].sort(function(a,b){return b.d-a.d;})[0];
   if(fastest2.d>0){
     var hasEngCampaign=(D.campaigns||[]).some(function(c){return c.name.toLowerCase().indexOf('engagement')>=0&&c.spend>0;});
     var advice='';
@@ -500,12 +507,11 @@ function renderAll(){
     makeChart('c-leads',{type:'bar',data:{labels:ls.months,datasets:ldatasets},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#90BFED',font:{size:9},padding:20}},tooltip:{mode:'index'}},scales:{x:{stacked:true,ticks:{color:'#6F90C8'},grid:{display:false}},y:{stacked:true,ticks:{color:'#6F90C8'},grid:{color:'#1a2a44'}}}},plugins:[totalPlugin]});
   }
 
-  // Engagement trend — from filtered posts weekly buckets
+  // Engagement trend — from filtered posts weekly buckets (YouTube excluded — views ≠ interactions)
   makeChart('c-eng',{type:'bar',data:{labels:weekLabels,datasets:[
     {label:'Facebook',data:weekKeys.map(function(k){return weekBuckets[k].fb_e;}),backgroundColor:CL.fb+'90'},
     {label:'Instagram',data:weekKeys.map(function(k){return weekBuckets[k].ig_e;}),backgroundColor:CL.ig+'90'},
     {label:'LinkedIn',data:weekKeys.map(function(k){return weekBuckets[k].li_e;}),backgroundColor:CL.li+'90'},
-    {label:'YouTube',data:weekKeys.map(function(k){return weekBuckets[k].yt_v||0;}),backgroundColor:'#FF000090'},
   ]},options:{...chartOpts,scales:{x:{stacked:true,ticks:{color:'#6F90C8',font:{size:8}},grid:{display:false}},y:{stacked:true,ticks:{color:'#6F90C8'},grid:{color:'#1a2a44'}}}}});
 
   // Follower growth
@@ -516,7 +522,7 @@ function renderAll(){
       {label:'Instagram',data:fh.map(r=>r.instagram),backgroundColor:CL.ig+'90',borderColor:CL.ig,borderWidth:1,yAxisID:'y2'},
       {label:'LinkedIn',data:fh.map(r=>r.linkedin),backgroundColor:CL.li+'90',borderColor:CL.li,borderWidth:1,yAxisID:'y2'},
       {label:'YouTube',data:fh.map(function(r){return r.youtube||0;}),backgroundColor:'#FF000090',borderColor:'#FF0000',borderWidth:1,yAxisID:'y2'},
-    ]},options:{...chartOpts,scales:{x:{ticks:{color:'#6F90C8',font:{size:8}},grid:{display:false}},y:{position:'left',title:{display:true,text:'Facebook',color:CL.fb,font:{size:9}},ticks:{color:CL.fb},grid:{color:'#1a2a44'}},y2:{position:'right',title:{display:true,text:'IG / LI',color:CL.ig,font:{size:9}},ticks:{color:CL.ig},grid:{display:false}}}}});
+    ]},options:{...chartOpts,scales:{x:{ticks:{color:'#6F90C8',font:{size:8}},grid:{display:false}},y:{position:'left',title:{display:true,text:'Facebook',color:CL.fb,font:{size:9}},ticks:{color:CL.fb},grid:{color:'#1a2a44'}},y2:{position:'right',title:{display:true,text:'IG / LI / YT',color:CL.ig,font:{size:9}},ticks:{color:CL.ig},grid:{display:false}}}}});
   }
 
   // Pre-render all channel detail tabs (pass filtered posts for date-aware conclusions)

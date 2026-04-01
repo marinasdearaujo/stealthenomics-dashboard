@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-01 19:24",
+  "generated_at": "2026-04-01 19:33",
   "current_week": {
     "start": "2026-03-25",
     "end": "2026-03-31"
@@ -33,6 +33,14 @@
       "prev_engagement": 48,
       "prev_posts": 7
     },
+    "youtube": {
+      "curr_reach": 258,
+      "curr_engagement": 0,
+      "curr_posts": 0,
+      "prev_reach": 32091,
+      "prev_engagement": 0,
+      "prev_posts": 0
+    },
     "total": {
       "curr_reach": 370,
       "curr_engagement": 9,
@@ -49,11 +57,11 @@
       "total": 1795
     },
     "followers_prev": {
-      "facebook": 1155,
-      "instagram": 138,
-      "linkedin": 412,
-      "youtube": 31,
-      "total": 1736
+      "facebook": 1200,
+      "instagram": 142,
+      "linkedin": 414,
+      "youtube": 39,
+      "total": 1795
     },
     "ads": {
       "spend": 5335.99,
@@ -4603,6 +4611,32 @@
         "reach": 82,
         "engagement": 5
       }
+    ],
+    "youtube": [
+      {
+        "views": 81
+      },
+      {
+        "views": 741
+      },
+      {
+        "views": 868
+      },
+      {
+        "views": 340
+      },
+      {
+        "views": 1934
+      },
+      {
+        "views": 1310
+      },
+      {
+        "views": 31497
+      },
+      {
+        "views": 163
+      }
     ]
   },
   "conclusions": {
@@ -4647,6 +4681,13 @@
     },
     {
       "date": "2026-03-25",
+      "facebook": 1200,
+      "instagram": 142,
+      "linkedin": 414,
+      "youtube": 39
+    },
+    {
+      "date": "2026-03-31",
       "facebook": 1200,
       "instagram": 142,
       "linkedin": 414,
