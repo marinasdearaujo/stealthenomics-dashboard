@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-01 13:51",
+  "generated_at": "2026-04-01 19:06",
   "current_week": {
     "start": "2026-03-25",
     "end": "2026-03-31"
@@ -4590,6 +4590,421 @@
         }
       ]
     }
+  },
+  "youtube": {
+    "monthly_views": {
+      "Jan": 2,
+      "Feb": 1996,
+      "Mar": 34938
+    },
+    "total_views": 36746,
+    "paid_views": 30946,
+    "organic_views": 5800,
+    "paid_pct": 84.2,
+    "subscribers": 39,
+    "audience": 2316,
+    "top_videos": [
+      {
+        "id": "FiDuKugAMis",
+        "title": "50% of Businesses Fail Within 5 Years | Here's Why\n#Entrepreneurship #businessti",
+        "date": "Mar 16, 2026",
+        "views": 31671,
+        "hours": 58.5,
+        "subs": 4,
+        "impressions": 303,
+        "ctr": 10.2
+      },
+      {
+        "id": "OJr6jBaXqpE",
+        "title": "One Daily Habit That Compounded My Business Success\u2728| #SMBGrowth #BusinessAdvice",
+        "date": "Mar 9, 2026",
+        "views": 1565,
+        "hours": 2.3,
+        "subs": 7,
+        "impressions": 341,
+        "ctr": 6.5
+      },
+      {
+        "id": "1ciKxHQrtdM",
+        "title": "When your campus tech stack is more tangled than freshman orientation week\u2026 \ud83d\ude05",
+        "date": "Feb 18, 2026",
+        "views": 484,
+        "hours": 0.5,
+        "subs": 0,
+        "impressions": 255,
+        "ctr": 3.5
+      },
+      {
+        "id": "Mxcv5CU3ZIE",
+        "title": "How To Generate Revenue Through Technology Acquisition",
+        "date": "Feb 20, 2026",
+        "views": 184,
+        "hours": 0.3,
+        "subs": 0,
+        "impressions": 309,
+        "ctr": 1.9
+      },
+      {
+        "id": "72Krk8zPe4E",
+        "title": "Your Automation Isn't the Problem\u2026 Here's What Is |\n#TechFail #EntrepreneurLife ",
+        "date": "Mar 12, 2026",
+        "views": 155,
+        "hours": 0.1,
+        "subs": 0,
+        "impressions": 228,
+        "ctr": 1.3
+      },
+      {
+        "id": "VpZAca8YZ6c",
+        "title": "Just one more tool should fix it..right?",
+        "date": "Feb 24, 2026",
+        "views": 152,
+        "hours": 0.2,
+        "subs": 0,
+        "impressions": 247,
+        "ctr": 0.8
+      },
+      {
+        "id": "6uGq8Hny4uA",
+        "title": "When your campus tech doesn\u2019t talk to each other\u2026",
+        "date": "Feb 13, 2026",
+        "views": 145,
+        "hours": 0.1,
+        "subs": 0,
+        "impressions": 85,
+        "ctr": 4.7
+      },
+      {
+        "id": "B9fQRby_GtY",
+        "title": "\ud83d\udca1 If you change nothing, nothing changes",
+        "date": "Feb 24, 2026",
+        "views": 142,
+        "hours": 0.0,
+        "subs": 0,
+        "impressions": 237,
+        "ctr": 0.4
+      },
+      {
+        "id": "kNaLQhngwwQ",
+        "title": "Life Lesson I Learned Too Late #Hickeyisms\ud83d\udca1#LifeAdvice #Motivation #Wisdom",
+        "date": "Mar 18, 2026",
+        "views": 141,
+        "hours": 0.2,
+        "subs": 0,
+        "impressions": 221,
+        "ctr": 2.3
+      },
+      {
+        "id": "0pRtqnIk4Xc",
+        "title": "Manipulation Loves Speed \u2013 Launch Your Business in 45 Days #startupsuccess  #bus",
+        "date": "Mar 17, 2026",
+        "views": 134,
+        "hours": 0.3,
+        "subs": 0,
+        "impressions": 255,
+        "ctr": 5.5
+      }
+    ],
+    "traffic": [
+      {
+        "source": "YouTube advertising",
+        "views": 30946,
+        "hours": 55.6
+      },
+      {
+        "source": "Shorts feed",
+        "views": 4913,
+        "hours": 5.8
+      },
+      {
+        "source": "Channel pages",
+        "views": 508,
+        "hours": 4.5
+      },
+      {
+        "source": "YouTube search",
+        "views": 164,
+        "hours": 0.4
+      },
+      {
+        "source": "Other YouTube features",
+        "views": 103,
+        "hours": 0.2
+      },
+      {
+        "source": "Browse features",
+        "views": 52,
+        "hours": 0.4
+      },
+      {
+        "source": "Playlists",
+        "views": 23,
+        "hours": 0.1
+      },
+      {
+        "source": "Notifications",
+        "views": 21,
+        "hours": 0.1
+      },
+      {
+        "source": "Direct or unknown",
+        "views": 8,
+        "hours": 0.0
+      },
+      {
+        "source": "Related Shorts",
+        "views": 3,
+        "hours": 0.0
+      },
+      {
+        "source": "Suggested videos",
+        "views": 3,
+        "hours": 0.0
+      },
+      {
+        "source": "External",
+        "views": 2,
+        "hours": 0.0
+      }
+    ],
+    "daily": [
+      {
+        "date": "2026-02-01",
+        "views": 0
+      },
+      {
+        "date": "2026-02-02",
+        "views": 0
+      },
+      {
+        "date": "2026-02-03",
+        "views": 0
+      },
+      {
+        "date": "2026-02-04",
+        "views": 0
+      },
+      {
+        "date": "2026-02-05",
+        "views": 1
+      },
+      {
+        "date": "2026-02-06",
+        "views": 0
+      },
+      {
+        "date": "2026-02-07",
+        "views": 0
+      },
+      {
+        "date": "2026-02-08",
+        "views": 0
+      },
+      {
+        "date": "2026-02-09",
+        "views": 0
+      },
+      {
+        "date": "2026-02-10",
+        "views": 6
+      },
+      {
+        "date": "2026-02-11",
+        "views": 74
+      },
+      {
+        "date": "2026-02-12",
+        "views": 173
+      },
+      {
+        "date": "2026-02-13",
+        "views": 186
+      },
+      {
+        "date": "2026-02-14",
+        "views": 0
+      },
+      {
+        "date": "2026-02-15",
+        "views": 0
+      },
+      {
+        "date": "2026-02-16",
+        "views": 123
+      },
+      {
+        "date": "2026-02-17",
+        "views": 115
+      },
+      {
+        "date": "2026-02-18",
+        "views": 144
+      },
+      {
+        "date": "2026-02-19",
+        "views": 179
+      },
+      {
+        "date": "2026-02-20",
+        "views": 228
+      },
+      {
+        "date": "2026-02-21",
+        "views": 177
+      },
+      {
+        "date": "2026-02-22",
+        "views": 110
+      },
+      {
+        "date": "2026-02-23",
+        "views": 11
+      },
+      {
+        "date": "2026-02-24",
+        "views": 81
+      },
+      {
+        "date": "2026-02-25",
+        "views": 82
+      },
+      {
+        "date": "2026-02-26",
+        "views": 107
+      },
+      {
+        "date": "2026-02-27",
+        "views": 110
+      },
+      {
+        "date": "2026-02-28",
+        "views": 89
+      },
+      {
+        "date": "2026-03-01",
+        "views": 15
+      },
+      {
+        "date": "2026-03-02",
+        "views": 0
+      },
+      {
+        "date": "2026-03-03",
+        "views": 7
+      },
+      {
+        "date": "2026-03-04",
+        "views": 12
+      },
+      {
+        "date": "2026-03-05",
+        "views": 107
+      },
+      {
+        "date": "2026-03-06",
+        "views": 39
+      },
+      {
+        "date": "2026-03-07",
+        "views": 1
+      },
+      {
+        "date": "2026-03-08",
+        "views": 64
+      },
+      {
+        "date": "2026-03-09",
+        "views": 819
+      },
+      {
+        "date": "2026-03-10",
+        "views": 492
+      },
+      {
+        "date": "2026-03-11",
+        "views": 412
+      },
+      {
+        "date": "2026-03-12",
+        "views": 359
+      },
+      {
+        "date": "2026-03-13",
+        "views": 52
+      },
+      {
+        "date": "2026-03-14",
+        "views": 8
+      },
+      {
+        "date": "2026-03-15",
+        "views": 9
+      },
+      {
+        "date": "2026-03-16",
+        "views": 43
+      },
+      {
+        "date": "2026-03-17",
+        "views": 150
+      },
+      {
+        "date": "2026-03-18",
+        "views": 689
+      },
+      {
+        "date": "2026-03-19",
+        "views": 2282
+      },
+      {
+        "date": "2026-03-20",
+        "views": 6417
+      },
+      {
+        "date": "2026-03-21",
+        "views": 8295
+      },
+      {
+        "date": "2026-03-22",
+        "views": 7269
+      },
+      {
+        "date": "2026-03-23",
+        "views": 7065
+      },
+      {
+        "date": "2026-03-24",
+        "views": 74
+      },
+      {
+        "date": "2026-03-25",
+        "views": 95
+      },
+      {
+        "date": "2026-03-26",
+        "views": 45
+      },
+      {
+        "date": "2026-03-27",
+        "views": 24
+      },
+      {
+        "date": "2026-03-28",
+        "views": 5
+      },
+      {
+        "date": "2026-03-29",
+        "views": 2
+      },
+      {
+        "date": "2026-03-30",
+        "views": 82
+      },
+      {
+        "date": "2026-03-31",
+        "views": 5
+      }
+    ]
   },
   "community": {
     "current_members": 8,
