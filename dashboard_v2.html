@@ -157,6 +157,7 @@ function renderAll(){
   // Compute monthly buckets from ALL posts (unfiltered — always shows full history for comparison)
   var monthBuckets={};
   D.all_posts.forEach(function(p){
+    if(p.date<'2026')return; // Only 2026 data
     var mkey=p.date.slice(0,7);
     if(!monthBuckets[mkey])monthBuckets[mkey]={fb_r:0,fb_e:0,fb_boost:0,ig_r:0,ig_e:0,li_r:0,li_e:0,yt_v:0,yt_e:0,yt_org:0,yt_paid:0};
     if(p.platform==='Facebook'){
