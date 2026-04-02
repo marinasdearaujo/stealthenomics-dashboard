@@ -135,35 +135,41 @@ function renderAll(){
   var k=D.kpis;
   if(!k)return;
 
-  // Compute weekly buckets from filtered posts (used by reach trend, engagement trend, growth conclusion)
+  // Compute weekly buckets from filtered posts (used by reach trend)
   var weekBuckets={};
+  // Compute monthly buckets (used by engagement trend)
+  var monthBuckets={};
+  var MO=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   posts.forEach(function(p){
     var d2=new Date(p.date);var ws=new Date(d2);ws.setDate(d2.getDate()-d2.getDay());
-    var key=ws.toISOString().slice(0,10);
-    if(!weekBuckets[key])weekBuckets[key]={fb_r:0,fb_e:0,fb_boost:0,ig_r:0,ig_e:0,li_r:0,li_e:0,yt_v:0,yt_e:0,yt_org:0,yt_paid:0};
+    var wkey=ws.toISOString().slice(0,10);
+    var mkey=p.date.slice(0,7); // YYYY-MM
+    if(!weekBuckets[wkey])weekBuckets[wkey]={fb_r:0,fb_e:0,fb_boost:0,ig_r:0,ig_e:0,li_r:0,li_e:0,yt_v:0,yt_e:0,yt_org:0,yt_paid:0};
+    if(!monthBuckets[mkey])monthBuckets[mkey]={fb_r:0,fb_e:0,fb_boost:0,ig_r:0,ig_e:0,li_r:0,li_e:0,yt_v:0,yt_e:0,yt_org:0,yt_paid:0};
     if(p.platform==='Facebook'){
-      if(p.boosted){weekBuckets[key].fb_boost+=p.reach;}
-      else{weekBuckets[key].fb_r+=p.reach;}
-      weekBuckets[key].fb_e+=p.engagement;
+      if(p.boosted){weekBuckets[wkey].fb_boost+=p.reach;monthBuckets[mkey].fb_boost+=p.reach;}
+      else{weekBuckets[wkey].fb_r+=p.reach;monthBuckets[mkey].fb_r+=p.reach;}
+      weekBuckets[wkey].fb_e+=p.engagement;monthBuckets[mkey].fb_e+=p.engagement;
     }
-    if(p.platform==='Instagram'){weekBuckets[key].ig_r+=p.reach;weekBuckets[key].ig_e+=p.engagement;}
-    if(p.platform==='LinkedIn'){weekBuckets[key].li_r+=p.reach;weekBuckets[key].li_e+=p.engagement;}
-    if(p.platform==='YouTube'){weekBuckets[key].yt_v+=p.reach;weekBuckets[key].yt_e+=p.engagement;weekBuckets[key].yt_org+=(p.yt_organic_views||0);weekBuckets[key].yt_paid+=(p.yt_paid_views||0);}
+    if(p.platform==='Instagram'){weekBuckets[wkey].ig_r+=p.reach;weekBuckets[wkey].ig_e+=p.engagement;monthBuckets[mkey].ig_r+=p.reach;monthBuckets[mkey].ig_e+=p.engagement;}
+    if(p.platform==='LinkedIn'){weekBuckets[wkey].li_r+=p.reach;weekBuckets[wkey].li_e+=p.engagement;monthBuckets[mkey].li_r+=p.reach;monthBuckets[mkey].li_e+=p.engagement;}
+    if(p.platform==='YouTube'){weekBuckets[wkey].yt_v+=p.reach;weekBuckets[wkey].yt_e+=p.engagement;weekBuckets[wkey].yt_org+=(p.yt_organic_views||0);weekBuckets[wkey].yt_paid+=(p.yt_paid_views||0);monthBuckets[mkey].yt_v+=p.reach;monthBuckets[mkey].yt_e+=p.engagement;monthBuckets[mkey].yt_org+=(p.yt_organic_views||0);monthBuckets[mkey].yt_paid+=(p.yt_paid_views||0);}
   });
   var weekKeys=Object.keys(weekBuckets).sort();
   var weekLabels=weekKeys.map(function(k2){return fdate(k2);});
+  var monthKeys=Object.keys(monthBuckets).sort();
+  var monthLabels=monthKeys.map(function(k){var parts=k.split('-');return MO[parseInt(parts[1])-1]+' '+parts[0].slice(2);});
 
   // Stats from filtered posts — CURRENT period (including YouTube)
   var byP={Facebook:{r:0,e:0,n:0},Instagram:{r:0,e:0,n:0},LinkedIn:{r:0,e:0,n:0},YouTube:{r:0,e:0,n:0}};
   posts.forEach(function(p){if(byP[p.platform]){byP[p.platform].r+=p.reach;byP[p.platform].e+=p.engagement;byP[p.platform].n++;}});
-  // Totals exclude YouTube (views ≠ reach/engagement for social platforms)
-  var tot={r:0,e:0,n:0};['Facebook','Instagram','LinkedIn'].forEach(function(k){var v=byP[k];tot.r+=v.r;tot.e+=v.e;tot.n+=v.n;});
+  var tot={r:0,e:0,n:0};['Facebook','Instagram','LinkedIn','YouTube'].forEach(function(k){var v=byP[k];tot.r+=v.r;tot.e+=v.e;tot.n+=v.n;});
 
   // Stats from PREVIOUS period
   var prevPosts=filterPostsPrev(D.all_posts,range);
   var byPP={Facebook:{r:0,e:0,n:0},Instagram:{r:0,e:0,n:0},LinkedIn:{r:0,e:0,n:0},YouTube:{r:0,e:0,n:0}};
   prevPosts.forEach(function(p){if(byPP[p.platform]){byPP[p.platform].r+=p.reach;byPP[p.platform].e+=p.engagement;byPP[p.platform].n++;}});
-  var totP={r:0,e:0,n:0};['Facebook','Instagram','LinkedIn'].forEach(function(k){var v=byPP[k];totP.r+=v.r;totP.e+=v.e;totP.n+=v.n;});
+  var totP={r:0,e:0,n:0};['Facebook','Instagram','LinkedIn','YouTube'].forEach(function(k){var v=byPP[k];totP.r+=v.r;totP.e+=v.e;totP.n+=v.n;});
   var hasPrev=range.label!=='all'&&prevPosts.length>0;
   var periodLabel=range.label==='week'?'vs prev week':range.label==='month'?'vs prev month':range.label==='quarter'?'vs prev 90 days':'vs prev period';
 
@@ -241,7 +247,7 @@ function renderAll(){
 
   // GROWTH
   h+='<div class="sec"><div class="st">Are we growing?</div><div class="g2">';
-  h+='<div class="cd"><h3>Engagement Trend <span class="sub">(weekly, filtered by date)</span></h3><div class="cc"><canvas id="c-eng"></canvas></div><div class="conc" id="gc"></div></div>';
+  h+='<div class="cd"><h3>Engagement Trend <span class="sub">(monthly, filtered by date)</span></h3><div class="cc"><canvas id="c-eng"></canvas></div><div class="conc" id="gc"></div></div>';
   h+='<div class="cd"><h3>Follower Growth <span class="sub"></span></h3><div class="cc ccs"><canvas id="c-foll"></canvas></div><div id="fcards" style="display:flex;flex-wrap:wrap;gap:7px;margin-top:8px"></div></div>';
   h+='</div></div>';
 
@@ -504,12 +510,12 @@ function renderAll(){
     makeChart('c-leads',{type:'bar',data:{labels:ls.months,datasets:ldatasets},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#90BFED',font:{size:9},padding:20}},tooltip:{mode:'index'}},scales:{x:{stacked:true,ticks:{color:'#6F90C8'},grid:{display:false}},y:{stacked:true,ticks:{color:'#6F90C8'},grid:{color:'#1a2a44'}}}},plugins:[totalPlugin]});
   }
 
-  // Engagement trend — from filtered posts weekly buckets (YouTube = subscribers gained)
-  makeChart('c-eng',{type:'bar',data:{labels:weekLabels,datasets:[
-    {label:'Facebook',data:weekKeys.map(function(k){return weekBuckets[k].fb_e;}),backgroundColor:CL.fb+'90'},
-    {label:'Instagram',data:weekKeys.map(function(k){return weekBuckets[k].ig_e;}),backgroundColor:CL.ig+'90'},
-    {label:'LinkedIn',data:weekKeys.map(function(k){return weekBuckets[k].li_e;}),backgroundColor:CL.li+'90'},
-    {label:'YouTube',data:weekKeys.map(function(k){return weekBuckets[k].yt_e||0;}),backgroundColor:'#FF000090'},
+  // Engagement trend — MONTHLY buckets for proper month-over-month comparison
+  makeChart('c-eng',{type:'bar',data:{labels:monthLabels,datasets:[
+    {label:'Facebook',data:monthKeys.map(function(k){return monthBuckets[k].fb_e;}),backgroundColor:CL.fb+'90'},
+    {label:'Instagram',data:monthKeys.map(function(k){return monthBuckets[k].ig_e;}),backgroundColor:CL.ig+'90'},
+    {label:'LinkedIn',data:monthKeys.map(function(k){return monthBuckets[k].li_e;}),backgroundColor:CL.li+'90'},
+    {label:'YouTube',data:monthKeys.map(function(k){return monthBuckets[k].yt_e||0;}),backgroundColor:'#FF000090'},
   ]},options:{...chartOpts,scales:{x:{stacked:true,ticks:{color:'#6F90C8',font:{size:8}},grid:{display:false}},y:{stacked:true,ticks:{color:'#6F90C8'},grid:{color:'#1a2a44'}}}}});
 
   // Follower growth
