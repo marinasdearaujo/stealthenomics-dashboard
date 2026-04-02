@@ -135,28 +135,39 @@ function renderAll(){
   var k=D.kpis;
   if(!k)return;
 
-  // Compute weekly buckets from filtered posts (used by reach trend)
+  // Compute weekly buckets from FILTERED posts (used by reach trend)
   var weekBuckets={};
-  // Compute monthly buckets (used by engagement trend)
-  var monthBuckets={};
   var MO=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   posts.forEach(function(p){
     var d2=new Date(p.date);var ws=new Date(d2);ws.setDate(d2.getDate()-d2.getDay());
     var wkey=ws.toISOString().slice(0,10);
-    var mkey=p.date.slice(0,7); // YYYY-MM
     if(!weekBuckets[wkey])weekBuckets[wkey]={fb_r:0,fb_e:0,fb_boost:0,ig_r:0,ig_e:0,li_r:0,li_e:0,yt_v:0,yt_e:0,yt_org:0,yt_paid:0};
-    if(!monthBuckets[mkey])monthBuckets[mkey]={fb_r:0,fb_e:0,fb_boost:0,ig_r:0,ig_e:0,li_r:0,li_e:0,yt_v:0,yt_e:0,yt_org:0,yt_paid:0};
     if(p.platform==='Facebook'){
-      if(p.boosted){weekBuckets[wkey].fb_boost+=p.reach;monthBuckets[mkey].fb_boost+=p.reach;}
-      else{weekBuckets[wkey].fb_r+=p.reach;monthBuckets[mkey].fb_r+=p.reach;}
-      weekBuckets[wkey].fb_e+=p.engagement;monthBuckets[mkey].fb_e+=p.engagement;
+      if(p.boosted){weekBuckets[wkey].fb_boost+=p.reach;}
+      else{weekBuckets[wkey].fb_r+=p.reach;}
+      weekBuckets[wkey].fb_e+=p.engagement;
     }
-    if(p.platform==='Instagram'){weekBuckets[wkey].ig_r+=p.reach;weekBuckets[wkey].ig_e+=p.engagement;monthBuckets[mkey].ig_r+=p.reach;monthBuckets[mkey].ig_e+=p.engagement;}
-    if(p.platform==='LinkedIn'){weekBuckets[wkey].li_r+=p.reach;weekBuckets[wkey].li_e+=p.engagement;monthBuckets[mkey].li_r+=p.reach;monthBuckets[mkey].li_e+=p.engagement;}
-    if(p.platform==='YouTube'){weekBuckets[wkey].yt_v+=p.reach;weekBuckets[wkey].yt_e+=p.engagement;weekBuckets[wkey].yt_org+=(p.yt_organic_views||0);weekBuckets[wkey].yt_paid+=(p.yt_paid_views||0);monthBuckets[mkey].yt_v+=p.reach;monthBuckets[mkey].yt_e+=p.engagement;monthBuckets[mkey].yt_org+=(p.yt_organic_views||0);monthBuckets[mkey].yt_paid+=(p.yt_paid_views||0);}
+    if(p.platform==='Instagram'){weekBuckets[wkey].ig_r+=p.reach;weekBuckets[wkey].ig_e+=p.engagement;}
+    if(p.platform==='LinkedIn'){weekBuckets[wkey].li_r+=p.reach;weekBuckets[wkey].li_e+=p.engagement;}
+    if(p.platform==='YouTube'){weekBuckets[wkey].yt_v+=p.reach;weekBuckets[wkey].yt_e+=p.engagement;weekBuckets[wkey].yt_org+=(p.yt_organic_views||0);weekBuckets[wkey].yt_paid+=(p.yt_paid_views||0);}
   });
   var weekKeys=Object.keys(weekBuckets).sort();
   var weekLabels=weekKeys.map(function(k2){return fdate(k2);});
+
+  // Compute monthly buckets from ALL posts (unfiltered — always shows full history for comparison)
+  var monthBuckets={};
+  D.all_posts.forEach(function(p){
+    var mkey=p.date.slice(0,7);
+    if(!monthBuckets[mkey])monthBuckets[mkey]={fb_r:0,fb_e:0,fb_boost:0,ig_r:0,ig_e:0,li_r:0,li_e:0,yt_v:0,yt_e:0,yt_org:0,yt_paid:0};
+    if(p.platform==='Facebook'){
+      if(p.boosted){monthBuckets[mkey].fb_boost+=p.reach;}
+      else{monthBuckets[mkey].fb_r+=p.reach;}
+      monthBuckets[mkey].fb_e+=p.engagement;
+    }
+    if(p.platform==='Instagram'){monthBuckets[mkey].ig_r+=p.reach;monthBuckets[mkey].ig_e+=p.engagement;}
+    if(p.platform==='LinkedIn'){monthBuckets[mkey].li_r+=p.reach;monthBuckets[mkey].li_e+=p.engagement;}
+    if(p.platform==='YouTube'){monthBuckets[mkey].yt_v+=p.reach;monthBuckets[mkey].yt_e+=p.engagement;monthBuckets[mkey].yt_org+=(p.yt_organic_views||0);monthBuckets[mkey].yt_paid+=(p.yt_paid_views||0);}
+  });
   var monthKeys=Object.keys(monthBuckets).sort();
   var monthLabels=monthKeys.map(function(k){var parts=k.split('-');return MO[parseInt(parts[1])-1]+' '+parts[0].slice(2);});
 
@@ -247,7 +258,7 @@ function renderAll(){
 
   // GROWTH
   h+='<div class="sec"><div class="st">Are we growing?</div><div class="g2">';
-  h+='<div class="cd"><h3>Engagement Trend <span class="sub">(monthly, filtered by date)</span></h3><div class="cc"><canvas id="c-eng"></canvas></div><div class="conc" id="gc"></div></div>';
+  h+='<div class="cd"><h3>Engagement Trend <span class="sub">(monthly)</span></h3><div class="cc"><canvas id="c-eng"></canvas></div><div class="conc" id="gc"></div></div>';
   h+='<div class="cd"><h3>Follower Growth <span class="sub"></span></h3><div class="cc ccs"><canvas id="c-foll"></canvas></div><div id="fcards" style="display:flex;flex-wrap:wrap;gap:7px;margin-top:8px"></div></div>';
   h+='</div></div>';
 
