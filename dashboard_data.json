@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-02 10:19",
+  "generated_at": "2026-04-02 13:48",
   "current_week": {
     "start": "2026-03-26",
     "end": "2026-04-01"
@@ -42,10 +42,10 @@
       "prev_posts": 0
     },
     "total": {
-      "curr_reach": 260,
+      "curr_reach": 423,
       "curr_engagement": 8,
       "curr_posts": 5,
-      "prev_reach": 12709,
+      "prev_reach": 44206,
       "prev_engagement": 74,
       "prev_posts": 21
     },
@@ -293,7 +293,8 @@
       "comments": 2,
       "shares": 6,
       "likes": 5,
-      "boosted": true
+      "boosted": true,
+      "views": 20291
     },
     {
       "platform": "Facebook",
@@ -307,7 +308,8 @@
       "comments": 0,
       "shares": 0,
       "likes": 26,
-      "boosted": true
+      "boosted": true,
+      "views": 3479
     },
     {
       "platform": "LinkedIn",
@@ -347,7 +349,8 @@
       "comments": 0,
       "shares": 1,
       "likes": 5,
-      "boosted": false
+      "boosted": false,
+      "views": 176
     },
     {
       "platform": "Instagram",
@@ -427,6 +430,7 @@
       "editorial": "",
       "audience": "All",
       "text": "StealthEnomics updated their cover photo.",
+      "views": 0,
       "boosted": false
     },
     {
@@ -438,6 +442,7 @@
       "editorial": "Educational (Authority / Frameworks)",
       "audience": "Brokers",
       "text": "Did you know that over 70% of organizations juggle multiple ",
+      "views": 52,
       "boosted": false
     },
     {
@@ -449,6 +454,7 @@
       "editorial": "Thought Leadership (Founder POV)",
       "audience": "SMB/Startup",
       "text": "Your network is powerful. But is it working for you - or jus",
+      "views": 51,
       "boosted": false
     },
     {
@@ -460,6 +466,7 @@
       "editorial": "Relatable / Pain Point (Humor & POV)",
       "audience": "IT Business",
       "text": "Lost in a maze of vendor proposals? Picked the \"wrong\" solut",
+      "views": 77,
       "boosted": false
     },
     {
@@ -471,6 +478,7 @@
       "editorial": "",
       "audience": "IT Business",
       "text": "More clarity in IT decisions? Fewer vendor headaches? More t",
+      "views": 49,
       "boosted": false
     },
     {
@@ -482,6 +490,7 @@
       "editorial": "",
       "audience": "Higher Ed",
       "text": "Ever felt overwhelmed trying to choose the right IT solution",
+      "views": 64,
       "boosted": false
     },
     {
@@ -493,6 +502,7 @@
       "editorial": "Educational (Authority / Frameworks)",
       "audience": "IT Business",
       "text": "Did You Know?\n\n43% of universities report at least one ranso",
+      "views": 54,
       "boosted": false
     },
     {
@@ -504,6 +514,7 @@
       "editorial": "",
       "audience": "All",
       "text": "StealthEnomics updated their cover photo.",
+      "views": 0,
       "boosted": false
     },
     {
@@ -515,6 +526,7 @@
       "editorial": "Thought Leadership (Founder POV)",
       "audience": "Higher Ed",
       "text": "Improve campus operations & student experience.\nToday\u2019s stud",
+      "views": 44,
       "boosted": false
     },
     {
@@ -526,6 +538,7 @@
       "editorial": "Educational (Authority / Frameworks)",
       "audience": "Higher Ed",
       "text": "Higher Ed tech choices shouldn\u2019t be overwhelming.\nFrom data ",
+      "views": 39,
       "boosted": false
     },
     {
@@ -537,6 +550,7 @@
       "editorial": "Promotional (Solution-Focused)",
       "audience": "IT Business",
       "text": "Check this story....  x University got qualified to receive ",
+      "views": 35,
       "boosted": false
     },
     {
@@ -548,6 +562,7 @@
       "editorial": "Engagement (Interactive)",
       "audience": "All",
       "text": "It\u2019s that time of year when we start thinking about New Year",
+      "views": 53,
       "boosted": false
     },
     {
@@ -559,6 +574,7 @@
       "editorial": "Thought Leadership (Founder POV)",
       "audience": "SMB/Startup",
       "text": "Your network is powerful. But is it working for you\u2014or just ",
+      "views": 56,
       "boosted": false
     },
     {
@@ -570,6 +586,7 @@
       "editorial": "Educational (Authority / Frameworks)",
       "audience": "SMB/Startup",
       "text": "Too many tools\u2026 and no idea where to start in your business?",
+      "views": 49,
       "boosted": false
     },
     {
@@ -581,6 +598,7 @@
       "editorial": "Thought Leadership (Founder POV)",
       "audience": "Brokers",
       "text": "How To Generate Revenue Through Technology Acquisition",
+      "views": 35,
       "boosted": false
     },
     {
@@ -592,6 +610,7 @@
       "editorial": "Engagement (Interactive)",
       "audience": "IT Business",
       "text": "What's one tech decision you'd redo if you could? \ud83e\udd14\n\nNo sham",
+      "views": 26,
       "boosted": false
     },
     {
@@ -603,6 +622,7 @@
       "editorial": "Thought Leadership (Founder POV)",
       "audience": "All",
       "text": "Change Nothing",
+      "views": 44,
       "boosted": false
     },
     {
@@ -614,6 +634,7 @@
       "editorial": "Relatable / Pain Point (Humor & POV)",
       "audience": "All",
       "text": "Just one more tool should fix it..right?",
+      "views": 73,
       "boosted": false
     },
     {
@@ -625,6 +646,7 @@
       "editorial": "Educational (Authority / Frameworks)",
       "audience": "SMB/Startup",
       "text": "Friday Facts: Did you know?\n\nSMBs that automate and streamli",
+      "views": 39,
       "boosted": false
     },
     {
@@ -636,6 +658,7 @@
       "editorial": "Relatable / Pain Point (Humor & POV)",
       "audience": "IT Business",
       "text": "\"Complexity is the enemy of scale.\" \ud83c\udfaf\n\nTranslation: If your ",
+      "views": 35,
       "boosted": false
     },
     {
@@ -647,6 +670,7 @@
       "editorial": "Relatable / Pain Point (Humor & POV)",
       "audience": "Higher Ed",
       "text": "We Take Your Campus Back To The Future... Don't Believe Us? ",
+      "views": 39,
       "boosted": false
     },
     {
@@ -658,6 +682,7 @@
       "editorial": "Educational (Authority / Frameworks)",
       "audience": "IT Business",
       "text": "Friday Facts: Did you know? \ud83d\udcca\n\nCompanies with scalable IT sy",
+      "views": 21,
       "boosted": false
     },
     {
@@ -669,6 +694,7 @@
       "editorial": "Promotional (Solution-Focused)",
       "audience": "Brokers",
       "text": "Is your powerful IT network truly working for you? \ud83e\udd14 Many le",
+      "views": 65,
       "boosted": false
     },
     {
@@ -680,6 +706,7 @@
       "editorial": "Educational (Authority / Frameworks)",
       "audience": "SMB/Startup",
       "text": "Here's the hard truth most SMB founders don't realize until ",
+      "views": 21,
       "boosted": false
     },
     {
@@ -691,6 +718,7 @@
       "editorial": "Relatable / Pain Point (Humor & POV)",
       "audience": "Higher Ed",
       "text": "When your campus tech stack is more tangled than freshman or",
+      "views": 22,
       "boosted": false
     },
     {
@@ -702,6 +730,7 @@
       "editorial": "Thought Leadership (Founder POV)",
       "audience": "All",
       "text": "Competence & Kindness",
+      "views": 19,
       "boosted": false
     },
     {
@@ -713,6 +742,7 @@
       "editorial": "Engagement (Interactive)",
       "audience": "IT Business",
       "text": "Strong systems make strong teams.",
+      "views": 20,
       "boosted": false
     },
     {
@@ -724,6 +754,7 @@
       "editorial": "Promotional (Solution-Focused)",
       "audience": "IT Business",
       "text": "What if you could get a professional vendor analysis\u2026 for FR",
+      "views": 18,
       "boosted": false
     },
     {
@@ -735,6 +766,7 @@
       "editorial": "Thought Leadership (Founder POV)",
       "audience": "SMB/Startup",
       "text": "This President's Day, let's talk about what real leadership ",
+      "views": 27,
       "boosted": false
     },
     {
@@ -746,6 +778,7 @@
       "editorial": "Educational (Authority / Frameworks)",
       "audience": "IT Business",
       "text": "Think about it:\n\nWhen was the last time your team praised th",
+      "views": 40,
       "boosted": false
     },
     {
@@ -757,6 +790,7 @@
       "editorial": "Relatable / Pain Point (Humor & POV)",
       "audience": "SMB/Startup",
       "text": "What happens when your system is just vibes and memory?",
+      "views": 47,
       "boosted": false
     },
     {
@@ -768,6 +802,7 @@
       "editorial": "Relatable / Pain Point (Humor & POV)",
       "audience": "Higher Ed",
       "text": "When your campus tech doesn't talk to each other\u2026",
+      "views": 43,
       "boosted": false
     },
     {
@@ -779,6 +814,7 @@
       "editorial": "Thought Leadership (Founder POV)",
       "audience": "All",
       "text": "Share the Why",
+      "views": 154,
       "boosted": false
     },
     {
@@ -790,6 +826,7 @@
       "editorial": "",
       "audience": "SMB/Startup",
       "text": "Sometimes the biggest breakthroughs come from subtraction, n",
+      "views": 46,
       "boosted": false
     },
     {
@@ -801,6 +838,7 @@
       "editorial": "Promotional (Solution-Focused)",
       "audience": "SMB/Startup",
       "text": "How to Turn Your Idea Into a Real Business in 45 Days",
+      "views": 44,
       "boosted": false
     },
     {
@@ -812,6 +850,7 @@
       "editorial": "Educational (Authority / Frameworks)",
       "audience": "SMB/Startup",
       "text": "SMBs using integrated systems see up to 30% faster decision-",
+      "views": 29,
       "boosted": false
     },
     {
@@ -823,6 +862,7 @@
       "editorial": "Educational (Authority / Frameworks)",
       "audience": "IT Business",
       "text": "IT leaders aren't hired to maintain chaos.\n\nYet most spend t",
+      "views": 52,
       "boosted": false
     },
     {
@@ -834,6 +874,7 @@
       "editorial": "Promotional (Solution-Focused)",
       "audience": "Brokers",
       "text": "Forget cold calls. THIS is how real money is made in 2026.",
+      "views": 95,
       "boosted": false
     },
     {
@@ -845,6 +886,7 @@
       "editorial": "Relatable / Pain Point (Humor & POV)",
       "audience": "Higher Ed",
       "text": "We Take Your Campus Back To The Future... Don't Believe Us? ",
+      "views": 79,
       "boosted": false
     },
     {
@@ -856,6 +898,7 @@
       "editorial": "Relatable / Pain Point (Humor & POV)",
       "audience": "SMB/Startup",
       "text": "Chaos doesn't scale. Systems do.",
+      "views": 54,
       "boosted": false
     },
     {
@@ -867,6 +910,7 @@
       "editorial": "Engagement (Interactive)",
       "audience": "IT Business",
       "text": "Here's the truth most IT leaders don't talk about: we carry ",
+      "views": 46,
       "boosted": false
     },
     {
@@ -878,6 +922,7 @@
       "editorial": "Thought Leadership (Founder POV)",
       "audience": "IT Business",
       "text": "Why StealthEnomics? Because the Dark Web has a Help desk | #",
+      "views": 119,
       "boosted": false
     },
     {
@@ -889,6 +934,7 @@
       "editorial": "Educational (Authority / Frameworks)",
       "audience": "SMB/Startup",
       "text": "She Thought Starting a Business Was Easy\u2026 Until This Happene",
+      "views": 19,
       "boosted": false
     },
     {
@@ -900,6 +946,7 @@
       "editorial": "Thought Leadership (Founder POV)",
       "audience": "Higher Ed",
       "text": "$200M+ in responsibility. 30 years of leadership. One philos",
+      "views": 19,
       "boosted": false
     },
     {
@@ -911,6 +958,7 @@
       "editorial": "Educational (Authority / Frameworks)",
       "audience": "SMB/Startup",
       "text": "3 Signs Your Business Operations Are Broken",
+      "views": 165,
       "boosted": false
     },
     {
@@ -922,6 +970,7 @@
       "editorial": "Thought Leadership (Founder POV)",
       "audience": "All",
       "text": "Life Lesson I Learned Too Late #Hickeyisms\ud83d\udca1",
+      "views": 109,
       "boosted": false
     },
     {
@@ -933,6 +982,7 @@
       "editorial": "Educational (Authority / Frameworks)",
       "audience": "SMB/Startup",
       "text": "TOMORROW WE ARE LIVE - You're Invited!\n\nIt's not too late to",
+      "views": 31,
       "boosted": true
     },
     {
@@ -944,6 +994,7 @@
       "editorial": "Promotional (Solution-Focused)",
       "audience": "SMB/Startup",
       "text": "Manipulation Loves Speed \u2013 Launch Your Business in 45 Days",
+      "views": 153,
       "boosted": false
     },
     {
@@ -955,6 +1006,7 @@
       "editorial": "Engagement (Interactive)",
       "audience": "SMB/Startup",
       "text": "Finish the sentence: If I could automate one thing in my bus",
+      "views": 19,
       "boosted": false
     },
     {
@@ -966,6 +1018,7 @@
       "editorial": "Engagement (Interactive)",
       "audience": "All",
       "text": "Simple Scales, Complication Fails. Do you agree? Share your ",
+      "views": 38,
       "boosted": false
     },
     {
@@ -977,6 +1030,7 @@
       "editorial": "Educational (Authority / Frameworks)",
       "audience": "Higher Ed",
       "text": "Friday Facts: 66% of Higher Education institutions reported ",
+      "views": 36,
       "boosted": false
     },
     {
@@ -988,6 +1042,7 @@
       "editorial": "Promotional (Solution-Focused)",
       "audience": "SMB/Startup",
       "text": "Do You Have One More Mountain Left? \u26f0\ufe0f\ud83d\ude0f| Free Live Webinar",
+      "views": 176,
       "boosted": false
     },
     {
@@ -999,6 +1054,7 @@
       "editorial": "Educational (Authority / Frameworks)",
       "audience": "SMB/Startup",
       "text": "Stop Wasting Time. Launch Your Business The Right Way.\n\nDid ",
+      "views": 20291,
       "boosted": true
     },
     {
@@ -1010,6 +1066,7 @@
       "editorial": "Promotional (Solution-Focused)",
       "audience": "SMB/Startup",
       "text": "Most People Don't Know Which One They Are\u2026 | Free Live Webin",
+      "views": 40,
       "boosted": false
     },
     {
@@ -1021,6 +1078,7 @@
       "editorial": "",
       "audience": "All",
       "text": "Most business books get collected.\nFew actually get used.\n\nB",
+      "views": 109,
       "boosted": false
     },
     {
@@ -1032,6 +1090,7 @@
       "editorial": "Educational (Authority / Frameworks)",
       "audience": "SMB/Startup",
       "text": "50% of Businesses Fail Within 5 Years | Here's Why",
+      "views": 3479,
       "boosted": true
     },
     {
@@ -1043,6 +1102,7 @@
       "editorial": "Educational (Authority / Frameworks)",
       "audience": "All",
       "text": "Friday Facts: Organizations that invest in integrated data a",
+      "views": 96,
       "boosted": false
     },
     {
@@ -1054,6 +1114,7 @@
       "editorial": "Promotional (Solution-Focused)",
       "audience": "SMB/Startup",
       "text": "Laid off. Battling cancer. And today\u2026 I am COO. Want To Know",
+      "views": 55,
       "boosted": false
     },
     {
@@ -1065,6 +1126,7 @@
       "editorial": "Promotional (Solution-Focused)",
       "audience": "SMB/Startup",
       "text": "Laid off. Battling cancer. And today\u2026 I am COO. Want To Know",
+      "views": 98,
       "boosted": false
     },
     {
@@ -1076,6 +1138,7 @@
       "editorial": "",
       "audience": "SMB/Startup",
       "text": "How a 2020 Quick Fix Became a 2026 Business Disaster \ud83d\udd25 | #En",
+      "views": 91,
       "boosted": false
     },
     {
@@ -1087,6 +1150,7 @@
       "editorial": "Educational (Authority / Frameworks)",
       "audience": "IT Business",
       "text": "Guess the number:\nHow much of your SaaS budget is actually b",
+      "views": 72,
       "boosted": false
     },
     {
@@ -1098,6 +1162,7 @@
       "editorial": "Educational (Authority / Frameworks)",
       "audience": "IT Business",
       "text": "Friday Facts: 70% of B2B buyers have already eliminated vend",
+      "views": 62,
       "boosted": false
     },
     {
@@ -1109,6 +1174,7 @@
       "editorial": "Relatable / Pain Point (Humor & POV)",
       "audience": "IT Business",
       "text": "POV: \"Seamless Integration\" in IT Meetings vs Reality \ud83d\ude05 | #C",
+      "views": 95,
       "boosted": false
     },
     {
@@ -1120,6 +1186,7 @@
       "editorial": "",
       "audience": "All",
       "text": "nan",
+      "views": 60,
       "boosted": false
     },
     {
@@ -1131,6 +1198,7 @@
       "editorial": "",
       "audience": "SMB/Startup",
       "text": "Launch Your Business Successfully within 45 days | June",
+      "views": 0,
       "boosted": true
     },
     {
@@ -1142,6 +1210,7 @@
       "editorial": "",
       "audience": "SMB/Startup",
       "text": "Launch Your Business Successfully within 45 days",
+      "views": 0,
       "boosted": true
     },
     {
@@ -1153,6 +1222,7 @@
       "editorial": "Engagement (Interactive)",
       "audience": "SMB/Startup",
       "text": "\"Fill in the blank: The worst tech decision I ever made was ",
+      "views": 61,
       "boosted": false
     },
     {
@@ -5417,10 +5487,10 @@
       "Feb": 1996,
       "Mar": 34938
     },
-    "total_views": 36746,
+    "total_views": 36936,
     "paid_views": 30946,
-    "organic_views": 5800,
-    "paid_pct": 84.2,
+    "organic_views": 5990,
+    "paid_pct": 83.8,
     "subscribers": 39,
     "audience": 2316,
     "top_videos": [
