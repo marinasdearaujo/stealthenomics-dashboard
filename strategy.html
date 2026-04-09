@@ -8,13 +8,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;500&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Roboto',sans-serif;background:#001A35;color:#F1F7FB;line-height:1.6;padding:0}
-.page{max-width:1100px;margin:0 auto;padding:40px 50px;page-break-after:always}
-.page:last-child{page-break-after:avoid}
+.container{max-width:1100px;margin:0 auto;padding:20px 30px}
 h1{font-family:'Montserrat',sans-serif;font-size:28px;font-weight:800;color:#B3C234;margin-bottom:4px}
-h2{font-family:'Montserrat',sans-serif;font-size:20px;font-weight:700;color:#1975BB;margin:30px 0 12px;border-bottom:2px solid #1975BB30;padding-bottom:6px}
-h3{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:700;color:#B3C234;margin:20px 0 8px}
+h2{font-family:'Montserrat',sans-serif;font-size:20px;font-weight:700;color:#1975BB;margin:24px 0 10px;border-bottom:2px solid #1975BB30;padding-bottom:6px}
+h3{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:700;color:#B3C234;margin:18px 0 8px}
 p,li{font-size:13px;color:#C8D8E8;line-height:1.7}
-.subtitle{font-size:14px;color:#6F90C8;margin-bottom:30px}
+.subtitle{font-size:14px;color:#6F90C8;margin-bottom:20px}
 .highlight{background:#1975BB15;border-left:3px solid #1975BB;padding:12px 16px;margin:12px 0;border-radius:0 6px 6px 0}
 .highlight p{margin:0;color:#90BFED}
 .highlight strong{color:#F1F7FB}
@@ -26,24 +25,33 @@ table{width:100%;border-collapse:collapse;margin:12px 0;font-size:12px}
 th{background:#0d2847;color:#90BFED;font-family:'Montserrat',sans-serif;font-weight:600;text-align:left;padding:8px 10px;font-size:11px;text-transform:uppercase;letter-spacing:0.5px}
 td{padding:7px 10px;border-bottom:1px solid #1a2a44;color:#C8D8E8}
 tr:hover td{background:#0d284730}
-.tag{display:inline-block;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:600;font-family:'Montserrat',sans-serif}
-.tag-meta{background:#1975BB30;color:#90BFED}
-.tag-google{background:#B3C23430;color:#d4e87a}
-.tag-organic{background:#0e9aa730;color:#7dd8e0}
-.tag-outbound{background:#e1306c30;color:#f5a0bc}
-.tag-setup{background:#fbbf2430;color:#fde68a}
 ul{margin:6px 0 6px 20px}
 li{margin:3px 0}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.kpi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:15px 0}
+.kpi-card{background:#0d2847;border:1px solid #1a2a44;border-radius:8px;padding:12px;text-align:center}
+.kpi-card .kl{font-size:9px;text-transform:uppercase;color:#6F90C8;font-family:'Montserrat',sans-serif;font-weight:600;letter-spacing:0.5px}
+.kpi-card .kv{font-size:22px;font-weight:800;font-family:'Montserrat',sans-serif;color:#B3C234;margin:4px 0}
+.kpi-card .ks{font-size:10px;color:#90BFED}
 .funnel{display:flex;justify-content:center;gap:0;margin:20px 0;text-align:center}
-.funnel-step{padding:12px 20px;position:relative;flex:1}
-.funnel-step .fl{font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;color:#F1F7FB}
+.funnel-step{padding:12px 16px;position:relative;flex:1}
+.funnel-step .fl{font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;color:#F1F7FB}
 .funnel-step .fd{font-size:10px;color:#6F90C8;margin-top:2px}
 .f-top{background:#1975BB40;border-radius:8px 0 0 8px}
 .f-mid{background:#0e9aa740}
 .f-bot{background:#B3C23440;border-radius:0 8px 8px 0}
-.arrow{display:flex;align-items:center;color:#6F90C8;font-size:18px;padding:0 4px}
+.arrow{display:flex;align-items:center;color:#6F90C8;font-size:16px;padding:0 2px}
 
-/* Gantt Chart */
+/* Tabs */
+.tab-nav{display:flex;gap:0;margin:20px 0 0;overflow-x:auto;border-bottom:2px solid #1a2a44}
+.tab-btn{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;padding:10px 16px;background:none;border:none;color:#6F90C8;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:all 0.2s}
+.tab-btn:hover{color:#90BFED;background:#0d284740}
+.tab-btn.active{color:#B3C234;border-bottom-color:#B3C234;background:#0d284760}
+.tab-content{display:none;padding:20px 0;animation:fadeIn 0.3s}
+.tab-content.active{display:block}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* Gantt */
 .gantt{width:100%;margin:15px 0;font-size:11px}
 .gantt-header{display:grid;grid-template-columns:180px repeat(30,1fr);background:#0d2847;border-radius:6px 6px 0 0}
 .gantt-header .gh{padding:4px 2px;text-align:center;color:#6F90C8;font-size:8px;font-family:'Montserrat',sans-serif;font-weight:600}
@@ -52,42 +60,39 @@ li{margin:3px 0}
 .gantt-row:hover{background:#0d284730}
 .gantt-label{padding:4px 10px;font-size:10px;font-family:'Montserrat',sans-serif;font-weight:600;color:#C8D8E8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .gantt-bar{height:16px;border-radius:3px;margin:0 1px}
-.gb-blue{background:#1975BB90}
-.gb-green{background:#B3C23490}
-.gb-teal{background:#0e9aa790}
-.gb-pink{background:#e1306c90}
-.gb-yellow{background:#fbbf2490}
-.gb-red{background:#CC000090}
+.gb-blue{background:#1975BB90}.gb-green{background:#B3C23490}.gb-teal{background:#0e9aa790}.gb-pink{background:#e1306c90}.gb-yellow{background:#fbbf2490}
 .gantt-milestone{width:10px;height:10px;background:#B3C234;transform:rotate(45deg);margin:0 auto}
 .gantt-section{background:#0d2847;padding:4px 10px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;color:#1975BB;text-transform:uppercase;letter-spacing:1px;grid-column:1/-1}
 
-.kpi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:15px 0}
-.kpi-card{background:#0d2847;border:1px solid #1a2a44;border-radius:8px;padding:12px;text-align:center}
-.kpi-card .kl{font-size:9px;text-transform:uppercase;color:#6F90C8;font-family:'Montserrat',sans-serif;font-weight:600;letter-spacing:0.5px}
-.kpi-card .kv{font-size:22px;font-weight:800;font-family:'Montserrat',sans-serif;color:#B3C234;margin:4px 0}
-.kpi-card .ks{font-size:10px;color:#90BFED}
-
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-
 .footer{text-align:center;margin-top:30px;padding-top:15px;border-top:1px solid #1a2a44;font-size:10px;color:#6F90C8}
-
-@media print{
-  body{background:#001A35;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-  .page{padding:30px 40px}
-}
 </style>
 </head>
 <body>
+<div class="container">
 
-<!-- PAGE 1: COVER + EXECUTIVE SUMMARY -->
-<div class="page">
-<div style="text-align:center;padding:40px 0 20px">
-  <div style="font-family:Montserrat;font-size:11px;text-transform:uppercase;letter-spacing:3px;color:#6F90C8;margin-bottom:10px">StealthEnomics</div>
-  <h1 style="font-size:32px;margin-bottom:8px">30-Day Marketing Strategy</h1>
+<!-- HEADER -->
+<div style="text-align:center;padding:30px 0 10px">
+  <div style="font-family:Montserrat;font-size:11px;text-transform:uppercase;letter-spacing:3px;color:#6F90C8;margin-bottom:8px">StealthEnomics</div>
+  <h1 style="font-size:30px;margin-bottom:6px">30-Day Marketing Strategy</h1>
   <div class="subtitle">April 8 – May 7, 2026 &nbsp;|&nbsp; Prepared by Marina Scheffer de Araujo</div>
 </div>
 
-<h2>Executive Summary</h2>
+<!-- TAB NAVIGATION -->
+<div class="tab-nav">
+  <button class="tab-btn active" onclick="showTab('overview')">Overview</button>
+  <button class="tab-btn" onclick="showTab('timeline')">Timeline</button>
+  <button class="tab-btn" onclick="showTab('setup')">Setup & Tracking</button>
+  <button class="tab-btn" onclick="showTab('paid')">Paid Campaigns</button>
+  <button class="tab-btn" onclick="showTab('organic')">Organic Content</button>
+  <button class="tab-btn" onclick="showTab('webinar')">Webinar Growth</button>
+  <button class="tab-btn" onclick="showTab('community')">Community Growth</button>
+  <button class="tab-btn" onclick="showTab('outbound')">Outbound</button>
+  <button class="tab-btn" onclick="showTab('budget')">Budget</button>
+  <button class="tab-btn" onclick="showTab('team')">Team & Focus</button>
+</div>
+
+<!-- ==================== OVERVIEW TAB ==================== -->
+<div id="tab-overview" class="tab-content active">
 
 <p>Our efforts are currently disconnected — ads, organic, webinar, and community run as separate initiatives. This plan connects them into <strong>one funnel</strong> where everything drives toward the Launch Box.</p>
 
@@ -101,7 +106,7 @@ li{margin:3px 0}
   <div class="funnel-step f-bot"><div class="fl">LAUNCH BOX</div><div class="fd">Bottom of Funnel</div><div style="font-size:9px;color:#d4e87a;margin-top:4px">Convert to sales</div></div>
 </div>
 
-<h2 style="color:#B3C234;border-bottom-color:#B3C23430">Priority Roadmap — Do This, Then This, Then This</h2>
+<h2 style="color:#B3C234;border-bottom-color:#B3C23430">Priority Roadmap</h2>
 
 <p>This plan has a lot of pieces. Here's the order. <strong>Don't move to the next phase until the current one is running.</strong></p>
 
@@ -111,34 +116,11 @@ li{margin:3px 0}
 
 <table>
 <thead><tr><th style="width:90px">Phase</th><th style="width:80px">When</th><th>Focus</th><th>Why</th></tr></thead>
-<tr style="background:#fbbf2410"><td style="font-weight:700;color:#fbbf24">🔧 PHASE 1</td><td>Days 1-3</td><td><strong>Fix + push simultaneously</strong><br>① Meta pixel + UTMs on Zoom (Day 1)<br>② Switch webinar → Conversions (Day 1-2)<br>③ Start LinkedIn outbound immediately — Chris personally invites founders to April 21 webinar<br>④ Email entire HubSpot base → webinar invite + community invite<br>⑤ Begin improving SMB landing page</td><td>Pixel/UTMs take hours, not days. While that's being set up, Chris starts outbound and we blast the email list. <strong>Every day without registrations is a lost day.</strong></td></tr>
+<tr style="background:#fbbf2410"><td style="font-weight:700;color:#fbbf24">🔧 PHASE 1</td><td>Days 1-3</td><td><strong>Fix + push simultaneously</strong><br>① Meta pixel + UTMs on Zoom (Day 1)<br>② Switch webinar → Conversions (Day 1-2)<br>③ Start LinkedIn outbound immediately<br>④ Email entire HubSpot base → webinar + community invite<br>⑤ Begin improving SMB landing page</td><td>Pixel/UTMs take hours, not days. While that's being set up, Chris starts outbound and we blast the email list. <strong>Every day without registrations is a lost day.</strong></td></tr>
 <tr style="background:#1975BB10"><td style="font-weight:700;color:#1975BB">🚀 PHASE 2</td><td>Days 3-7</td><td><strong>Launch all engines</strong><br>⑥ Launch Google Ads ($50/day) — LP should be ready<br>⑦ Activate Chris's LinkedIn (3x/week) — webinar CTA on every post<br>⑧ Beverly starts daily: company LI, YouTube (Opus Clip), account warming<br>⑨ Boost best organic post → retarget with webinar CTA<br>⑩ Community cross-promo → webinar invite</td><td>Tracking is live. LP is improved. Now turn on all traffic sources with 2 weeks until webinar.</td></tr>
-<tr style="background:#e1306c10"><td style="font-weight:700;color:#e1306c">📣 PHASE 3</td><td>Days 7-14</td><td><strong>Webinar countdown</strong><br>⑪ Countdown content daily (organic + paid): "1 week left" → "3 days" → "tomorrow"<br>⑫ Free Diagnostic as alternative CTA for people not ready for webinar<br>⑬ Email reminders (3d, 1d, 3h before)<br>⑭ Chris goes live on LinkedIn 5 min: "Here's why you should be there"</td><td>Final push. Every channel points to April 21. Urgency + scarcity ("limited seats").</td></tr>
-<tr style="background:#0e9aa710"><td style="font-weight:700;color:#0e9aa7">📊 PHASE 4</td><td>Days 14-30</td><td><strong>Webinar + convert + optimize</strong><br>⑮ Webinar execution (April 21)<br>⑯ Post-webinar: recording to no-shows, follow-up, community invite to all attendees<br>⑰ Retarget attendees → Launch Box<br>⑱ Review all data. HubSpot pipeline setup.<br>⑲ Plan May webinar based on learnings</td><td>Harvest the results. Capture everyone who didn't buy into the community for May. Set up full funnel visibility.</td></tr>
+<tr style="background:#e1306c10"><td style="font-weight:700;color:#e1306c">📣 PHASE 3</td><td>Days 7-14</td><td><strong>Webinar countdown</strong><br>⑪ Countdown content daily: "1 week left" → "3 days" → "tomorrow"<br>⑫ Free Diagnostic as alternative CTA<br>⑬ Email reminders (3d, 1d, 3h before)<br>⑭ Chris goes live on LinkedIn 5 min: "Here's why you should be there"</td><td>Final push. Every channel points to April 21. Urgency + scarcity ("limited seats").</td></tr>
+<tr style="background:#0e9aa710"><td style="font-weight:700;color:#0e9aa7">📊 PHASE 4</td><td>Days 14-30</td><td><strong>Webinar + convert + optimize</strong><br>⑮ Webinar execution (April 21)<br>⑯ Post-webinar: recording to no-shows, follow-up, community invite<br>⑰ Retarget attendees → Launch Box<br>⑱ Review all data. HubSpot pipeline setup.<br>⑲ Plan May webinar based on learnings</td><td>Harvest the results. Capture everyone who didn't buy into the community for May.</td></tr>
 </table>
-
-<h3>Budget (flat at ~$185/day)</h3>
-
-<div class="two-col">
-<div>
-<table>
-<thead><tr><th colspan="2">Meta (demand creation)</th></tr></thead>
-<tr><td>Webinar Conversions</td><td style="text-align:right;font-weight:600;color:#B3C234">$80/day</td></tr>
-<tr><td>Boost best organic</td><td style="text-align:right">$15/day</td></tr>
-<tr><td>Retargeting</td><td style="text-align:right">$15/day</td></tr>
-<tr><td>Engagement (2 campaigns)</td><td style="text-align:right">$25/day</td></tr>
-<tr><td style="font-weight:600">Meta total</td><td style="text-align:right;font-weight:600">$135/day</td></tr>
-</table>
-</div>
-<div>
-<table>
-<thead><tr><th colspan="2">Google (demand capture)</th></tr></thead>
-<tr><td>Search + lead form</td><td style="text-align:right;font-weight:600;color:#B3C234">$50/day</td></tr>
-<tr><td style="color:#6F90C8;font-size:11px" colspan="2">Higher-intent leads actively searching for services</td></tr>
-<tr><td style="font-weight:600">Google total</td><td style="text-align:right;font-weight:600">$50/day</td></tr>
-</table>
-</div>
-</div>
 
 <h3>30-Day Targets</h3>
 <div class="kpi-grid">
@@ -152,15 +134,14 @@ li{margin:3px 0}
 
 </div>
 
-<!-- PAGE 2: GANTT CHART -->
-<div class="page">
-<h1 style="font-size:22px">30-Day Execution Timeline</h1>
+<!-- ==================== TIMELINE TAB ==================== -->
+<div id="tab-timeline" class="tab-content">
+
+<h2>30-Day Execution Timeline</h2>
 <p class="subtitle">April 8 – May 7, 2026</p>
 
 <div style="overflow-x:auto">
 <div class="gantt" style="min-width:900px">
-
-<!-- Header -->
 <div class="gantt-header">
 <div class="gh">Task</div>
 <div class="gh">8</div><div class="gh">9</div><div class="gh">10</div><div class="gh">11</div><div class="gh">12</div><div class="gh">13</div><div class="gh">14</div>
@@ -168,335 +149,160 @@ li{margin:3px 0}
 <div class="gh">22</div><div class="gh">23</div><div class="gh">24</div><div class="gh">25</div><div class="gh">26</div><div class="gh">27</div><div class="gh">28</div>
 <div class="gh">29</div><div class="gh">30</div><div class="gh">1</div><div class="gh">2</div><div class="gh">3</div><div class="gh">4</div><div class="gh">5</div><div class="gh">6</div><div class="gh">7</div>
 </div>
-
-<!-- Week labels -->
 <div class="gantt-row" style="background:#0d284740">
-<div class="gantt-label" style="color:#6F90C8;font-size:9px">WEEK</div>
-<div style="grid-column:2/8;text-align:center;font-size:9px;color:#1975BB;font-family:Montserrat;font-weight:700">WEEK 1 — Setup</div>
-<div style="grid-column:8/15;text-align:center;font-size:9px;color:#1975BB;font-family:Montserrat;font-weight:700">WEEK 2 — Pre-Webinar</div>
-<div style="grid-column:15/22;text-align:center;font-size:9px;color:#e1306c;font-family:Montserrat;font-weight:700">WEEK 3 — Webinar + Push</div>
-<div style="grid-column:22/31;text-align:center;font-size:9px;color:#0e9aa7;font-family:Montserrat;font-weight:700">WEEK 4 — Optimize + Scale</div>
+<div class="gantt-label" style="color:#6F90C8;font-size:9px">PHASE</div>
+<div style="grid-column:2/5;text-align:center;font-size:9px;color:#fbbf24;font-family:Montserrat;font-weight:700">P1 Fix+Push</div>
+<div style="grid-column:5/9;text-align:center;font-size:9px;color:#1975BB;font-family:Montserrat;font-weight:700">P2 Launch</div>
+<div style="grid-column:9/15;text-align:center;font-size:9px;color:#e1306c;font-family:Montserrat;font-weight:700">P3 Countdown</div>
+<div style="grid-column:15/31;text-align:center;font-size:9px;color:#0e9aa7;font-family:Montserrat;font-weight:700">P4 Convert + Optimize</div>
 </div>
 
-<!-- SETUP Section -->
 <div class="gantt-section">⚙️ Setup & Tracking</div>
+<div class="gantt-row"><div class="gantt-label">Meta pixel + UTMs on Zoom</div><div style="grid-column:2/4"><div class="gantt-bar gb-yellow"></div></div></div>
+<div class="gantt-row"><div class="gantt-label">Switch webinar → Conversions</div><div style="grid-column:3/5"><div class="gantt-bar gb-yellow"></div></div></div>
+<div class="gantt-row"><div class="gantt-label" style="color:#B3C234;font-weight:700">Improve SMB landing page</div><div style="grid-column:2/7"><div class="gantt-bar gb-yellow" style="border:1px solid #fbbf24"></div></div></div>
+<div class="gantt-row"><div class="gantt-label">Set up retargeting campaigns</div><div style="grid-column:5/8"><div class="gantt-bar gb-blue"></div></div></div>
+<div class="gantt-row"><div class="gantt-label">Conversions API connection</div><div style="grid-column:8/12"><div class="gantt-bar gb-yellow"></div></div></div>
+<div class="gantt-row"><div class="gantt-label">HubSpot pipeline setup</div><div style="grid-column:15/24"><div class="gantt-bar gb-yellow" style="opacity:0.5"></div></div></div>
 
-<div class="gantt-row">
-<div class="gantt-label">Meta pixel on Zoom confirm</div>
-<div style="grid-column:2/5"><div class="gantt-bar gb-yellow"></div></div>
-</div>
-
-<div class="gantt-row">
-<div class="gantt-label">UTM spreadsheet + tagged links</div>
-<div style="grid-column:2/5"><div class="gantt-bar gb-yellow"></div></div>
-</div>
-
-<div class="gantt-row">
-<div class="gantt-label">Switch webinar campaign → Conversions</div>
-<div style="grid-column:4/6"><div class="gantt-bar gb-yellow"></div></div>
-</div>
-
-<div class="gantt-row">
-<div class="gantt-label" style="color:#B3C234;font-weight:700">Improve SMB landing page</div>
-<div style="grid-column:2/8"><div class="gantt-bar gb-yellow" style="border:1px solid #fbbf24"></div></div>
-</div>
-
-<div class="gantt-row">
-<div class="gantt-label">Launch Google Ads (after LP ready)</div>
-<div style="grid-column:8/12"><div class="gantt-bar gb-green"></div></div>
-</div>
-
-<div class="gantt-row">
-<div class="gantt-label">Set up retargeting campaigns</div>
-<div style="grid-column:5/8"><div class="gantt-bar gb-blue"></div></div>
-</div>
-
-<div class="gantt-row">
-<div class="gantt-label">HubSpot pipeline setup</div>
-<div style="grid-column:8/24"><div class="gantt-bar gb-yellow" style="opacity:0.5"></div></div>
-</div>
-
-<div class="gantt-row">
-<div class="gantt-label">Conversions API connection</div>
-<div style="grid-column:8/12"><div class="gantt-bar gb-yellow"></div></div>
-</div>
-
-<!-- ADS Section -->
 <div class="gantt-section">💰 Paid Campaigns</div>
+<div class="gantt-row"><div class="gantt-label">Webinar Conversions ($80/day)</div><div style="grid-column:4/31"><div class="gantt-bar gb-blue"></div></div></div>
+<div class="gantt-row"><div class="gantt-label">Google Search Ads ($50/day)</div><div style="grid-column:7/31"><div class="gantt-bar gb-green"></div></div></div>
+<div class="gantt-row"><div class="gantt-label">Boost best organic (weekly)</div><div style="grid-column:5/8"><div class="gantt-bar gb-pink" style="opacity:0.7"></div></div><div style="grid-column:12/15"><div class="gantt-bar gb-pink" style="opacity:0.7"></div></div><div style="grid-column:19/22"><div class="gantt-bar gb-pink" style="opacity:0.7"></div></div><div style="grid-column:26/29"><div class="gantt-bar gb-pink" style="opacity:0.7"></div></div></div>
+<div class="gantt-row"><div class="gantt-label">Retargeting ($15/day)</div><div style="grid-column:8/31"><div class="gantt-bar gb-teal" style="opacity:0.6"></div></div></div>
+<div class="gantt-row"><div class="gantt-label">Engagement campaigns ($25/day)</div><div style="grid-column:2/31"><div class="gantt-bar gb-blue" style="opacity:0.4"></div></div></div>
 
-<div class="gantt-row">
-<div class="gantt-label">Webinar Conversions ($80/day)</div>
-<div style="grid-column:5/31"><div class="gantt-bar gb-blue"></div></div>
-</div>
-
-<div class="gantt-row">
-<div class="gantt-label">Google Search Ads ($50/day)</div>
-<div style="grid-column:8/31"><div class="gantt-bar gb-green"></div></div>
-</div>
-
-<div class="gantt-row">
-<div class="gantt-label">Boost best organic (weekly)</div>
-<div style="grid-column:5/8"><div class="gantt-bar gb-pink" style="opacity:0.7"></div></div>
-<div style="grid-column:12/15"><div class="gantt-bar gb-pink" style="opacity:0.7"></div></div>
-<div style="grid-column:19/22"><div class="gantt-bar gb-pink" style="opacity:0.7"></div></div>
-<div style="grid-column:26/29"><div class="gantt-bar gb-pink" style="opacity:0.7"></div></div>
-</div>
-
-<div class="gantt-row">
-<div class="gantt-label">Retargeting ($15/day)</div>
-<div style="grid-column:8/31"><div class="gantt-bar gb-teal" style="opacity:0.6"></div></div>
-</div>
-
-<div class="gantt-row">
-<div class="gantt-label">Engagement campaigns ($25/day)</div>
-<div style="grid-column:2/31"><div class="gantt-bar gb-blue" style="opacity:0.4"></div></div>
-</div>
-
-<!-- ORGANIC Section -->
 <div class="gantt-section">📝 Organic Content</div>
+<div class="gantt-row"><div class="gantt-label">Chris LinkedIn (3x/week — test)</div><div style="grid-column:5/31"><div class="gantt-bar gb-teal"></div></div></div>
+<div class="gantt-row"><div class="gantt-label">Company LinkedIn (5x/week)</div><div style="grid-column:5/31"><div class="gantt-bar gb-teal" style="opacity:0.5"></div></div></div>
+<div class="gantt-row"><div class="gantt-label">YouTube daily (Opus Clip + reach)</div><div style="grid-column:5/31"><div class="gantt-bar gb-pink" style="opacity:0.6"></div></div></div>
+<div class="gantt-row"><div class="gantt-label">FB + IG (3x/week, repurposed)</div><div style="grid-column:5/31"><div class="gantt-bar gb-blue" style="opacity:0.3"></div></div></div>
+<div class="gantt-row"><div class="gantt-label">Beverly: account warming (daily)</div><div style="grid-column:5/31"><div class="gantt-bar gb-pink" style="opacity:0.3"></div></div></div>
 
-<div class="gantt-row">
-<div class="gantt-label">Chris LinkedIn (3x/week — test)</div>
-<div style="grid-column:2/31"><div class="gantt-bar gb-teal"></div></div>
-</div>
-
-<div class="gantt-row">
-<div class="gantt-label">Company LinkedIn (5x/week)</div>
-<div style="grid-column:2/31"><div class="gantt-bar gb-teal" style="opacity:0.5"></div></div>
-</div>
-
-<div class="gantt-row">
-<div class="gantt-label">FB + IG (3x/week, repurposed)</div>
-<div style="grid-column:2/31"><div class="gantt-bar gb-blue" style="opacity:0.3"></div></div>
-</div>
-
-<div class="gantt-row">
-<div class="gantt-label">YouTube daily (Opus Clip cuts)</div>
-<div style="grid-column:2/31"><div class="gantt-bar gb-pink" style="opacity:0.6"></div></div>
-</div>
-
-<div class="gantt-row">
-<div class="gantt-label">YouTube product showcases (BPC)</div>
-<div style="grid-column:8/15"><div class="gantt-bar gb-green" style="opacity:0.5"></div></div>
-<div style="grid-column:22/29"><div class="gantt-bar gb-green" style="opacity:0.5"></div></div>
-</div>
-
-<div class="gantt-row">
-<div class="gantt-label">Community (3x/week)</div>
-<div style="grid-column:2/31"><div class="gantt-bar gb-teal" style="opacity:0.4"></div></div>
-</div>
-
-<div class="gantt-row">
-<div class="gantt-label">Beverly: account warming (daily)</div>
-<div style="grid-column:2/31"><div class="gantt-bar gb-pink" style="opacity:0.3"></div></div>
-</div>
-
-<div class="gantt-row">
-<div class="gantt-label">Content theme: The Problem</div>
-<div style="grid-column:2/8"><div class="gantt-bar gb-blue" style="opacity:0.3"></div></div>
-</div>
-
-<div class="gantt-row">
-<div class="gantt-label">Content theme: The Framework</div>
-<div style="grid-column:8/15"><div class="gantt-bar gb-teal" style="opacity:0.3"></div></div>
-</div>
-
-<div class="gantt-row">
-<div class="gantt-label">Content theme: The Proof + Urgency</div>
-<div style="grid-column:15/22"><div class="gantt-bar gb-pink" style="opacity:0.3"></div></div>
-</div>
-
-<div class="gantt-row">
-<div class="gantt-label">Content theme: Follow-up + Next</div>
-<div style="grid-column:22/31"><div class="gantt-bar gb-green" style="opacity:0.3"></div></div>
-</div>
-
-<!-- COMMUNITY GROWTH Section -->
-<div class="gantt-section">🚀 Community Growth</div>
-
-<div class="gantt-row">
-<div class="gantt-label">Email HubSpot base → community invite</div>
-<div style="grid-column:3/6"><div class="gantt-bar gb-yellow"></div></div>
-</div>
-
-<div class="gantt-row">
-<div class="gantt-label">Retargeting ads → community</div>
-<div style="grid-column:8/31"><div class="gantt-bar gb-blue" style="opacity:0.4"></div></div>
-</div>
-
-<div class="gantt-row">
-<div class="gantt-label">Email webinar registrants → community</div>
-<div style="grid-column:15/19"><div class="gantt-bar gb-yellow"></div></div>
-</div>
-
-<!-- WEBINAR GROWTH Section -->
 <div class="gantt-section">🎯 Webinar Growth</div>
+<div class="gantt-row"><div class="gantt-label">LI outbound (10-20/week)</div><div style="grid-column:2/15"><div class="gantt-bar gb-pink"></div></div></div>
+<div class="gantt-row"><div class="gantt-label">Email HubSpot base → webinar</div><div style="grid-column:2/4"><div class="gantt-bar gb-yellow"></div></div></div>
+<div class="gantt-row"><div class="gantt-label">Organic webinar content (40%)</div><div style="grid-column:5/15"><div class="gantt-bar gb-teal" style="opacity:0.5"></div></div></div>
+<div class="gantt-row"><div class="gantt-label">Community → webinar cross-promo</div><div style="grid-column:5/15"><div class="gantt-bar gb-teal" style="opacity:0.4"></div></div></div>
+<div class="gantt-row"><div class="gantt-label">Email reminders (3d, 1d, 3h)</div><div style="grid-column:11/15"><div class="gantt-bar gb-yellow"></div></div></div>
+<div class="gantt-row"><div class="gantt-label" style="color:#B3C234;font-weight:800">🎯 WEBINAR — April 21</div><div style="grid-column:14/15"><div class="gantt-milestone"></div></div></div>
+<div class="gantt-row"><div class="gantt-label">Post-webinar: recording + follow-up</div><div style="grid-column:15/18"><div class="gantt-bar gb-green"></div></div></div>
+<div class="gantt-row"><div class="gantt-label">Retarget attendees → Launch Box</div><div style="grid-column:15/22"><div class="gantt-bar gb-green"></div></div></div>
 
-<div class="gantt-row">
-<div class="gantt-label">LI outbound (10-20 connections/week)</div>
-<div style="grid-column:5/31"><div class="gantt-bar gb-pink"></div></div>
-</div>
+<div class="gantt-section">🚀 Community Growth</div>
+<div class="gantt-row"><div class="gantt-label">Email HubSpot base → community</div><div style="grid-column:2/4"><div class="gantt-bar gb-yellow"></div></div></div>
+<div class="gantt-row"><div class="gantt-label">Retargeting ads → community</div><div style="grid-column:8/31"><div class="gantt-bar gb-blue" style="opacity:0.4"></div></div></div>
+<div class="gantt-row"><div class="gantt-label">Attendees → community invite</div><div style="grid-column:15/19"><div class="gantt-bar gb-teal"></div></div></div>
+<div class="gantt-row"><div class="gantt-label">Community content (3x/week)</div><div style="grid-column:5/31"><div class="gantt-bar gb-teal" style="opacity:0.4"></div></div></div>
 
-<div class="gantt-row">
-<div class="gantt-label">Organic webinar content (60% of posts)</div>
-<div style="grid-column:5/21"><div class="gantt-bar gb-teal" style="opacity:0.5"></div></div>
-</div>
-
-<div class="gantt-row">
-<div class="gantt-label">Email HubSpot base → webinar invite</div>
-<div style="grid-column:8/10"><div class="gantt-bar gb-yellow"></div></div>
-</div>
-
-<div class="gantt-row">
-<div class="gantt-label">Community → webinar cross-promo</div>
-<div style="grid-column:8/15"><div class="gantt-bar gb-teal" style="opacity:0.4"></div></div>
-</div>
-
-<div class="gantt-row">
-<div class="gantt-label">Email reminders (3d, 1d, 3h before)</div>
-<div style="grid-column:11/15"><div class="gantt-bar gb-yellow"></div></div>
-</div>
-
-<div class="gantt-row">
-<div class="gantt-label" style="color:#B3C234;font-weight:800">🎯 WEBINAR — April 21</div>
-<div style="grid-column:14/15"><div class="gantt-milestone"></div></div>
-</div>
-
-<div class="gantt-row">
-<div class="gantt-label">Post-webinar: recording + follow-up</div>
-<div style="grid-column:15/18"><div class="gantt-bar gb-green"></div></div>
-</div>
-
-<div class="gantt-row">
-<div class="gantt-label">Attendees → Community invite</div>
-<div style="grid-column:15/19"><div class="gantt-bar gb-teal"></div></div>
-</div>
-
-<div class="gantt-row">
-<div class="gantt-label">Retarget attendees → Launch Box</div>
-<div style="grid-column:15/22"><div class="gantt-bar gb-green"></div></div>
-</div>
-
-<!-- REVIEW Section -->
 <div class="gantt-section">📊 Reviews</div>
-
-<div class="gantt-row">
-<div class="gantt-label">Weekly review (Friday)</div>
-<div style="grid-column:5/6"><div class="gantt-milestone"></div></div>
-<div style="grid-column:12/13"><div class="gantt-milestone"></div></div>
-<div style="grid-column:19/20"><div class="gantt-milestone"></div></div>
-<div style="grid-column:26/27"><div class="gantt-milestone"></div></div>
-</div>
-
-<div class="gantt-row">
-<div class="gantt-label">Google vs Meta lead quality check</div>
-<div style="grid-column:19/20"><div class="gantt-milestone" style="background:#fbbf24"></div></div>
-</div>
-
-<div class="gantt-row">
-<div class="gantt-label" style="color:#B3C234">30-day results review</div>
-<div style="grid-column:30/31"><div class="gantt-milestone"></div></div>
-</div>
-
+<div class="gantt-row"><div class="gantt-label">Weekly review (Friday)</div><div style="grid-column:5/6"><div class="gantt-milestone"></div></div><div style="grid-column:12/13"><div class="gantt-milestone"></div></div><div style="grid-column:19/20"><div class="gantt-milestone"></div></div><div style="grid-column:26/27"><div class="gantt-milestone"></div></div></div>
+<div class="gantt-row"><div class="gantt-label">Google vs Meta lead quality check</div><div style="grid-column:19/20"><div class="gantt-milestone" style="background:#fbbf24"></div></div></div>
+<div class="gantt-row"><div class="gantt-label" style="color:#B3C234">30-day results review</div><div style="grid-column:30/31"><div class="gantt-milestone"></div></div></div>
 </div>
 </div>
 
 <div style="display:flex;gap:15px;margin-top:15px;flex-wrap:wrap">
-<div style="display:flex;align-items:center;gap:5px;font-size:10px;color:#6F90C8"><div style="width:12px;height:12px;background:#fbbf2490;border-radius:2px"></div> Setup/Tracking</div>
-<div style="display:flex;align-items:center;gap:5px;font-size:10px;color:#6F90C8"><div style="width:12px;height:12px;background:#1975BB90;border-radius:2px"></div> Meta Campaigns</div>
-<div style="display:flex;align-items:center;gap:5px;font-size:10px;color:#6F90C8"><div style="width:12px;height:12px;background:#B3C23490;border-radius:2px"></div> Google / Follow-up</div>
-<div style="display:flex;align-items:center;gap:5px;font-size:10px;color:#6F90C8"><div style="width:12px;height:12px;background:#0e9aa790;border-radius:2px"></div> Organic / Community</div>
-<div style="display:flex;align-items:center;gap:5px;font-size:10px;color:#6F90C8"><div style="width:12px;height:12px;background:#e1306c90;border-radius:2px"></div> Outbound / Boost</div>
+<div style="display:flex;align-items:center;gap:5px;font-size:10px;color:#6F90C8"><div style="width:12px;height:12px;background:#fbbf2490;border-radius:2px"></div> Setup</div>
+<div style="display:flex;align-items:center;gap:5px;font-size:10px;color:#6F90C8"><div style="width:12px;height:12px;background:#1975BB90;border-radius:2px"></div> Meta</div>
+<div style="display:flex;align-items:center;gap:5px;font-size:10px;color:#6F90C8"><div style="width:12px;height:12px;background:#B3C23490;border-radius:2px"></div> Google</div>
+<div style="display:flex;align-items:center;gap:5px;font-size:10px;color:#6F90C8"><div style="width:12px;height:12px;background:#0e9aa790;border-radius:2px"></div> Organic</div>
+<div style="display:flex;align-items:center;gap:5px;font-size:10px;color:#6F90C8"><div style="width:12px;height:12px;background:#e1306c90;border-radius:2px"></div> Outbound/Boost</div>
 <div style="display:flex;align-items:center;gap:5px;font-size:10px;color:#6F90C8"><div style="width:10px;height:10px;background:#B3C234;transform:rotate(45deg)"></div> Milestone</div>
 </div>
 
 </div>
 
-<!-- PAGE 3: DETAILED STRATEGY -->
-<div class="page">
-<h1 style="font-size:22px">Detailed Strategy</h1>
+<!-- ==================== SETUP & TRACKING TAB ==================== -->
+<div id="tab-setup" class="tab-content">
 
 <h2>1. Fix the Webinar Funnel</h2>
 <p>Last month: 1,372 clicks → 8 registrations (5 qualified). Sub-1% conversion rate. We've moved from RingCentral to Zoom with our own domain. Now we need full tracking:</p>
-
 <ul>
 <li><strong>Meta pixel on confirmation page</strong> — enables switching from Traffic to Conversions objective</li>
 <li><strong>UTM parameters on every link</strong> — pre-built per channel in a shared spreadsheet (Facebook organic, Facebook ad, Chris LinkedIn, outbound DM, email — each gets a unique tagged URL)</li>
 <li><strong>Form data → HubSpot</strong> — one place to track registration to attendance to sale</li>
 </ul>
 
-<h3>Webinar Scaling Plan</h3>
-<table>
-<thead><tr><th>Webinar</th><th>Registrations</th><th>What changes</th></tr></thead>
-<tr><td>March (last)</td><td>8 (5 qualified)</td><td>No pixel, no UTMs, Traffic campaign, RingCentral</td></tr>
-<tr><td style="color:#B3C234;font-weight:600">April</td><td style="color:#B3C234;font-weight:600">20-50</td><td>Pixel, UTMs, Conversions campaign, organic + outbound push</td></tr>
-<tr><td>May</td><td>50-80</td><td>Optimized retargeting + community feeding registrations</td></tr>
-<tr><td>June</td><td>80-100</td><td>Full engine — paid + organic + community all contributing</td></tr>
-</table>
-
-<h3>Webinar Registration Growth Playbook</h3>
-<table>
-<thead><tr><th>Tactic</th><th>When</th><th>Expected Impact</th></tr></thead>
-<tr><td style="font-weight:600;color:#B3C234">Conversion-optimized Meta ads ($80/day)</td><td>Phase 2+</td><td>At $5-8/registration, 10-16 registrations/day once optimized. Our main volume driver.</td></tr>
-<tr><td style="font-weight:600;color:#B3C234">Chris's LinkedIn outbound</td><td>Phase 2+</td><td>10-20 personal invitations/week. 10% conversion = 4-8 hand-picked, high-quality registrations/month.</td></tr>
-<tr><td style="font-weight:600;color:#B3C234">Organic content (60% webinar CTA)</td><td>Phase 2+</td><td>Chris's personal stories + pain point videos end with "Join me live." 3x/week on LI + repurposed to FB.</td></tr>
-<tr><td style="font-weight:600;color:#B3C234">Boost best organic → retarget</td><td>Phase 3</td><td>$0.01-0.10/view on boost → $2-3 to retarget warm viewers into registrations. Cheapest path to registration.</td></tr>
-<tr><td style="font-weight:600;color:#B3C234">Email HubSpot base</td><td>Phase 3</td><td>Dedicated webinar invite email to all existing contacts. Free, immediate.</td></tr>
-<tr><td style="font-weight:600;color:#B3C234">Community cross-promotion</td><td>Phase 3</td><td>Post webinar invite inside community. As community grows, this becomes a reliable registration source each month.</td></tr>
-<tr><td style="font-weight:600;color:#B3C234">Email reminder sequence</td><td>3d, 1d, 3h before</td><td>Increases show-up rate from typical 30% to 40-50%. Applied to all registrants.</td></tr>
-<tr><td>Free Diagnostic → Webinar upsell</td><td>Ongoing</td><td>People who complete diagnostic get follow-up: "Your score is X. Want the full framework? Join the webinar."</td></tr>
-</table>
-
-<h2>2. Improve SMB Landing Page (Week 1 priority)</h2>
-
-<p>Every dollar we spend on Google Ads, webinar retargeting, and organic content is only as good as the page it lands on. The SMB landing page is the conversion point for the entire bottom of the funnel — it needs to work before we scale traffic to it.</p>
-
+<h2>2. Improve SMB Landing Page (Phase 1)</h2>
+<p>Every dollar we spend on Google Ads, webinar retargeting, and organic content is only as good as the page it lands on.</p>
 <h3>Optimization priorities:</h3>
 <ul>
-<li><strong>Clear value prop above the fold</strong> — What is the Launch Box, who is it for, and why should they care? Answer in 1-2 sentences.</li>
+<li><strong>Clear value prop above the fold</strong> — What is the Launch Box, who is it for, and why should they care?</li>
 <li><strong>Social proof</strong> — Chris's credibility (Forbes featured, COO story), client testimonials, specific results.</li>
-<li><strong>Stronger CTA</strong> — Clear next step (book a call, register for webinar, or apply). One primary action, not multiple competing options.</li>
-<li><strong>Qualifying form</strong> — Keep the qualifying questions (company size, timeline) but reduce friction on non-essential fields.</li>
-<li><strong>Mobile optimization</strong> — Most Meta/Google ad traffic arrives on mobile. The page must load fast and convert on small screens.</li>
-<li><strong>Pixel + tracking</strong> — Ensure Meta pixel and Google tag fire on form submission for conversion optimization.</li>
+<li><strong>Stronger CTA</strong> — Clear next step. One primary action, not multiple competing options.</li>
+<li><strong>Qualifying form</strong> — Keep qualifying questions but reduce friction on non-essential fields.</li>
+<li><strong>Mobile optimization</strong> — Most ad traffic arrives on mobile. Fast load, clean conversion.</li>
+<li><strong>Pixel + tracking</strong> — Meta pixel and Google tag fire on form submission.</li>
 </ul>
-
 <div class="highlight green">
-<p><strong>Timeline:</strong> LP improvements should be completed in Week 1, <strong>before</strong> Google Ads launch. Sending paid traffic to an unoptimized page wastes budget.</p>
+<p><strong>Timeline:</strong> LP improvements should be completed in Phase 1 (Days 1-3), <strong>before</strong> Google Ads launch. Sending paid traffic to an unoptimized page wastes budget.</p>
 </div>
 
-<h2>3. Qualified Leads — Meta to Google</h2>
+<h2>3. Full Funnel Visibility — HubSpot</h2>
+<p>Data currently scattered across Meta, Google, Zoom, HubSpot, and Facebook. We need one view:</p>
+<table>
+<thead><tr><th>Pipeline Stage</th><th>Tracked in</th><th>Key Metric</th></tr></thead>
+<tr><td>Lead (ad form / outbound)</td><td>HubSpot + Google/Meta</td><td>Contact rate, qualification rate</td></tr>
+<tr><td>Webinar Registered</td><td>Zoom + HubSpot</td><td>Registrations by source (UTMs)</td></tr>
+<tr><td>Webinar Attended</td><td>Zoom → HubSpot sync</td><td>Show-up rate</td></tr>
+<tr><td>Community Member</td><td>Facebook Group → HubSpot</td><td>Conversion to next webinar</td></tr>
+<tr><td>Opportunity</td><td>HubSpot</td><td>Pipeline value</td></tr>
+<tr><td>Launch Box Customer</td><td>HubSpot</td><td>Revenue, source attribution</td></tr>
+</table>
+<p>Target: configured by end of April (Phase 4). Operational for May webinar cycle.</p>
 
+</div>
+
+<!-- ==================== PAID CAMPAIGNS TAB ==================== -->
+<div id="tab-paid" class="tab-content">
+
+<h2>Qualified Leads — Meta to Google</h2>
 <p>We tested two approaches on Meta for direct lead generation:</p>
+<div class="highlight warn"><p><strong>Instant forms</strong> → fake phone numbers, bot entries</p></div>
+<div class="highlight warn"><p><strong>Landing page conversion</strong> → low conversion rate</p></div>
+<div class="highlight green"><p><strong>Conclusion:</strong> Meta's audience isn't in buying mode for direct lead gen. Move to <strong>Google Search</strong> where intent is real.</p></div>
 
-<div class="highlight warn">
-<p><strong>Instant forms</strong> → fake phone numbers, bot entries</p>
-</div>
-<div class="highlight warn">
-<p><strong>Landing page conversion</strong> → low conversion rate</p>
-</div>
-<div class="highlight green">
-<p><strong>Conclusion:</strong> Meta's audience isn't in buying mode for direct lead gen. They're browsing, not searching. Move direct lead gen to <strong>Google Search</strong> where intent is real.</p>
-</div>
-
-<h3>Google Ads Setup</h3>
+<h3>Google Ads Setup ($50/day)</h3>
 <ul>
 <li><strong>Search campaigns:</strong> High-intent keywords — technology acquisition, managed IT, business launch consulting. 10-15 keywords, not broad match.</li>
 <li><strong>Lead form:</strong> Manual phone entry + qualifying questions (company size, timeline, challenge).</li>
 <li><strong>Display + Video:</strong> Retargeting only. No cold prospecting.</li>
-<li><strong>After 30 days:</strong> Compare contact rate and qualification rate vs Meta. Data-driven decision on permanent allocation.</li>
+<li><strong>After 30 days:</strong> Compare contact rate vs Meta. Data-driven permanent allocation.</li>
 </ul>
+
+<h3>Google Ads — Phased Approach</h3>
+<table>
+<thead><tr><th>Phase</th><th>When</th><th>What</th></tr></thead>
+<tr><td style="color:#B3C234;font-weight:600">Phase 1</td><td>Now (April)</td><td>Search + lead form for high-intent keywords. Display/Video retargeting only.</td></tr>
+<tr><td>Phase 2</td><td>May</td><td>Add branded search ("StealthEnomics", "45-day business launch"). $1-3/click.</td></tr>
+<tr><td>Phase 3</td><td>June+</td><td>Broader non-branded keywords if volume justifies. CPCs $15-40 in B2B.</td></tr>
+</table>
+
+<h3>Meta Campaigns (demand creation)</h3>
+<table>
+<thead><tr><th>Campaign</th><th>Budget</th><th>Objective</th></tr></thead>
+<tr><td style="font-weight:600;color:#B3C234">Webinar Conversions</td><td>$80/day</td><td>Registrations — our sales engine</td></tr>
+<tr><td>Boost best organic</td><td>$15/day</td><td>Build retarget pool cheaply ($0.01-0.10/view)</td></tr>
+<tr><td>Retargeting</td><td>$15/day</td><td>Warm viewers → webinar registration / community</td></tr>
+<tr><td>Engagement SMB</td><td>$15/day</td><td>Top-of-funnel awareness</td></tr>
+<tr><td>Engagement IT/Tech</td><td>$10/day</td><td>Top-of-funnel awareness</td></tr>
+</table>
 
 <p>Also: <strong>Connect CRM with Conversions API</strong> — Meta's #1 recommendation (score: 90/100). Estimated 19% lower cost per quality lead. Free to implement.</p>
 
-<h2>4. Organic: Focus on What's Working</h2>
+</div>
+
+<!-- ==================== ORGANIC CONTENT TAB ==================== -->
+<div id="tab-organic" class="tab-content">
+
+<h2>Organic: Focus on What's Working</h2>
 
 <div class="two-col">
 <div>
 <h3 style="color:#B3C234">✓ What works</h3>
 <ul>
 <li>LinkedIn company page: 14%+ ER</li>
-<li>Facebook video: 14.3% ER</li>
 <li>Relatable/pain point content: 20.3% ER on FB</li>
 <li>Interactive posts: 17-37% ER</li>
 <li>Chris's personal stories: #1 across all platforms</li>
@@ -510,34 +316,26 @@ li{margin:3px 0}
 <li>Friday Facts: consistently 0 reactions</li>
 <li>Cross-posting identical copy</li>
 <li>YouTube long-form (60s+): avg 5 views</li>
-<li>Company page only: 1.6% follower reach</li>
+<li>Video on LinkedIn: 2-3% ER (save for FB/YT)</li>
 </ul>
 </div>
 </div>
 
 <div class="highlight green">
-<p><strong>Biggest untapped opportunity: Chris's personal LinkedIn.</strong> We've never posted there. Personal profiles get 561% more reach than company pages. Starting at 3x/week as a test — if it performs as expected, we scale up.</p>
+<p><strong>Biggest untapped opportunity: Chris's personal LinkedIn.</strong> We've never posted there. Personal profiles get 561% more reach than company pages. Starting at 3x/week as a test.</p>
 </div>
 
 <h3>LinkedIn-Native Formats (Chris + Company Page)</h3>
-<p>LinkedIn's algorithm rewards native formats differently than other platforms. Both Chris's personal profile and the company page should use LinkedIn-specific content — not repurposed from other platforms:</p>
+<p>Both profiles should use LinkedIn-specific content — not repurposed from other platforms:</p>
 <table>
-<thead><tr><th>Format</th><th>Avg ER (2026 data)</th><th>Best for</th></tr></thead>
+<thead><tr><th>Format</th><th>Avg ER (2026)</th><th>Best for</th></tr></thead>
 <tr><td style="font-weight:600;color:#B3C234">Multi-image posts</td><td style="color:#B3C234">6.60%</td><td>Before/after, process breakdowns, team highlights</td></tr>
-<tr><td style="font-weight:600;color:#B3C234">Document carousels</td><td style="color:#B3C234">6.10%</td><td>Frameworks, step-by-step guides, educational content</td></tr>
+<tr><td style="font-weight:600;color:#B3C234">Document carousels</td><td style="color:#B3C234">6.10%</td><td>Frameworks, step-by-step guides, educational</td></tr>
 <tr><td>Text + single image</td><td>4-5%</td><td>Personal stories, opinions, founder POV</td></tr>
 <tr><td>Text-only</td><td>3-4%</td><td>Hot takes, questions, conversations</td></tr>
-<tr><td style="color:#CC0000">Video</td><td style="color:#CC0000">2-3%</td><td>Underperforms on LinkedIn — save for FB/YT</td></tr>
 </table>
 
-<h3>Free Diagnostic — Funnel Entry Point</h3>
-<p>The Free Business Diagnostic is a lower-commitment entry point than the webinar — no date/time required, available anytime. It captures a lead, reveals gaps in their business infrastructure, and creates a natural next step:</p>
-<div class="highlight">
-<p>"Your score is 78%. Here are the 3 areas holding your business back. Want the full framework to fix them? <strong>Join our next live webinar</strong> — or <strong>join the community</strong> for ongoing support."</p>
-</div>
-<p>The diagnostic should be promoted as an alternative CTA on posts where the webinar isn't the right fit — educational content, value-first posts, and trend/reach content.</p>
-
-<h3>Content Mix — Revised</h3>
+<h3>Content Mix</h3>
 <table>
 <thead><tr><th>Content Type</th><th>CTA</th><th>Split</th></tr></thead>
 <tr><td>Chris stories, pain point videos, urgency posts</td><td style="color:#1975BB;font-weight:600">Webinar</td><td>40%</td></tr>
@@ -547,57 +345,96 @@ li{margin:3px 0}
 <tr><td>Community spotlights, behind-the-scenes</td><td style="color:#7dd8e0;font-weight:600">Community</td><td>10%</td></tr>
 </table>
 
+<h3>Free Diagnostic — Funnel Entry Point</h3>
+<p>Lower commitment than webinar (no date/time). Captures a lead, reveals gaps, creates a natural next step:</p>
+<div class="highlight">
+<p>"Your score is 78%. Here are the 3 areas holding your business back. Want the full framework? <strong>Join our next live webinar</strong> — or <strong>join the community</strong> for ongoing support."</p>
+</div>
+
 <h3>YouTube Strategy — Daily via Opus Clip + Showcases + Reach</h3>
 <ul>
-<li><strong>Daily webinar cuts</strong> — Beverly uses Opus Clip to extract short clips (16-60s sweet spot) from webinar recordings and posts daily. Share Opus Clip login with Beverly.</li>
-<li><strong>Product showcases</strong> — BPC demos, Launch Box walkthroughs, client success stories. 1-2 per month as original content.</li>
-<li><strong>Reach/growth content</strong> — Trend-based videos, hooks, and timely topics that attract new viewers beyond our existing audience. These don't need a hard CTA — they grow the subscriber base that we later convert.</li>
-<li>This feeds the YouTube algorithm with consistency (daily) without requiring new production. Our data shows 16-60s videos avg 1,434 views vs 5 for long-form.</li>
+<li><strong>Daily webinar cuts</strong> — Beverly uses Opus Clip (16-60s sweet spot). Share login with Beverly.</li>
+<li><strong>Product showcases</strong> — BPC demos, Launch Box walkthroughs. 1-2 per month.</li>
+<li><strong>Reach/growth content</strong> — Trend-based videos, hooks, timely topics to attract new viewers.</li>
 </ul>
 
-<h3>Account Warming — Beverly</h3>
-<p>Beverly engages daily with relevant pages, posts, and profiles on LinkedIn and Facebook to warm up the StealthEnomics accounts. This signals the algorithm that the accounts are active and increases visibility of our own content. Commenting, sharing, and reacting to industry content — not automated, genuine engagement.</p>
-
 <h3>Boost the Winner Strategy</h3>
-<p>Post organically → after 24-48h, boost the best performer ($15/day, 3-5 days) → viewers enter retarget pool → retarget with webinar CTA ($15/day). Cost: $0.01-0.10/view on boost vs $5-8/registration cold.</p>
+<p>Post organically → after 24-48h, boost the best performer ($15/day, 3-5 days) → viewers enter retarget pool → retarget with webinar CTA. Cost: $0.01-0.10/view on boost vs $5-8/registration cold.</p>
 
-<h3>Facebook & Instagram — Repurpose Only (Ads Handle Reach)</h3>
-<p>Facebook organic reach averages 15-27 per post. Meanwhile, we're spending $135/day on Meta ads that reach thousands. Creating original Facebook content is low ROI — the ads do the heavy lifting. Facebook and Instagram become <strong>repurpose channels</strong>: best-performing LinkedIn posts and YouTube clips, adapted for each platform. No original creative time spent.</p>
+<h3>Facebook & Instagram — Repurpose Only</h3>
+<p>Facebook organic reach averages 15-27 per post. We're spending $135/day on Meta ads that reach thousands. FB and IG become <strong>repurpose channels</strong>: best LinkedIn posts and YouTube clips. No original creative time.</p>
+
+<h3>Account Warming — Beverly</h3>
+<p>Beverly engages daily with relevant pages and profiles on LinkedIn and Facebook. Genuine engagement — commenting, sharing, reacting to industry content. Signals the algorithm, increases visibility.</p>
 
 <h3>Posting Schedule</h3>
 <table>
 <thead><tr><th>Platform</th><th>Owner</th><th>Frequency</th><th>Format / Notes</th></tr></thead>
 <tr style="background:#0e9aa710"><td style="font-weight:600;color:#B3C234">Chris's LinkedIn</td><td>Chris</td><td>3x/week (test)</td><td>LinkedIn-native: multi-image, carousels, personal stories</td></tr>
-<tr style="background:#0e9aa710"><td style="font-weight:600;color:#B3C234">Company LinkedIn</td><td>Beverly</td><td>Every weekday (5x)</td><td>LinkedIn-native: carousels, multi-image, educational, product showcases</td></tr>
-<tr style="background:#CC000010"><td style="font-weight:600;color:#B3C234">YouTube</td><td>Beverly</td><td>Every weekday (5x)</td><td>Opus Clip webinar cuts + product showcases + reach/trend content</td></tr>
+<tr style="background:#0e9aa710"><td style="font-weight:600;color:#B3C234">Company LinkedIn</td><td>Beverly</td><td>Every weekday (5x)</td><td>LinkedIn-native: carousels, multi-image, educational, showcases</td></tr>
+<tr style="background:#CC000010"><td style="font-weight:600;color:#B3C234">YouTube</td><td>Beverly</td><td>Every weekday (5x)</td><td>Opus Clip cuts + product showcases + reach/trend content</td></tr>
 <tr style="background:#0e9aa710"><td style="font-weight:600;color:#B3C234">Community</td><td>Beverly</td><td>3x/week</td><td>Discussion prompts, welcome new members, value posts</td></tr>
 <tr><td>Facebook</td><td>Beverly</td><td>3x/week</td><td>Repurposed from LinkedIn + YouTube (ads handle reach)</td></tr>
-<tr><td>Instagram</td><td>Beverly</td><td>3x/week</td><td>Repurposed reels from YouTube + LinkedIn carousels as IG carousels</td></tr>
+<tr><td>Instagram</td><td>Beverly</td><td>3x/week</td><td>Repurposed reels from YouTube + LI carousels as IG carousels</td></tr>
 </table>
 <p style="font-size:11px;color:#6F90C8;margin-top:4px">Green rows = original content. Other rows = repurpose only.</p>
 
 </div>
 
-<!-- PAGE 4: OUTBOUND + COMMUNITY + BUDGET + FOCUS -->
-<div class="page">
+<!-- ==================== WEBINAR GROWTH TAB ==================== -->
+<div id="tab-webinar" class="tab-content">
 
-<h2>5. Community as the Nurture Engine</h2>
-<p>Currently 8 members. The community is the mid-funnel where we nurture leads who aren't ready to buy yet. But it needs critical mass to feel alive. Here's how we grow it fast:</p>
+<h2>Webinar Registration Growth</h2>
 
-<h3>Community Growth Playbook</h3>
+<h3>Scaling Plan</h3>
+<table>
+<thead><tr><th>Webinar</th><th>Registrations</th><th>What changes</th></tr></thead>
+<tr><td>March (last)</td><td>8 (5 qualified)</td><td>No pixel, no UTMs, Traffic campaign, RingCentral</td></tr>
+<tr><td style="color:#B3C234;font-weight:600">April</td><td style="color:#B3C234;font-weight:600">20-50</td><td>Pixel, UTMs, Conversions campaign, organic + outbound push</td></tr>
+<tr><td>May</td><td>50-80</td><td>Optimized retargeting + community feeding registrations</td></tr>
+<tr><td>June</td><td>80-100</td><td>Full engine — paid + organic + community all contributing</td></tr>
+</table>
+
+<h3>Growth Playbook</h3>
 <table>
 <thead><tr><th>Tactic</th><th>When</th><th>Expected Impact</th></tr></thead>
-<tr><td style="font-weight:600;color:#B3C234">Email HubSpot base</td><td>Week 1</td><td>Invite all existing contacts. Even 5-10% conversion = 15-30 members from existing leads.</td></tr>
-<tr><td style="font-weight:600;color:#B3C234">Retargeting ads → community</td><td>Week 2+</td><td>Show community invite to warm audiences (site visitors, video viewers, engagers). $5-10/day from retargeting budget.</td></tr>
-<tr><td style="font-weight:600;color:#B3C234">CTAs on organic posts</td><td>Ongoing</td><td>20% of content points to community. Interactive/educational posts end with "Join the conversation in our group."</td></tr>
-<tr><td style="font-weight:600;color:#B3C234">Email webinar registrants</td><td>Post-webinar</td><td>Every registrant (attended or not) gets community invite in follow-up sequence. "Missed the live? Join the community for the replay + ongoing discussion."</td></tr>
-<tr><td>Post-webinar attendee invite</td><td>Post-webinar</td><td>Direct invite to attendees who didn't buy: "Stay connected, keep learning."</td></tr>
+<tr><td style="font-weight:600;color:#B3C234">Conversion-optimized Meta ads ($80/day)</td><td>Phase 1+</td><td>At $5-8/registration, 10-16/day once optimized. Main volume driver.</td></tr>
+<tr><td style="font-weight:600;color:#B3C234">Chris's LinkedIn outbound</td><td>Phase 1 (Day 1)</td><td>10-20 personal invitations/week. 10% conversion = 4-8 high-quality registrations/month.</td></tr>
+<tr><td style="font-weight:600;color:#B3C234">Email HubSpot base</td><td>Phase 1 (Day 1)</td><td>Dedicated webinar invite to all existing contacts. Free, immediate.</td></tr>
+<tr><td style="font-weight:600;color:#B3C234">Organic content (40% webinar CTA)</td><td>Phase 2+</td><td>Chris's personal stories + pain point videos end with "Join me live."</td></tr>
+<tr><td style="font-weight:600;color:#B3C234">Boost best organic → retarget</td><td>Phase 2+</td><td>$0.01-0.10/view → $2-3 to retarget warm viewers. Cheapest path.</td></tr>
+<tr><td style="font-weight:600;color:#B3C234">Community cross-promotion</td><td>Phase 2+</td><td>Webinar invite inside community. Becomes reliable source each month.</td></tr>
+<tr><td style="font-weight:600;color:#B3C234">Countdown content</td><td>Phase 3</td><td>Daily urgency: "1 week" → "3 days" → "tomorrow." Chris goes live on LI.</td></tr>
+<tr><td style="font-weight:600;color:#B3C234">Email reminder sequence</td><td>3d, 1d, 3h before</td><td>Increases show-up rate from 30% to 40-50%.</td></tr>
+<tr><td>Free Diagnostic → Webinar upsell</td><td>Ongoing</td><td>"Your score is X. Want the full framework? Join the webinar."</td></tr>
+</table>
+
+</div>
+
+<!-- ==================== COMMUNITY GROWTH TAB ==================== -->
+<div id="tab-community" class="tab-content">
+
+<h2>Community as the Nurture Engine</h2>
+<p>Currently 8 members. The community is the mid-funnel where we nurture leads who aren't ready to buy yet. It needs critical mass to feel alive. Here's how we grow it fast:</p>
+
+<h3>Growth Playbook</h3>
+<table>
+<thead><tr><th>Tactic</th><th>When</th><th>Expected Impact</th></tr></thead>
+<tr><td style="font-weight:600;color:#B3C234">Email HubSpot base</td><td>Phase 1 (Day 1)</td><td>Invite all existing contacts. 5-10% conversion = 15-30 members from existing leads.</td></tr>
+<tr><td style="font-weight:600;color:#B3C234">Retargeting ads → community</td><td>Phase 2+</td><td>Community invite to warm audiences (site visitors, video viewers, engagers). $5-10/day from retargeting budget.</td></tr>
+<tr><td style="font-weight:600;color:#B3C234">CTAs on organic posts</td><td>Ongoing</td><td>20% of content points to community. "Join the conversation in our group."</td></tr>
+<tr><td style="font-weight:600;color:#B3C234">Email webinar registrants</td><td>Post-webinar</td><td>Every registrant (attended or not) gets community invite. "Missed the live? Join for replay + discussion."</td></tr>
+<tr><td style="font-weight:600;color:#B3C234">Post-webinar attendee invite</td><td>Post-webinar</td><td>Direct invite to attendees who didn't buy: "Stay connected, keep learning."</td></tr>
 </table>
 
 <p>Beverly manages community 3x/week: discussion prompts, welcome new members, share value content. Light-touch now, increase as membership grows past 30.</p>
 
-<h2>6. Outbound: LinkedIn Personal Invitations</h2>
+</div>
 
+<!-- ==================== OUTBOUND TAB ==================== -->
+<div id="tab-outbound" class="tab-content">
+
+<h2>LinkedIn Outbound — Personal Invitations</h2>
 <p>For a high-ticket offer like the Launch Box, personal outreach from Chris can be more effective than any ad:</p>
 
 <ul>
@@ -607,27 +444,20 @@ li{margin:3px 0}
 <li><strong>Compounding:</strong> Every connection stays in Chris's network for future webinars. Every post Chris makes reaches this growing audience.</li>
 </ul>
 
-<h2>7. Full Funnel Visibility — HubSpot</h2>
+<div class="highlight green">
+<p><strong>Start Day 1.</strong> This doesn't depend on tracking being set up. Chris can start personally inviting founders to the April 21 webinar immediately.</p>
+</div>
 
-<p>Data currently scattered across Meta, Google, Zoom, HubSpot, and Facebook. We need one view:</p>
+</div>
 
-<table>
-<thead><tr><th>Pipeline Stage</th><th>Tracked in</th><th>Key Metric</th></tr></thead>
-<tr><td>Lead (ad form / outbound)</td><td>HubSpot + Google/Meta</td><td>Contact rate, qualification rate</td></tr>
-<tr><td>Webinar Registered</td><td>Zoom + HubSpot</td><td>Registrations by source (UTMs)</td></tr>
-<tr><td>Webinar Attended</td><td>Zoom → HubSpot sync</td><td>Show-up rate</td></tr>
-<tr><td>Community Member</td><td>Facebook Group → HubSpot</td><td>Conversion to next webinar</td></tr>
-<tr><td>Opportunity</td><td>HubSpot</td><td>Pipeline value</td></tr>
-<tr><td>Launch Box Customer</td><td>HubSpot</td><td>Revenue, source attribution</td></tr>
-</table>
+<!-- ==================== BUDGET TAB ==================== -->
+<div id="tab-budget" class="tab-content">
 
-<p>Target: configured by end of April. Operational for May webinar cycle.</p>
-
-<h2>8. Budget Reallocation</h2>
+<h2>Budget Reallocation</h2>
 
 <table>
 <thead><tr><th>Campaign</th><th>Current</th><th>Proposed</th><th>Change</th></tr></thead>
-<tr><td>Meta lead gen (instant/LP)</td><td>$100/day</td><td style="color:#CC0000">$0</td><td>Cut — tested, didn't work</td></tr>
+<tr><td>Meta lead gen (instant/LP)</td><td>$100/day</td><td style="color:#CC0000">$0</td><td>Cut — tested both approaches, didn't work</td></tr>
 <tr><td>Google Ads (Search + lead form)</td><td>$0</td><td style="color:#B3C234;font-weight:600">$50/day</td><td>New — demand capture</td></tr>
 <tr><td>Webinar Conversions (Meta)</td><td>$40/day</td><td style="color:#B3C234;font-weight:600">$80/day</td><td>+100% — our sales engine</td></tr>
 <tr><td>Boosted organic (Meta)</td><td>$0</td><td style="color:#B3C234;font-weight:600">$15/day</td><td>New — build retarget pool</td></tr>
@@ -639,13 +469,30 @@ li{margin:3px 0}
 
 <p><strong>The shift:</strong> Meta = demand creation (webinar, engagement, boosting, retargeting). Google = demand capture (direct leads where search intent exists). Each platform does what it does best.</p>
 
-<h2>9. Google Ads — Phased Approach</h2>
+<h3>Budget by funnel stage</h3>
+<div class="two-col">
+<div>
 <table>
-<thead><tr><th>Phase</th><th>When</th><th>What</th></tr></thead>
-<tr><td style="color:#B3C234;font-weight:600">Phase 1</td><td>Now (April)</td><td>Search + lead form for high-intent keywords. Display/Video retargeting only. Track contact rate vs Meta.</td></tr>
-<tr><td>Phase 2</td><td>May</td><td>Add branded search ("StealthEnomics", "45-day business launch"). Cheap ($1-3/click), captures demand we created on Meta.</td></tr>
-<tr><td>Phase 3</td><td>June+</td><td>Test broader non-branded keywords if search volume justifies. CPCs run $15-40 in B2B — LP must convert well first.</td></tr>
+<thead><tr><th colspan="2">Meta — $135/day</th></tr></thead>
+<tr><td>Webinar Conversions</td><td style="text-align:right;font-weight:600;color:#B3C234">$80/day</td></tr>
+<tr><td>Boost best organic</td><td style="text-align:right">$15/day</td></tr>
+<tr><td>Retargeting</td><td style="text-align:right">$15/day</td></tr>
+<tr><td>Engagement (2 campaigns)</td><td style="text-align:right">$25/day</td></tr>
 </table>
+</div>
+<div>
+<table>
+<thead><tr><th colspan="2">Google — $50/day</th></tr></thead>
+<tr><td>Search + lead form</td><td style="text-align:right;font-weight:600;color:#B3C234">$50/day</td></tr>
+<tr><td style="color:#6F90C8;font-size:11px" colspan="2">Higher-intent leads actively searching for services</td></tr>
+</table>
+</div>
+</div>
+
+</div>
+
+<!-- ==================== TEAM & FOCUS TAB ==================== -->
+<div id="tab-team" class="tab-content">
 
 <h2>Weekly Rhythm</h2>
 <table>
@@ -658,18 +505,17 @@ li{margin:3px 0}
 </table>
 
 <h2>A Note on Focus</h2>
-
-<p>This plan is designed for a <strong>2-person team</strong> (~12-16 hours/week recurring + 12-16 hours setup in weeks 1-2).</p>
+<p>This plan is designed for a <strong>2-person team</strong> (~12-16 hours/week recurring + 12-16 hours setup in Phase 1).</p>
 
 <div class="two-col">
 <div>
 <h3 style="color:#B3C234">What we commit to</h3>
 <ul>
-<li>SMB landing page optimization (Week 1)</li>
+<li>SMB landing page optimization (Phase 1)</li>
 <li>Chris's LinkedIn 3x/week (test) — LinkedIn-native formats</li>
-<li>Company LinkedIn 5x/week (Beverly)</li>
-<li>YouTube daily — Opus Clip webinar cuts + product showcases (Beverly)</li>
-<li>Facebook + Instagram 3x/week each (repurposed from LI + YT — no original creative)</li>
+<li>Company LinkedIn 5x/week (Beverly) — LinkedIn-native formats</li>
+<li>YouTube daily — Opus Clip + product showcases + reach (Beverly)</li>
+<li>FB + IG 3x/week each (repurposed — no original creative)</li>
 <li>Community 3x/week + growth hacks (email, retargeting, CTAs)</li>
 <li>Free Diagnostic as alternative CTA on 20% of content</li>
 <li>Boost best organic post weekly</li>
@@ -683,7 +529,7 @@ li{margin:3px 0}
 <div>
 <h3 style="color:#CC0000">What we're NOT doing</h3>
 <ul>
-<li>Instagram native content (repurpose from FB/YT)</li>
+<li>Original Facebook/Instagram content (repurpose only)</li>
 <li>Friday Facts or low-performing formats</li>
 <li>Cross-posting identical copy across platforms</li>
 <li>Meta direct lead gen (tested, didn't work)</li>
@@ -697,11 +543,24 @@ li{margin:3px 0}
 <p>The biggest risk isn't the strategy — it's <strong>scope creep</strong>. Every platform or request added mid-month takes time directly from this funnel. If scope expands, we should revisit the targets together.</p>
 </div>
 
+</div>
+
+<!-- FOOTER -->
 <div class="footer">
 StealthEnomics — 30-Day Marketing Strategy &nbsp;|&nbsp; April 8 – May 7, 2026 &nbsp;|&nbsp; Prepared by Marina Scheffer de Araujo
 </div>
 
 </div>
+
+<script>
+function showTab(id){
+  document.querySelectorAll('.tab-content').forEach(function(t){t.classList.remove('active')});
+  document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active')});
+  document.getElementById('tab-'+id).classList.add('active');
+  event.target.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
 
 </body>
 </html>
