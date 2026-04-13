@@ -215,54 +215,46 @@ select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%
 </div>
 
 <script>
-var BLOB_ID = '019d8758-728b-7894-92ab-6582184f66a6';
-var BLOB_URL = 'https://jsonblob.com/api/jsonBlob/' + BLOB_ID;
+var SCRIPT_URL = '';
 var linkHistory = [];
 var modalTarget = '';
-var historyLoaded = false;
 
-// Load history from cloud
+// Load history
 function loadHistory(){
-  document.getElementById('historyContainer').innerHTML = '<div class="empty-state">Loading history...</div>';
-  fetch(BLOB_URL, {headers:{'Accept':'application/json'}})
-    .then(function(r){ return r.json(); })
-    .then(function(data){
-      linkHistory = data.links || [];
-      historyLoaded = true;
-      renderHistory();
-    })
-    .catch(function(e){
-      console.error('Failed to load from cloud:', e);
-      // Fallback to localStorage
-      try { linkHistory = JSON.parse(localStorage.getItem('se_utm_history') || '[]'); } catch(x){}
-      historyLoaded = true;
-      renderHistory();
-    });
+  // Load from localStorage
+  try { linkHistory = JSON.parse(localStorage.getItem('se_utm_history') || '[]'); } catch(e){ linkHistory = []; }
+
+  // Also try loading from shared cloud file
+  if(SCRIPT_URL){
+    fetch(SCRIPT_URL + '?action=get')
+      .then(function(r){ return r.json(); })
+      .then(function(data){
+        if(data.links && data.links.length > linkHistory.length){
+          linkHistory = data.links;
+          try { localStorage.setItem('se_utm_history', JSON.stringify(linkHistory)); } catch(e){}
+        }
+        renderHistory();
+      })
+      .catch(function(){ renderHistory(); });
+  } else {
+    renderHistory();
+  }
 }
 
-// Save history to cloud
+// Save history
 function saveHistory(){
-  // Save to localStorage as backup
   try { localStorage.setItem('se_utm_history', JSON.stringify(linkHistory)); } catch(e){}
-  // Save to cloud
-  var saveData = JSON.stringify({links: linkHistory});
-  fetch(BLOB_URL, {
-    method: 'PUT',
-    mode: 'cors',
-    headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-    body: saveData
-  })
-  .then(function(r){
-    if(!r.ok) throw new Error('HTTP ' + r.status);
-    document.getElementById('saveStatus').textContent = 'Saved to cloud';
-    document.getElementById('saveStatus').style.color = '#B3C234';
-    setTimeout(function(){ document.getElementById('saveStatus').textContent = ''; }, 2000);
-  })
-  .catch(function(e){
-    console.error('Failed to save to cloud:', e);
-    document.getElementById('saveStatus').textContent = 'Save failed - stored locally only';
-    document.getElementById('saveStatus').style.color = '#ff6666';
-  });
+  document.getElementById('saveStatus').textContent = 'Saved';
+  document.getElementById('saveStatus').style.color = '#B3C234';
+  setTimeout(function(){ document.getElementById('saveStatus').textContent = ''; }, 2000);
+
+  if(SCRIPT_URL){
+    fetch(SCRIPT_URL + '?action=save', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({links: linkHistory})
+    }).catch(function(){});
+  }
 }
 
 loadHistory();
