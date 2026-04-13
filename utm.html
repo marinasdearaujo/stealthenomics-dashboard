@@ -214,14 +214,44 @@ select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%
 </div>
 
 <script>
+var BLOB_ID = '019d8758-728b-7894-92ab-6582184f66a6';
+var BLOB_URL = 'https://jsonblob.com/api/jsonBlob/' + BLOB_ID;
 var linkHistory = [];
-try {
-  linkHistory = JSON.parse(localStorage.getItem('se_utm_history') || '[]');
-} catch(e) {
-  console.error('Failed to load history from localStorage:', e);
-  linkHistory = [];
-}
 var modalTarget = '';
+var historyLoaded = false;
+
+// Load history from cloud
+function loadHistory(){
+  document.getElementById('historyContainer').innerHTML = '<div class="empty-state">Loading history...</div>';
+  fetch(BLOB_URL, {headers:{'Accept':'application/json'}})
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      linkHistory = data.links || [];
+      historyLoaded = true;
+      renderHistory();
+    })
+    .catch(function(e){
+      console.error('Failed to load from cloud:', e);
+      // Fallback to localStorage
+      try { linkHistory = JSON.parse(localStorage.getItem('se_utm_history') || '[]'); } catch(x){}
+      historyLoaded = true;
+      renderHistory();
+    });
+}
+
+// Save history to cloud
+function saveHistory(){
+  // Save to localStorage as backup
+  try { localStorage.setItem('se_utm_history', JSON.stringify(linkHistory)); } catch(e){}
+  // Save to cloud
+  fetch(BLOB_URL, {
+    method: 'PUT',
+    headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+    body: JSON.stringify({links: linkHistory})
+  }).catch(function(e){ console.error('Failed to save to cloud:', e); });
+}
+
+loadHistory();
 
 // Base URL toggle
 document.getElementById('baseUrl').addEventListener('change', function(){
@@ -284,13 +314,8 @@ function generateLink(){
     date: new Date().toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric', hour:'2-digit', minute:'2-digit'})
   };
   linkHistory.unshift(entry);
-  try {
-    localStorage.setItem('se_utm_history', JSON.stringify(linkHistory));
-  } catch(e) {
-    console.error('Failed to save to localStorage:', e);
-  }
+  saveHistory();
   renderHistory();
-  console.log('Link generated and saved. History length:', linkHistory.length);
 
   // Add custom content to dropdown if new
   if(contentCustom){
@@ -334,7 +359,7 @@ function shortenLink(){
       // Update last history entry with short URL
       if(linkHistory.length > 0){
         linkHistory[0].shortUrl = shortUrl;
-        localStorage.setItem('se_utm_history', JSON.stringify(linkHistory));
+        saveHistory();
         renderHistory();
       }
     })
@@ -415,7 +440,7 @@ function shortenHistoryLink(idx, btn){
     .then(function(r){ return r.text(); })
     .then(function(shortUrl){
       linkHistory[idx].shortUrl = shortUrl;
-      localStorage.setItem('se_utm_history', JSON.stringify(linkHistory));
+      saveHistory();
       renderHistory();
     })
     .catch(function(){
@@ -440,7 +465,7 @@ function exportCSV(){
 function clearHistory(){
   if(confirm('Clear all link history? This cannot be undone.')){
     linkHistory = [];
-    localStorage.setItem('se_utm_history', JSON.stringify(linkHistory));
+    saveHistory();
     renderHistory();
   }
 }
