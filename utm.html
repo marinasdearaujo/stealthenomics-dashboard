@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StealthEnomics — UTM Generator</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;500&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Roboto',sans-serif;background:#001A35;color:#F1F7FB;min-height:100vh;padding:20px}
+.container{max-width:900px;margin:0 auto}
+h1{font-family:'Montserrat',sans-serif;font-size:24px;font-weight:800;color:#B3C234;margin-bottom:4px;text-align:center}
+h2{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:700;color:#1975BB;margin:20px 0 10px;border-bottom:2px solid #1975BB30;padding-bottom:6px}
+.subtitle{font-size:13px;color:#6F90C8;text-align:center;margin-bottom:20px}
+label{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;color:#90BFED;text-transform:uppercase;letter-spacing:0.5px;display:block;margin-bottom:4px}
+select,input[type="text"]{width:100%;padding:10px 12px;background:#0d2847;border:1px solid #1a3a5c;border-radius:6px;color:#F1F7FB;font-size:14px;font-family:'Roboto',sans-serif;outline:none;transition:border 0.2s}
+select:focus,input:focus{border-color:#1975BB}
+select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%2390BFED'%3E%3Cpath d='M6 9L1 4h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.form-full{margin-bottom:14px}
+.hint{font-size:10px;color:#6F90C8;margin-top:2px}
+.btn{font-family:'Montserrat',sans-serif;font-weight:700;padding:12px 24px;border:none;border-radius:6px;cursor:pointer;font-size:13px;transition:all 0.2s}
+.btn-primary{background:#B3C234;color:#001A35;width:100%}
+.btn-primary:hover{background:#c8d84a;transform:translateY(-1px)}
+.btn-copy{background:#1975BB;color:white;padding:8px 16px;font-size:11px}
+.btn-copy:hover{background:#2185cb}
+.btn-clear{background:#CC000030;color:#ff9999;padding:8px 16px;font-size:11px}
+.btn-clear:hover{background:#CC000050}
+.btn-add{background:#0e9aa730;color:#7dd8e0;padding:6px 12px;font-size:10px;border-radius:4px}
+.btn-add:hover{background:#0e9aa750}
+.result-box{background:#0d2847;border:2px solid #B3C234;border-radius:8px;padding:16px;margin:16px 0;display:none}
+.result-url{font-family:'Consolas',monospace;font-size:13px;color:#B3C234;word-break:break-all;line-height:1.6}
+.result-actions{display:flex;gap:8px;margin-top:10px}
+.copied{background:#B3C234 !important;color:#001A35 !important}
+.history-table{width:100%;border-collapse:collapse;margin:10px 0;font-size:11px}
+.history-table th{background:#0d2847;color:#90BFED;font-family:'Montserrat',sans-serif;font-weight:600;text-align:left;padding:8px;font-size:10px;text-transform:uppercase}
+.history-table td{padding:6px 8px;border-bottom:1px solid #1a2a44;color:#C8D8E8;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.history-table tr:hover td{background:#0d284730}
+.tag{display:inline-block;padding:2px 6px;border-radius:3px;font-size:9px;font-weight:600;font-family:'Montserrat',sans-serif}
+.tag-paid{background:#1975BB30;color:#90BFED}
+.tag-organic{background:#0e9aa730;color:#7dd8e0}
+.tag-email{background:#fbbf2430;color:#fde68a}
+.tag-sms{background:#e1306c30;color:#f5a0bc}
+.tag-outbound{background:#B3C23430;color:#d4e87a}
+.empty-state{text-align:center;padding:30px;color:#6F90C8;font-size:12px}
+.add-modal{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.7);z-index:100;justify-content:center;align-items:center}
+.add-modal.show{display:flex}
+.modal-box{background:#0d2847;border:1px solid #1a3a5c;border-radius:10px;padding:24px;width:400px;max-width:90%}
+.modal-box h3{font-family:'Montserrat',sans-serif;color:#B3C234;margin-bottom:12px;font-size:14px}
+.error{color:#ff6666;font-size:11px;margin-top:4px;display:none}
+.warning{background:#CC000015;border:1px solid #CC000040;border-radius:6px;padding:10px;margin:10px 0;font-size:11px;color:#ff9999}
+.search-filter{margin-bottom:10px}
+.search-filter input{font-size:12px;padding:8px}
+.export-btn{float:right;margin-top:-30px}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>UTM Link Generator</h1>
+<p class="subtitle">StealthEnomics — Generate, copy, and track all your UTM links in one place</p>
+
+<!-- GENERATOR -->
+<div style="background:#0a1f37;border-radius:10px;padding:20px;margin-bottom:20px">
+<h2 style="margin-top:0">Generate a Link</h2>
+
+<div class="form-full">
+  <label>Base URL (the page you're linking to)</label>
+  <select id="baseUrl">
+    <option value="https://stealthenomics.com/webinar">stealthenomics.com/webinar (Webinar registration)</option>
+    <option value="https://www.facebook.com/groups/stealthenomicsfoundershub">Facebook Community Group</option>
+    <option value="https://stealthenomics.com/free-diagnostic">stealthenomics.com/free-diagnostic (Diagnostic)</option>
+    <option value="https://stealthenomics.com/smb-launch-box">stealthenomics.com/smb-launch-box (Launch Box)</option>
+    <option value="https://stealthenomics.com/business-performance-center">stealthenomics.com/business-performance-center (BPC)</option>
+    <option value="custom">Custom URL...</option>
+  </select>
+  <input type="text" id="customUrl" placeholder="Enter custom URL..." style="display:none;margin-top:6px">
+</div>
+
+<div class="form-grid">
+  <div>
+    <label>utm_source <span style="color:#6F90C8;font-weight:400">(where is the link?)</span></label>
+    <select id="source">
+      <option value="">Select source...</option>
+      <option value="facebook">facebook (FB page/ads)</option>
+      <option value="instagram">instagram</option>
+      <option value="linkedin">linkedin (company page)</option>
+      <option value="linkedin-chris">linkedin-chris (Chris personal)</option>
+      <option value="youtube">youtube</option>
+      <option value="email">email (HubSpot)</option>
+      <option value="sms">sms</option>
+      <option value="community">community (FB group)</option>
+      <option value="google">google (Google Ads)</option>
+    </select>
+  </div>
+  <div>
+    <label>utm_medium <span style="color:#6F90C8;font-weight:400">(paid or organic?)</span></label>
+    <select id="medium">
+      <option value="">Select medium...</option>
+      <option value="paid">paid (ads, boosts)</option>
+      <option value="organic">organic (non-paid posts)</option>
+      <option value="outbound">outbound (DMs)</option>
+      <option value="email">email</option>
+      <option value="sms">sms</option>
+    </select>
+  </div>
+</div>
+
+<div class="form-grid">
+  <div>
+    <label>utm_campaign <span style="color:#6F90C8;font-weight:400">(which initiative?)</span></label>
+    <select id="campaign">
+      <option value="">Select campaign...</option>
+      <option value="webinar-apr-2026">webinar-apr-2026</option>
+      <option value="webinar-may-2026">webinar-may-2026</option>
+      <option value="community-growth">community-growth</option>
+      <option value="diagnostic">diagnostic</option>
+      <option value="launch-box">launch-box</option>
+      <option value="bpc">bpc</option>
+    </select>
+    <div style="margin-top:4px"><button class="btn btn-add" onclick="showAddModal('campaign')">+ Add new campaign</button></div>
+  </div>
+  <div>
+    <label>utm_content <span style="color:#6F90C8;font-weight:400">(which specific post? optional)</span></label>
+    <select id="content">
+      <option value="">Select or type below...</option>
+      <option value="ad-webinar-v1">ad-webinar-v1</option>
+      <option value="ad-retarget-v1">ad-retarget-v1</option>
+      <option value="boost-week1">boost-week1</option>
+      <option value="boost-week2">boost-week2</option>
+      <option value="chris-post1">chris-post1</option>
+      <option value="chris-post2">chris-post2</option>
+      <option value="chris-post3">chris-post3</option>
+      <option value="company-post">company-post</option>
+      <option value="blast-1">blast-1</option>
+      <option value="blast-2-nonopeners">blast-2-nonopeners</option>
+      <option value="reminder-3d">reminder-3d</option>
+      <option value="reminder-1d">reminder-1d</option>
+      <option value="reminder-3h">reminder-3h</option>
+      <option value="dm-cold">dm-cold</option>
+      <option value="dm-warm">dm-warm</option>
+      <option value="sms-cold">sms-cold</option>
+      <option value="sms-warm">sms-warm</option>
+      <option value="sms-reminder">sms-reminder</option>
+      <option value="bio-link">bio-link</option>
+      <option value="description">description (YouTube)</option>
+      <option value="group-post">group-post</option>
+    </select>
+    <input type="text" id="customContent" placeholder="Or type custom content tag..." style="margin-top:6px;font-size:12px">
+    <div class="hint">Auto-formats: lowercase, spaces become hyphens</div>
+  </div>
+</div>
+
+<div class="form-full">
+  <label>Description <span style="color:#6F90C8;font-weight:400">(what is this link for? saved in history)</span></label>
+  <input type="text" id="description" placeholder="e.g., Chris LinkedIn post #1 about cancer/COO story">
+</div>
+
+<div id="validationError" class="error"></div>
+
+<button class="btn btn-primary" onclick="generateLink()">GENERATE LINK</button>
+
+<div id="resultBox" class="result-box">
+  <div id="resultUrl" class="result-url"></div>
+  <div class="result-actions">
+    <button class="btn btn-copy" id="copyBtn" onclick="copyLink()">Copy to clipboard</button>
+    <button class="btn btn-copy" onclick="copyShort()">Copy without UTMs (base only)</button>
+  </div>
+</div>
+</div>
+
+<!-- HISTORY -->
+<div style="background:#0a1f37;border-radius:10px;padding:20px">
+<div style="display:flex;justify-content:space-between;align-items:center">
+  <h2 style="margin-top:0;border:none;padding:0">Link History</h2>
+  <div style="display:flex;gap:8px">
+    <button class="btn btn-copy" onclick="exportCSV()">Export CSV</button>
+    <button class="btn btn-clear" onclick="clearHistory()">Clear all</button>
+  </div>
+</div>
+
+<div class="search-filter">
+  <input type="text" id="searchHistory" placeholder="Search history... (by source, campaign, description)" oninput="renderHistory()">
+</div>
+
+<div id="historyContainer">
+  <div class="empty-state">No links generated yet. Create your first one above.</div>
+</div>
+</div>
+
+</div>
+
+<!-- ADD MODAL -->
+<div id="addModal" class="add-modal">
+<div class="modal-box">
+  <h3 id="modalTitle">Add New Campaign</h3>
+  <label>Value (lowercase, hyphens only)</label>
+  <input type="text" id="modalInput" placeholder="e.g., webinar-jun-2026">
+  <div class="hint" style="margin-bottom:12px">Will auto-format: lowercase, spaces to hyphens, remove special characters</div>
+  <div style="display:flex;gap:8px">
+    <button class="btn btn-primary" style="width:auto;padding:10px 20px" onclick="addOption()">Add</button>
+    <button class="btn btn-clear" onclick="closeModal()">Cancel</button>
+  </div>
+</div>
+</div>
+
+<script>
+var history = JSON.parse(localStorage.getItem('se_utm_history') || '[]');
+var modalTarget = '';
+
+// Base URL toggle
+document.getElementById('baseUrl').addEventListener('change', function(){
+  document.getElementById('customUrl').style.display = this.value === 'custom' ? 'block' : 'none';
+});
+
+// Auto-suggest medium based on source
+document.getElementById('source').addEventListener('change', function(){
+  var med = document.getElementById('medium');
+  var map = {
+    'facebook': '', 'instagram': '', 'linkedin': '', 'linkedin-chris': '',
+    'youtube': 'organic', 'email': 'email', 'sms': 'sms',
+    'community': 'organic', 'google': 'paid'
+  };
+  if(map[this.value]) med.value = map[this.value];
+});
+
+function sanitize(str){
+  return str.toLowerCase().replace(/\s+/g,'-').replace(/[^a-z0-9\-]/g,'');
+}
+
+function generateLink(){
+  var baseSelect = document.getElementById('baseUrl');
+  var base = baseSelect.value === 'custom' ? document.getElementById('customUrl').value : baseSelect.value;
+  var source = document.getElementById('source').value;
+  var medium = document.getElementById('medium').value;
+  var campaign = document.getElementById('campaign').value;
+  var contentSelect = document.getElementById('content').value;
+  var contentCustom = document.getElementById('customContent').value.trim();
+  var content = contentCustom ? sanitize(contentCustom) : contentSelect;
+  var desc = document.getElementById('description').value.trim();
+  var err = document.getElementById('validationError');
+
+  // Validation
+  if(!base){err.textContent='Please select or enter a base URL.';err.style.display='block';return;}
+  if(!source){err.textContent='Please select a source.';err.style.display='block';return;}
+  if(!medium){err.textContent='Please select a medium.';err.style.display='block';return;}
+  if(!campaign){err.textContent='Please select a campaign.';err.style.display='block';return;}
+  err.style.display='none';
+
+  // Build URL
+  var sep = base.indexOf('?') > -1 ? '&' : '?';
+  var url = base + sep + 'utm_source=' + source + '&utm_medium=' + medium + '&utm_campaign=' + campaign;
+  if(content) url += '&utm_content=' + content;
+
+  // Show result
+  document.getElementById('resultUrl').textContent = url;
+  document.getElementById('resultBox').style.display = 'block';
+
+  // Save to history
+  var entry = {
+    url: url,
+    base: base,
+    source: source,
+    medium: medium,
+    campaign: campaign,
+    content: content || '-',
+    description: desc || '-',
+    date: new Date().toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric', hour:'2-digit', minute:'2-digit'})
+  };
+  history.unshift(entry);
+  localStorage.setItem('se_utm_history', JSON.stringify(history));
+  renderHistory();
+
+  // Add custom content to dropdown if new
+  if(contentCustom){
+    var sel = document.getElementById('content');
+    var val = sanitize(contentCustom);
+    var exists = false;
+    for(var i=0;i<sel.options.length;i++){if(sel.options[i].value===val)exists=true;}
+    if(!exists){
+      var opt = document.createElement('option');
+      opt.value = val;
+      opt.textContent = val;
+      sel.appendChild(opt);
+    }
+    document.getElementById('customContent').value = '';
+  }
+}
+
+function copyLink(){
+  var url = document.getElementById('resultUrl').textContent;
+  navigator.clipboard.writeText(url);
+  var btn = document.getElementById('copyBtn');
+  btn.textContent = 'Copied!';
+  btn.classList.add('copied');
+  setTimeout(function(){btn.textContent='Copy to clipboard';btn.classList.remove('copied');},2000);
+}
+
+function copyShort(){
+  var baseSelect = document.getElementById('baseUrl');
+  var base = baseSelect.value === 'custom' ? document.getElementById('customUrl').value : baseSelect.value;
+  navigator.clipboard.writeText(base);
+}
+
+function mediumTag(m){
+  var cls = {'paid':'tag-paid','organic':'tag-organic','email':'tag-email','sms':'tag-sms','outbound':'tag-outbound'};
+  return '<span class="tag '+(cls[m]||'tag-organic')+'">'+m+'</span>';
+}
+
+function renderHistory(){
+  var container = document.getElementById('historyContainer');
+  var search = document.getElementById('searchHistory').value.toLowerCase();
+  var filtered = history.filter(function(h){
+    if(!search) return true;
+    return (h.source+' '+h.campaign+' '+h.description+' '+h.content+' '+h.medium).toLowerCase().indexOf(search) > -1;
+  });
+
+  if(filtered.length === 0){
+    container.innerHTML = '<div class="empty-state">'+(search?'No matches found.':'No links generated yet. Create your first one above.')+'</div>';
+    return;
+  }
+
+  var html = '<table class="history-table"><thead><tr><th>Date</th><th>Source</th><th>Medium</th><th>Campaign</th><th>Content</th><th>Description</th><th>Actions</th></tr></thead><tbody>';
+  filtered.forEach(function(h, i){
+    html += '<tr>';
+    html += '<td style="font-size:10px;white-space:nowrap">'+h.date+'</td>';
+    html += '<td><strong>'+h.source+'</strong></td>';
+    html += '<td>'+mediumTag(h.medium)+'</td>';
+    html += '<td>'+h.campaign+'</td>';
+    html += '<td style="color:#6F90C8">'+h.content+'</td>';
+    html += '<td>'+h.description+'</td>';
+    html += '<td><button class="btn btn-copy" style="padding:4px 8px;font-size:9px" onclick="copyHistoryLink('+i+')">Copy</button></td>';
+    html += '</tr>';
+  });
+  html += '</tbody></table>';
+  container.innerHTML = html;
+}
+
+function copyHistoryLink(idx){
+  var filtered = history;
+  var search = document.getElementById('searchHistory').value.toLowerCase();
+  if(search){
+    filtered = history.filter(function(h){
+      return (h.source+' '+h.campaign+' '+h.description+' '+h.content+' '+h.medium).toLowerCase().indexOf(search) > -1;
+    });
+  }
+  navigator.clipboard.writeText(filtered[idx].url);
+}
+
+function exportCSV(){
+  if(history.length === 0) return;
+  var csv = 'Date,Source,Medium,Campaign,Content,Description,URL\n';
+  history.forEach(function(h){
+    csv += '"'+h.date+'","'+h.source+'","'+h.medium+'","'+h.campaign+'","'+h.content+'","'+h.description+'","'+h.url+'"\n';
+  });
+  var blob = new Blob([csv], {type:'text/csv'});
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'utm-history-stealthenomics.csv';
+  a.click();
+}
+
+function clearHistory(){
+  if(confirm('Clear all link history? This cannot be undone.')){
+    history = [];
+    localStorage.setItem('se_utm_history', JSON.stringify(history));
+    renderHistory();
+  }
+}
+
+function showAddModal(target){
+  modalTarget = target;
+  document.getElementById('modalTitle').textContent = 'Add New ' + (target === 'campaign' ? 'Campaign' : 'Content Tag');
+  document.getElementById('modalInput').value = '';
+  document.getElementById('addModal').classList.add('show');
+  document.getElementById('modalInput').focus();
+}
+
+function closeModal(){
+  document.getElementById('addModal').classList.remove('show');
+}
+
+function addOption(){
+  var val = sanitize(document.getElementById('modalInput').value);
+  if(!val) return;
+  var sel = document.getElementById(modalTarget);
+  var exists = false;
+  for(var i=0;i<sel.options.length;i++){if(sel.options[i].value===val)exists=true;}
+  if(!exists){
+    var opt = document.createElement('option');
+    opt.value = val;
+    opt.textContent = val;
+    sel.appendChild(opt);
+  }
+  sel.value = val;
+  closeModal();
+}
+
+// Close modal on outside click
+document.getElementById('addModal').addEventListener('click', function(e){
+  if(e.target === this) closeModal();
+});
+
+// Init
+renderHistory();
+</script>
+
+</body>
+</html>
