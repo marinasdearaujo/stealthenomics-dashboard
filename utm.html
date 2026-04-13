@@ -214,7 +214,7 @@ select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%
 </div>
 
 <script>
-var history = JSON.parse(localStorage.getItem('se_utm_history') || '[]');
+var linkHistory = JSON.parse(localStorage.getItem('se_utm_history') || '[]');
 var modalTarget = '';
 
 // Base URL toggle
@@ -277,8 +277,8 @@ function generateLink(){
     description: desc || '-',
     date: new Date().toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric', hour:'2-digit', minute:'2-digit'})
   };
-  history.unshift(entry);
-  localStorage.setItem('se_utm_history', JSON.stringify(history));
+  linkHistory.unshift(entry);
+  localStorage.setItem('se_utm_history', JSON.stringify(linkHistory));
   renderHistory();
 
   // Add custom content to dropdown if new
@@ -321,9 +321,9 @@ function shortenLink(){
       btn.disabled = false;
 
       // Update last history entry with short URL
-      if(history.length > 0){
-        history[0].shortUrl = shortUrl;
-        localStorage.setItem('se_utm_history', JSON.stringify(history));
+      if(linkHistory.length > 0){
+        linkHistory[0].shortUrl = shortUrl;
+        localStorage.setItem('se_utm_history', JSON.stringify(linkHistory));
         renderHistory();
       }
     })
@@ -351,7 +351,7 @@ function mediumTag(m){
 function renderHistory(){
   var container = document.getElementById('historyContainer');
   var search = document.getElementById('searchHistory').value.toLowerCase();
-  var filtered = history.filter(function(h){
+  var filtered = linkHistory.filter(function(h){
     if(!search) return true;
     return (h.source+' '+h.campaign+' '+h.description+' '+h.content+' '+h.medium).toLowerCase().indexOf(search) > -1;
   });
@@ -387,10 +387,10 @@ function renderHistory(){
 }
 
 function copyHistoryLink(idx, useShort){
-  var filtered = history;
+  var filtered = linkHistory;
   var search = document.getElementById('searchHistory').value.toLowerCase();
   if(search){
-    filtered = history.filter(function(h){
+    filtered = linkHistory.filter(function(h){
       return (h.source+' '+h.campaign+' '+h.description+' '+h.content+' '+h.medium).toLowerCase().indexOf(search) > -1;
     });
   }
@@ -400,11 +400,11 @@ function copyHistoryLink(idx, useShort){
 
 function shortenHistoryLink(idx, btn){
   btn.textContent = '...';
-  fetch('https://tinyurl.com/api-create.php?url=' + encodeURIComponent(history[idx].url))
+  fetch('https://tinyurl.com/api-create.php?url=' + encodeURIComponent(linkHistory[idx].url))
     .then(function(r){ return r.text(); })
     .then(function(shortUrl){
-      history[idx].shortUrl = shortUrl;
-      localStorage.setItem('se_utm_history', JSON.stringify(history));
+      linkHistory[idx].shortUrl = shortUrl;
+      localStorage.setItem('se_utm_history', JSON.stringify(linkHistory));
       renderHistory();
     })
     .catch(function(){
@@ -414,9 +414,9 @@ function shortenHistoryLink(idx, btn){
 }
 
 function exportCSV(){
-  if(history.length === 0) return;
+  if(linkHistory.length === 0) return;
   var csv = 'Date,Source,Medium,Campaign,Content,Description,URL\n';
-  history.forEach(function(h){
+  linkHistory.forEach(function(h){
     csv += '"'+h.date+'","'+h.source+'","'+h.medium+'","'+h.campaign+'","'+h.content+'","'+h.description+'","'+h.url+'"\n';
   });
   var blob = new Blob([csv], {type:'text/csv'});
@@ -428,8 +428,8 @@ function exportCSV(){
 
 function clearHistory(){
   if(confirm('Clear all link history? This cannot be undone.')){
-    history = [];
-    localStorage.setItem('se_utm_history', JSON.stringify(history));
+    linkHistory = [];
+    localStorage.setItem('se_utm_history', JSON.stringify(linkHistory));
     renderHistory();
   }
 }
