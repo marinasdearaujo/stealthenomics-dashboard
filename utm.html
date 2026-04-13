@@ -159,6 +159,7 @@ select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%
 <div id="validationError" class="error"></div>
 
 <button class="btn btn-primary" onclick="generateLink()">GENERATE LINK</button>
+<div id="saveStatus" style="text-align:center;font-size:11px;margin-top:6px;min-height:16px"></div>
 
 <div id="resultBox" class="result-box">
   <label style="margin-bottom:6px">Full UTM Link:</label>
@@ -244,11 +245,24 @@ function saveHistory(){
   // Save to localStorage as backup
   try { localStorage.setItem('se_utm_history', JSON.stringify(linkHistory)); } catch(e){}
   // Save to cloud
+  var saveData = JSON.stringify({links: linkHistory});
   fetch(BLOB_URL, {
     method: 'PUT',
+    mode: 'cors',
     headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-    body: JSON.stringify({links: linkHistory})
-  }).catch(function(e){ console.error('Failed to save to cloud:', e); });
+    body: saveData
+  })
+  .then(function(r){
+    if(!r.ok) throw new Error('HTTP ' + r.status);
+    document.getElementById('saveStatus').textContent = 'Saved to cloud';
+    document.getElementById('saveStatus').style.color = '#B3C234';
+    setTimeout(function(){ document.getElementById('saveStatus').textContent = ''; }, 2000);
+  })
+  .catch(function(e){
+    console.error('Failed to save to cloud:', e);
+    document.getElementById('saveStatus').textContent = 'Save failed - stored locally only';
+    document.getElementById('saveStatus').style.color = '#ff6666';
+  });
 }
 
 loadHistory();
