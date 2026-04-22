@@ -55,6 +55,7 @@ h1,h2,h3,.st,.kc .l,.tab{font-family:'Montserrat',sans-serif}
   <div class="tab" onclick="switchTab('ads',this)">Paid Ads</div>
   <div class="tab" onclick="switchTab('youtube',this)">YouTube</div>
   <div class="tab" onclick="switchTab('community',this)">Community</div>
+  <div class="tab" onclick="switchTab('webinar',this)">Webinar</div>
 </div>
 <div class="fil">
   <button class="fb ac" onclick="setR(this,'week')">This Week</button>
@@ -73,12 +74,13 @@ h1,h2,h3,.st,.kc .l,.tab{font-family:'Montserrat',sans-serif}
 <div class="tc" id="tab-ads"><div id="ch-ads"></div></div>
 <div class="tc" id="tab-youtube"><div id="ch-youtube"></div></div>
 <div class="tc" id="tab-community"><div id="ch-community"></div></div>
+<div class="tc" id="tab-webinar"><div id="ch-webinar"></div></div>
 </div>
 
 <script>
 var CL={fb:'#1877f2',ig:'#e1306c',li:'#0e9aa7',gr:'#B3C234',bl:'#1975BB',pd:'#fbbf24'};
 var MO=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-var D=null, charts=[], activeRange='week';
+var D=null, charts=[], activeRange='week', activeTab='overview';
 
 // ── Utility functions ──
 function pch(p,c){if(!p&&!c)return{t:'--',c:'fl'};if(p===0)return c>0?{t:'+'+c,c:'up'}:{t:'--',c:'fl'};var v=((c-p)/p*100).toFixed(0);return v>0?{t:'+'+v+'%',c:'up'}:v<0?{t:v+'%',c:'dn'}:{t:'0%',c:'fl'};}
@@ -90,18 +92,24 @@ function pcolor(p){return p==='Facebook'?CL.fb:p==='Instagram'?CL.ig:p==='YouTub
 
 // ── Tab switching ──
 function switchTab(t,el){
+  activeTab=t;
   document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
   document.querySelectorAll('.tc').forEach(x=>x.classList.remove('active'));
   if(el)el.classList.add('active');
   document.getElementById('tab-'+t).classList.add('active');
+  renderActiveTab();
+}
+function renderActiveTab(){
+  var t=activeTab;
   if(t==='ads'){try{renderAdsTab(document.getElementById('ch-ads'));}catch(e){document.getElementById('ch-ads').innerHTML='<p style="color:red">Error: '+e.message+'</p>';}}
   else if(t==='youtube'){try{renderYouTubeTab(document.getElementById('ch-youtube'));}catch(e){document.getElementById('ch-youtube').innerHTML='<p style="color:red">Error: '+e.message+'</p>';}}
   else if(t==='community'){try{renderCommunityTab(document.getElementById('ch-community'));}catch(e){document.getElementById('ch-community').innerHTML='<p style="color:red">Error: '+e.message+'</p>';}}
+  else if(t==='webinar'){try{renderWebinarTab(document.getElementById('ch-webinar'));}catch(e){document.getElementById('ch-webinar').innerHTML='<p style="color:red">Error: '+e.message+'</p>';}}
   else if(t!=='overview'){var pname={facebook:'Facebook',instagram:'Instagram',linkedin:'LinkedIn'}[t];if(pname){try{var r2=getRange();var fp2=r2?(D.all_posts||[]).filter(function(p){return p.date>=r2.s&&p.date<=r2.e;}):D.all_posts;renderChannelDetail(pname,document.getElementById('ch-'+t),fp2);}catch(e){document.getElementById('ch-'+t).innerHTML='<p style="color:red">Error: '+e.message+'</p>';}}}
 }
 
 // ── Date filtering ──
-function setR(el,r){document.querySelectorAll('.fil .fb').forEach(b=>b.classList.remove('ac'));el.classList.add('ac');activeRange=r;if(r==='custom'){document.getElementById('cdi').classList.add('vis');}else{document.getElementById('cdi').classList.remove('vis');}if(D)renderAll();}
+function setR(el,r){document.querySelectorAll('.fil .fb').forEach(b=>b.classList.remove('ac'));el.classList.add('ac');activeRange=r;if(r==='custom'){document.getElementById('cdi').classList.add('vis');}else{document.getElementById('cdi').classList.remove('vis');}if(D){renderAll();renderActiveTab();}}
 function toggleC(){document.getElementById('cdi').classList.toggle('vis');}
 function getRange(){
   var now=new Date();var s,e=now;
@@ -674,25 +682,22 @@ function renderChannelDetail(platform,container,filteredPosts){
 }
 
 // ── PAID ADS TAB ──
-function renderAdsTab(container){
+function renderAdsTab(container, forceMonth){
   if(!D)return;
   var adsMonthly=D.ads_monthly||{};
   var monthKeys=Object.keys(adsMonthly).sort();
   var drill=D.campaign_drill||{};
 
-  // Determine which month to show based on date filter
-  var range2=getRange();
-  var filterMonth=range2?range2.e.substring(0,7):null; // e.g. "2026-03"
-  var prevMonth=null;
-
-  // Find the matching month in data, or use latest
-  var currMonthKey=null,prevMonthKey=null;
-  if(filterMonth&&adsMonthly[filterMonth]){
-    currMonthKey=filterMonth;
-  }else if(monthKeys.length>0){
-    currMonthKey=monthKeys[monthKeys.length-1];
+  // Month selector — let user pick any month with data
+  var currMonthKey=forceMonth||null;
+  if(!currMonthKey){
+    // Default: try date filter, fallback to latest
+    var range2=getRange();
+    var filterMonth=range2?range2.e.substring(0,7):null;
+    if(filterMonth&&adsMonthly[filterMonth])currMonthKey=filterMonth;
+    else if(monthKeys.length>0)currMonthKey=monthKeys[monthKeys.length-1];
   }
-  // Previous month
+  var prevMonthKey=null;
   if(currMonthKey){
     var idx2=monthKeys.indexOf(currMonthKey);
     if(idx2>0)prevMonthKey=monthKeys[idx2-1];
@@ -701,7 +706,7 @@ function renderAdsTab(container){
   var camps=currMonthKey?adsMonthly[currMonthKey]:(D.campaigns||[]);
   var prevCamps=prevMonthKey?adsMonthly[prevMonthKey]:[];
 
-  if(camps.length===0){container.innerHTML='<p style="color:var(--dim);padding:20px">No campaign data for this period.</p>';return;}
+  if(camps.length===0&&!forceMonth){container.innerHTML='<p style="color:var(--dim);padding:20px">No campaign data for this period.</p>';return;}
 
   // Compute current period stats
   var totalSpend=0,totalImps=0,totalReach=0,totalClicks=0;
@@ -731,7 +736,14 @@ function renderAdsTab(container){
   var currLabel2=currMonthKey?MO[parseInt(currMonthKey.split('-')[1])-1]+' '+currMonthKey.split('-')[0]:'Current';
   var prevLabel2=prevMonthKey?MO[parseInt(prevMonthKey.split('-')[1])-1]+' '+prevMonthKey.split('-')[0]:'Previous';
 
-  var h='<h2 style="font-family:Montserrat;font-size:16px;margin-bottom:14px">&#128176; Paid Ads — '+currLabel2+'</h2>';
+  var h='<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px"><h2 style="font-family:Montserrat;font-size:16px">&#128176; Paid Ads — '+currLabel2+'</h2>';
+  h+='<div style="display:flex;gap:4px;align-items:center"><span style="font-size:10px;color:var(--dim);font-family:Montserrat;font-weight:600">PERIOD:</span>';
+  monthKeys.forEach(function(mk){
+    var mlbl=MO[parseInt(mk.split('-')[1])-1]+' '+mk.split('-')[0].slice(2);
+    var isActive=mk===currMonthKey;
+    h+='<button class="fb'+(isActive?' ac':'')+'" onclick="renderAdsTab(document.getElementById(\'ch-ads\'),\''+mk+'\')">'+mlbl+'</button>';
+  });
+  h+='</div></div>';
 
   // KPI cards with comparison
   h+='<div class="kg" style="grid-template-columns:repeat(4,1fr);margin-bottom:8px">';
@@ -1115,7 +1127,10 @@ function renderYouTubeTab(container){
   h+='<div class="cd" style="margin-bottom:14px"><h3>Top Performing Videos</h3>';
   h+='<table class="dt"><thead><tr><th>Video</th><th class="n">Views</th><th class="n">Watch Hours</th><th class="n">Subs Gained</th><th class="n">Impressions</th><th class="n">CTR%</th></tr></thead><tbody>';
   (yt.top_videos||[]).forEach(function(v){
-    h+='<tr><td style="font-size:9px"><a href="https://youtube.com/watch?v='+v.id+'" target="_blank" style="color:var(--al);text-decoration:none">'+v.title+'</a><br><span style="color:var(--dim);font-size:8px">'+v.date+'</span></td><td class="n">'+fnum(v.views)+'</td><td class="n">'+v.hours+'h</td><td class="n">'+v.subs+'</td><td class="n">'+fnum(v.impressions)+'</td><td class="n">'+v.ctr+'%</td></tr>';
+    var vDate=v.publish_date||v.date||'';
+    var vHours=(v.watch_hours||v.hours||0);
+    var vSubs=(v.subs_gained||v.subs||0);
+    h+='<tr><td style="font-size:9px"><a href="https://youtube.com/watch?v='+v.id+'" target="_blank" style="color:var(--al);text-decoration:none">'+v.title+'</a><br><span style="color:var(--dim);font-size:8px">'+vDate+'</span></td><td class="n">'+fnum(v.views)+'</td><td class="n">'+(typeof vHours==='number'?vHours.toFixed(1):vHours)+'h</td><td class="n">'+vSubs+'</td><td class="n">'+fnum(v.impressions)+'</td><td class="n">'+v.ctr+'%</td></tr>';
   });
   h+='</tbody></table></div>';
 
@@ -1127,11 +1142,12 @@ function renderYouTubeTab(container){
   // Charts
   var chOpts3={responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#90BFED',font:{size:9},padding:16}}},scales:{x:{ticks:{color:'#6F90C8',font:{size:8}},grid:{display:false}},y:{ticks:{color:'#6F90C8'},grid:{color:'#1a2a44'}}}};
 
-  // Daily views
-  if(yt.daily&&yt.daily.length>0){
+  // Daily views — filtered by date range
+  var filteredDaily=(yt.daily||[]).filter(function(d2){return d2.date>=range3.s&&d2.date<=range3.e;});
+  if(filteredDaily.length>0){
     new Chart(document.getElementById('yt-views'),{type:'line',data:{
-      labels:yt.daily.map(function(d2){return fdate(d2.date);}),
-      datasets:[{label:'Views',data:yt.daily.map(function(d2){return d2.views;}),borderColor:ytColor,backgroundColor:ytColor+'20',fill:true,tension:.3,pointRadius:2}]
+      labels:filteredDaily.map(function(d2){return fdate(d2.date);}),
+      datasets:[{label:'Views',data:filteredDaily.map(function(d2){return d2.views;}),borderColor:ytColor,backgroundColor:ytColor+'20',fill:true,tension:.3,pointRadius:2}]
     },options:{...chOpts3,plugins:{legend:{display:false}}}});
   }
 
@@ -1157,12 +1173,16 @@ function renderYouTubeTab(container){
 // ── COMMUNITY TAB ──
 function renderCommunityTab(container){
   var comm=D.community||{};
-  var members=comm.current_members||0;
-  var prevMembers=comm.prev_members||0;
-  var postsThisMonth=comm.posts_this_month||0;
+  var range4=getRange();
+  var allWeekly=comm.weekly||[];
+  // Filter weekly data by date range
+  var weeklyData=allWeekly.filter(function(w){return w.date>=range4.s&&w.date<=range4.e;});
+  if(weeklyData.length===0)weeklyData=allWeekly; // fallback to all if filter yields nothing
+  var members=weeklyData.length>0?weeklyData[weeklyData.length-1].members:(comm.current_members||0);
+  var prevMembers=weeklyData.length>1?weeklyData[0].members:(comm.prev_members||0);
+  var postsThisMonth=weeklyData.reduce(function(s,w){return s+(w.posts||0);},0);
   var postsPrevMonth=comm.posts_prev_month||0;
   var qualifiedLeads=comm.qualified_leads||0;
-  var weeklyData=comm.weekly||[];
 
   // Targets
   var target90=250;
@@ -1488,6 +1508,224 @@ function showDrillDown(campaignIdx){
 
   dd.style.display='block';
   dd.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+// ── Webinar Tab ──
+function renderWebinarTab(container){
+  var webinars=D.webinars||[];
+  if(webinars.length===0){container.innerHTML='<p style="color:var(--dim)">No webinar data yet.</p>';return;}
+
+  // Filter webinars by date range
+  var range5=getRange();
+  var filteredWebinars=webinars.filter(function(w){return w.date>=range5.s&&w.date<=range5.e;});
+  // If no webinars in range, show all with a note
+  var showAll=filteredWebinars.length===0;
+  var displayWebinars=showAll?webinars:filteredWebinars;
+
+  var h='<h2 style="font-family:Montserrat;font-size:16px;margin-bottom:14px">Webinar Performance</h2>';
+
+  if(showAll&&webinars.length>0){
+    h+='<div class="conc" style="margin-bottom:14px;font-size:11px">No webinars in the selected date range. Showing all webinars.</div>';
+  }
+
+  // Webinar selector (for future: multiple webinars)
+  h+='<div style="margin-bottom:14px;display:flex;gap:8px;align-items:center">';
+  h+='<label style="font-size:10px;color:var(--dim);font-family:Montserrat;font-weight:600;text-transform:uppercase;letter-spacing:1px">Select Webinar</label>';
+  h+='<select id="wb-select" onchange="renderWebinarDetail()" style="padding:5px 10px;border-radius:5px;border:1px solid var(--cb);background:var(--card);color:var(--text);font-size:11px;font-family:Roboto">';
+  displayWebinars.forEach(function(w,i){
+    h+='<option value="'+i+'" data-wid="'+w.id+'">['+w.type+'] '+w.title+' — '+fdate(w.date)+'</option>';
+  });
+  h+='</select></div>';
+  h+='<div id="wb-detail"></div>';
+  container.innerHTML=h;
+  // Store which webinars are displayed for renderWebinarDetail
+  window._displayWebinars=displayWebinars;
+  renderWebinarDetail();
+}
+
+function renderWebinarDetail(){
+  var webinars=window._displayWebinars||D.webinars||[];
+  var idx=document.getElementById('wb-select')?parseInt(document.getElementById('wb-select').value):0;
+  var w=webinars[idx];
+  if(!w)return;
+  var el=document.getElementById('wb-detail');
+  if(!el)return;
+
+  destroyCharts();
+
+  var attRate=w.total_registrations>0?(w.confirmed_attended/w.total_registrations*100).toFixed(0):0;
+  var regPct=w.targets.registrations>0?(w.total_registrations/w.targets.registrations*100).toFixed(0):0;
+  var attPct=w.targets.attendees>0?(w.confirmed_attended/w.targets.attendees*100).toFixed(0):0;
+  var smbRegRate=w.smb_list_size>0?((w.source_breakdown['SMB List Invite']||{}).registered||0)/w.smb_list_size*100:0;
+  var smbAttRate=(w.source_breakdown['SMB List Invite']||{}).registered>0?((w.source_breakdown['SMB List Invite']||{}).attended/(w.source_breakdown['SMB List Invite']||{}).registered*100).toFixed(0):0;
+  var adsAttRate=(w.source_breakdown['Ads']||{}).registered>0?((w.source_breakdown['Ads']||{}).attended/(w.source_breakdown['Ads']||{}).registered*100).toFixed(0):0;
+
+  var h='';
+
+  // Header info
+  h+='<div class="conc" style="margin-bottom:14px;font-size:11px">';
+  h+='<strong>'+w.title+'</strong> &mdash; '+fdate(w.date)+' at '+w.time+' | Host: '+w.host+' | Type: '+w.type;
+  h+='</div>';
+
+  // KPI Cards
+  h+='<div class="kg" style="grid-template-columns:repeat(6,1fr);margin-bottom:16px">';
+
+  // Registrations vs target
+  var regColor=parseInt(regPct)>=100?'var(--green)':'#fbbf24';
+  h+='<div class="kc" style="border-color:'+regColor+'"><div class="l">Registrations</div><div class="v">'+w.total_registrations+'</div>';
+  h+='<div style="margin-top:4px;height:6px;background:#1a2a44;border-radius:3px"><div style="width:'+Math.min(regPct,100)+'%;height:100%;background:'+regColor+';border-radius:3px"></div></div>';
+  h+='<div class="ch" style="color:var(--dim)">Target: '+w.targets.registrations+' | Stretch: '+w.targets.registrations_stretch+'</div></div>';
+
+  // Attendees vs target
+  var attColor=parseInt(attPct)>=100?'var(--green)':'#fbbf24';
+  h+='<div class="kc" style="border-color:'+attColor+'"><div class="l">Confirmed Attended</div><div class="v">'+w.confirmed_attended+'</div>';
+  h+='<div style="margin-top:4px;height:6px;background:#1a2a44;border-radius:3px"><div style="width:'+Math.min(attPct,100)+'%;height:100%;background:'+attColor+';border-radius:3px"></div></div>';
+  h+='<div class="ch" style="color:var(--dim)">Target: '+w.targets.attendees+' | Stretch: '+w.targets.attendees_stretch+'</div></div>';
+
+  // Attendance rate
+  h+='<div class="kc"><div class="l">Attendance Rate</div><div class="v">'+attRate+'%</div>';
+  h+='<div class="ch '+(parseInt(attRate)>=40?'up':'dn')+'">Industry avg: 40-50%</div></div>';
+
+  // Unique viewers (Zoom)
+  h+='<div class="kc"><div class="l">Unique Viewers (Zoom)</div><div class="v">'+w.unique_viewers+'</div>';
+  h+='<div class="ch" style="color:var(--dim)">Max concurrent: '+w.max_concurrent+'</div></div>';
+
+  // New leads acquired
+  var newLeads=(w.source_breakdown['Ads']||{}).registered||0;
+  h+='<div class="kc" style="border-color:var(--green)"><div class="l">New Leads (from Ads)</div><div class="v">'+newLeads+'</div>';
+  h+='<div class="ch" style="color:var(--dim)">Not previously in SMB list</div></div>';
+
+  // SMB conversion
+  h+='<div class="kc"><div class="l">SMB List Conversion</div><div class="v">'+smbRegRate.toFixed(1)+'%</div>';
+  h+='<div class="ch" style="color:var(--dim)">'+(w.source_breakdown['SMB List Invite']||{}).registered+' of '+w.smb_list_size+' registered</div></div>';
+
+  h+='</div>';
+
+  // Row: Source Attribution + Intent Breakdown + Registration Timeline
+  h+='<div class="sec"><div class="st">Source Attribution & Audience Quality</div>';
+  h+='<div class="g3" style="margin-bottom:14px">';
+
+  // Source Attribution chart
+  h+='<div class="cd"><h3>Registrations by Source</h3><div class="cc"><canvas id="wb-source"></canvas></div>';
+  h+='<div style="margin-top:8px;font-size:9px;color:var(--dim)">SMB List Invite attendance: <strong style="color:var(--green)">'+smbAttRate+'%</strong> | Ads attendance: <strong style="color:#fbbf24">'+adsAttRate+'%</strong></div></div>';
+
+  // Intent breakdown chart
+  h+='<div class="cd"><h3>Registrant Intent</h3><div class="cc"><canvas id="wb-intent"></canvas></div>';
+  h+='<div style="margin-top:8px;font-size:9px;color:var(--dim)">Higher intent = higher attendance rate</div></div>';
+
+  // Registration timeline
+  h+='<div class="cd"><h3>Registration Timeline</h3><div class="cc"><canvas id="wb-timeline"></canvas></div></div>';
+
+  h+='</div></div>';
+
+  // Attendee Table
+  h+='<div class="sec"><div class="st">Registrant Details</div>';
+  h+='<div class="cd">';
+  h+='<div style="display:flex;gap:8px;margin-bottom:10px">';
+  h+='<button class="fb ac" onclick="filterWbTable(\'all\',this)">All ('+w.total_registrations+')</button>';
+  h+='<button class="fb" onclick="filterWbTable(\'attended\',this)">Attended ('+w.confirmed_attended+')</button>';
+  h+='<button class="fb" onclick="filterWbTable(\'noshow\',this)">No-Show ('+(w.total_registrations-w.confirmed_attended)+')</button>';
+  h+='<button class="fb" onclick="filterWbTable(\'hot\',this)">Hot Leads</button>';
+  h+='</div>';
+  h+='<div style="max-height:400px;overflow-y:auto"><table class="dt" id="wb-table"><thead><tr>';
+  h+='<th>Name</th><th>Organization</th><th>Title</th><th>Intent</th><th>Source</th><th>Attended</th><th>Reg. Date</th>';
+  h+='</tr></thead><tbody>';
+
+  // Sort: attended+high-intent first
+  var stageOrder={'Ready to take action soon':0,'Comparing providers or approaches':1,'Actively researching solutions':2,'Just starting to explore this topic':3};
+  var sorted=w.registrants.slice().sort(function(a,b){
+    if(a.attended!==b.attended)return a.attended?-1:1;
+    return (stageOrder[a.stage]||9)-(stageOrder[b.stage]||9);
+  });
+
+  sorted.forEach(function(r){
+    var attBadge=r.attended?'<span style="color:var(--green);font-weight:700">Yes</span>':'<span style="color:var(--dim)">No</span>';
+    var stageShort=r.stage.replace('Just starting to explore this topic','Exploring').replace('Actively researching solutions','Researching').replace('Comparing providers or approaches','Comparing').replace('Ready to take action soon','Ready');
+    var stageColor=stageShort==='Ready'?'var(--green)':stageShort==='Comparing'?'#fbbf24':stageShort==='Researching'?'var(--blue)':'var(--dim)';
+    var srcColor=r.source==='SMB List Invite'?'var(--blue)':r.source==='Email Marketing'?'var(--ig)':'#fbbf24';
+    var isHot=(r.attended&&(r.stage==='Ready to take action soon'||r.stage==='Comparing providers or approaches'||r.stage==='Actively researching solutions'))||((!r.attended)&&(r.stage==='Ready to take action soon'||r.stage==='Comparing providers or approaches'));
+    h+='<tr data-attended="'+(r.attended?'yes':'no')+'" data-hot="'+(isHot?'yes':'no')+'">';
+    h+='<td>'+(isHot?'&#9733; ':'')+r.name+'</td>';
+    h+='<td>'+r.org+'</td>';
+    h+='<td>'+r.title+'</td>';
+    h+='<td><span style="color:'+stageColor+';font-weight:600">'+stageShort+'</span></td>';
+    h+='<td><span style="color:'+srcColor+'">'+r.source+'</span></td>';
+    h+='<td>'+attBadge+'</td>';
+    h+='<td>'+fdate(r.reg_date)+'</td>';
+    h+='</tr>';
+  });
+  h+='</tbody></table></div></div></div>';
+
+  // Tracking Improvements
+  if(w.tracking_improvements&&w.tracking_improvements.length>0){
+    h+='<div class="sec"><div class="st">Tracking Improvements for Next Webinar</div>';
+    h+='<div class="cd">';
+    w.tracking_improvements.forEach(function(item,i){
+      h+='<div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #1a2a44;font-size:11px">';
+      h+='<span style="color:var(--green);font-weight:700;min-width:18px">'+(i+1)+'.</span>';
+      h+='<span>'+item+'</span></div>';
+    });
+    h+='</div></div>';
+  }
+
+  el.innerHTML=h;
+
+  // ── Charts ──
+  var chOpts={responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#90BFED',font:{size:9},padding:16}}},scales:{x:{ticks:{color:'#6F90C8',font:{size:8}},grid:{display:false}},y:{ticks:{color:'#6F90C8'},grid:{color:'#1a2a44'}}}};
+
+  // Source chart (stacked bar: registered vs attended by source)
+  var srcLabels=Object.keys(w.source_breakdown);
+  var srcReg=srcLabels.map(function(s){return w.source_breakdown[s].registered;});
+  var srcAtt=srcLabels.map(function(s){return w.source_breakdown[s].attended;});
+  makeChart('wb-source',{type:'bar',data:{
+    labels:srcLabels,
+    datasets:[
+      {label:'Registered',data:srcReg,backgroundColor:'#1975BB90',borderColor:'#1975BB',borderWidth:1},
+      {label:'Attended',data:srcAtt,backgroundColor:'#B3C23490',borderColor:'#B3C234',borderWidth:1}
+    ]
+  },options:{...chOpts,scales:{...chOpts.scales,y:{...chOpts.scales.y,beginAtZero:true}}}});
+
+  // Intent chart (horizontal bar: registered vs attended by stage)
+  var stageLabels=['Ready to take action soon','Comparing providers or approaches','Actively researching solutions','Just starting to explore this topic'];
+  var stageShortLabels=['Ready','Comparing','Researching','Exploring'];
+  var stgReg=stageLabels.map(function(s){return (w.stage_breakdown[s]||{}).registered||0;});
+  var stgAtt=stageLabels.map(function(s){return (w.stage_breakdown[s]||{}).attended||0;});
+  makeChart('wb-intent',{type:'bar',data:{
+    labels:stageShortLabels,
+    datasets:[
+      {label:'Registered',data:stgReg,backgroundColor:'#1975BB90',borderColor:'#1975BB',borderWidth:1},
+      {label:'Attended',data:stgAtt,backgroundColor:'#B3C23490',borderColor:'#B3C234',borderWidth:1}
+    ]
+  },options:{...chOpts,indexAxis:'y',scales:{x:{ticks:{color:'#6F90C8'},grid:{color:'#1a2a44'},beginAtZero:true},y:{ticks:{color:'#6F90C8',font:{size:9}},grid:{display:false}}}}});
+
+  // Timeline chart (registrations per day)
+  var dayBuckets={};
+  w.registrants.forEach(function(r){
+    var d=r.reg_date;
+    if(!dayBuckets[d])dayBuckets[d]={total:0,attended:0};
+    dayBuckets[d].total++;
+    if(r.attended)dayBuckets[d].attended++;
+  });
+  var dayKeys=Object.keys(dayBuckets).sort();
+  makeChart('wb-timeline',{type:'bar',data:{
+    labels:dayKeys.map(function(d){return fdate(d);}),
+    datasets:[
+      {label:'Registrations',data:dayKeys.map(function(d){return dayBuckets[d].total;}),backgroundColor:'#1975BB90',borderColor:'#1975BB',borderWidth:1},
+      {label:'Of those, attended',data:dayKeys.map(function(d){return dayBuckets[d].attended;}),backgroundColor:'#B3C23490',borderColor:'#B3C234',borderWidth:1}
+    ]
+  },options:{...chOpts,scales:{...chOpts.scales,y:{...chOpts.scales.y,beginAtZero:true},x:{...chOpts.scales.x,stacked:false}}}});
+}
+
+function filterWbTable(filter,btn){
+  document.querySelectorAll('#wb-table').forEach(function(){});
+  if(btn){btn.parentElement.querySelectorAll('.fb').forEach(function(b){b.classList.remove('ac');});btn.classList.add('ac');}
+  var rows=document.querySelectorAll('#wb-table tbody tr');
+  rows.forEach(function(row){
+    if(filter==='all')row.style.display='';
+    else if(filter==='attended')row.style.display=row.dataset.attended==='yes'?'':'none';
+    else if(filter==='noshow')row.style.display=row.dataset.attended==='no'?'':'none';
+    else if(filter==='hot')row.style.display=row.dataset.hot==='yes'?'':'none';
+  });
 }
 
 // ── Init ──
