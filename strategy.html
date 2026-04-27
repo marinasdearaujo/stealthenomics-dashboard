@@ -65,6 +65,12 @@ li{margin:3px 0}
 .gantt-section{background:#0d2847;padding:4px 10px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;color:#1975BB;text-transform:uppercase;letter-spacing:1px;grid-column:1/-1}
 
 .footer{text-align:center;margin-top:30px;padding-top:15px;border-top:1px solid #1a2a44;font-size:10px;color:#6F90C8}
+.st{font-size:9px;font-weight:700;font-family:Montserrat;padding:2px 8px;border-radius:3px;letter-spacing:0.5px;white-space:nowrap}
+.st-done{background:#B3C23430;color:#B3C234}
+.st-paused{background:#fbbf2430;color:#fbbf24}
+.st-ongoing{background:#1975BB30;color:#90BFED}
+.st-notdone{background:#CC000030;color:#ff9999}
+.st-next{background:#0e9aa730;color:#7dd8e0}
 @media print{
   body{background:#001A35 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
   .tab-nav{display:none !important}
@@ -85,6 +91,9 @@ li{margin:3px 0}
   <div style="margin-bottom:12px"><img src="logo-white.jpg" alt="StealthEnomics" style="height:28px"></div>
   <h1 style="font-size:30px;margin-bottom:6px">30-Day Marketing Strategy</h1>
   <div class="subtitle">April 8 – May 7, 2026 &nbsp;|&nbsp; Prepared by Marina Scheffer de Araujo</div>
+  <div style="margin-top:8px;padding:6px 16px;background:#fbbf2420;border:1px solid #fbbf2440;border-radius:6px;display:inline-block">
+    <span style="font-size:11px;color:#fbbf24;font-weight:700;font-family:Montserrat">UPDATED: April 27, 2026 — Status Review &amp; Adjustments</span>
+  </div>
 </div>
 
 <!-- TAB NAVIGATION -->
@@ -134,106 +143,158 @@ li{margin:3px 0}
 
 <h2 style="color:#B3C234;border-bottom-color:#B3C23430">Execution Plan: Tasks, Owners & Deadlines</h2>
 
-<div style="display:flex;gap:20px;margin:12px 0;font-size:11px">
-<div><span style="color:#e1306c;font-weight:700">● Marina</span> — Strategy, ads, campaign creation, coordination, reporting</div>
-<div><span style="color:#1975BB;font-weight:700">● Beverly</span> — Content production, design, scheduling, guiding Jerico</div>
-<div><span style="color:#0e9aa7;font-weight:700">● Jerico</span> — CRM, engagement, DMs, lead tracking, email ops</div>
+<div style="display:flex;gap:20px;margin:12px 0;font-size:11px;flex-wrap:wrap">
+<div><span style="color:#e1306c;font-weight:700">● Marina</span> — Strategy, ads, campaign creation, coordination, reporting, HubSpot</div>
+<div><span style="color:#1975BB;font-weight:700">● Beverly</span> — Content production, design, scheduling, engagement, account warming</div>
+<div><span style="color:#0e9aa7;font-weight:700;text-decoration:line-through">● Jerico</span> <span style="color:#ff9999;font-size:10px">(OUT — tasks reassigned)</span></div>
 <div><span style="color:#fbbf24;font-weight:700">● Demond</span> — Technical (pixel, Google Ads, integrations)</div>
 </div>
 
 <h3 style="margin-top:16px;color:#fbbf24">Phase 1: Fix + Push (Wed Apr 8 - Mon Apr 13)</h3>
 <table>
 <thead><tr><th style="width:35%">Task</th><th style="width:12%">Owner</th><th style="width:13%">Deadline</th><th style="width:8%">Status</th><th>Notes</th></tr></thead>
-<tr><td>Meta pixel on Zoom (enabled through HubSpot)</td><td style="font-weight:700;color:#fbbf24">Demond</td><td>Fri Apr 10</td><td></td><td>Marina: understand how it works from Demond</td></tr>
-<tr><td>Send email re: Chris's LinkedIn access</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Fri Apr 10</td><td></td><td>Need access to post from Chris's personal profile</td></tr>
-<tr><td>Create email campaign content (webinar + community invite)</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Mon Apr 13</td><td></td><td>Marina writes copy. Jerico clones + sets up in HubSpot.</td></tr>
-<tr><td>Create brief for LinkedIn outbound + guide Jerico</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Mon Apr 13</td><td></td><td>Target list criteria, message templates, sequence. Jerico starts Tue Apr 14.</td></tr>
-<tr><td>Beverly guides Jerico on daily engagement</td><td style="font-weight:700;color:#1975BB">Beverly</td><td>Mon Apr 13</td><td></td><td>How to respond, tone, what to escalate. Marina checks quality.</td></tr>
-<tr><td>Beverly guides Jerico on account warming</td><td style="font-weight:700;color:#1975BB">Beverly</td><td>Mon Apr 13</td><td></td><td>Which pages, how to engage, what NOT to do. Marina checks quality.</td></tr>
-<tr><td>Create UTM spreadsheet + tagged links</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Tue Apr 14</td><td></td><td>Then teach Jerico to use UTMs going forward</td></tr>
-<tr><td>Create Meta campaign focused on Conversions</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Tue Apr 14</td><td></td><td>Switch from Traffic to Conversions objective</td></tr>
-<tr><td>Create SMS campaign copy</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Tue Apr 14</td><td></td><td>Templates for cold, warm, reminder sequences</td></tr>
-<tr><td>Coordinate email setup + sending with Jerico</td><td style="font-weight:700;color:#0e9aa7">Jerico</td><td>Tue Apr 14</td><td></td><td>Clone templates, set up lists, schedule send. Marina approves.</td></tr>
-<tr><td>Daily engagement: comments + DMs (all platforms)</td><td style="font-weight:700;color:#0e9aa7">Jerico</td><td>Tue Apr 14 (start)</td><td></td><td>After Beverly training Mon. Ongoing daily.</td></tr>
-<tr><td>Account warming: engage with relevant pages</td><td style="font-weight:700;color:#0e9aa7">Jerico</td><td>Tue Apr 14 (start)</td><td></td><td>After Beverly training Mon. Ongoing daily.</td></tr>
-<tr><td>SMB landing page new layout</td><td style="font-weight:700;color:#1975BB">Beverly</td><td>Wed Apr 15</td><td></td><td>Above fold, CTA, social proof, mobile. Marina reviews.</td></tr>
-<tr><td>Set up lead qualification automation in HubSpot</td><td style="font-weight:700;color:#0e9aa7">Jerico</td><td>Fri Apr 17</td><td></td><td>Automatic lead scoring/qualification. Marina defines criteria.</td></tr>
+<tr><td>Meta pixel on Zoom (enabled through HubSpot)</td><td style="font-weight:700;color:#fbbf24">Demond</td><td>Fri Apr 10</td><td><span class="st st-done">DONE</span></td><td>Marina reviewed — needs to verify it's firing correctly</td></tr>
+<tr><td>Send email re: Chris's LinkedIn access</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Fri Apr 10</td><td><span class="st st-paused">PAUSED</span></td><td>Done, but paused due to friction with Chris's team. Revisit later.</td></tr>
+<tr><td>Create email campaign content (webinar + community invite)</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Mon Apr 13</td><td><span class="st st-next">DO FOR MAY</span></td><td>Not done for April. Must create for May 26 webinar. Marina writes + sets up in HubSpot (no Jerico).</td></tr>
+<tr><td>Create brief for LinkedIn outbound + guide Jerico</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Mon Apr 13</td><td><span class="st st-paused">PAUSED</span></td><td>Brief done, but outbound stopped. Revisit when team capacity allows.</td></tr>
+<tr><td>Daily engagement: comments + DMs (all platforms)</td><td style="font-weight:700;color:#1975BB">Beverly</td><td>Ongoing</td><td><span class="st st-ongoing">CHECK</span></td><td><s>Jerico</s> → Beverly. Need to verify this is being done consistently.</td></tr>
+<tr><td>Account warming: engage with relevant pages</td><td style="font-weight:700;color:#1975BB">Beverly</td><td>Ongoing</td><td><span class="st st-ongoing">CHECK</span></td><td><s>Jerico</s> → Beverly. Need to verify this is being done consistently.</td></tr>
+<tr><td>Create UTM spreadsheet + tagged links</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Tue Apr 14</td><td><span class="st st-done">DONE</span></td><td>UTM tool published + spreadsheet created.</td></tr>
+<tr><td>Create Meta campaign focused on Conversions</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Tue Apr 14</td><td><span class="st st-done">DONE</span></td><td>Switched from Traffic to Conversions objective.</td></tr>
+<tr><td>Create SMS campaign copy</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Tue Apr 14</td><td><span class="st st-done">DONE</span></td><td>Templates for cold, warm, reminder sequences created.</td></tr>
+<tr><td>Coordinate email setup + sending</td><td style="font-weight:700;color:#e1306c">Marina</td><td>—</td><td><span class="st st-next">DO FOR MAY</span></td><td><s>Jerico</s> → Marina takes over HubSpot email ops. Set up for May 26 webinar.</td></tr>
+<tr><td>SMB landing page new layout</td><td style="font-weight:700;color:#1975BB">Beverly</td><td>Wed Apr 15</td><td><span class="st st-done">DONE</span></td><td>Layout updated with new above fold, CTA, social proof.</td></tr>
+<tr><td>Set up lead qualification automation in HubSpot</td><td style="font-weight:700;color:#e1306c">Marina</td><td>TBD</td><td><span class="st st-notdone">NOT DONE</span></td><td><s>Jerico</s> → Marina will lead this. Define criteria + build automation.</td></tr>
 </table>
 
 <h3 style="margin-top:16px;color:#1975BB">Phase 2: Launch All Engines (Tue Apr 14 - Fri Apr 17)</h3>
 <table>
 <thead><tr><th style="width:35%">Task</th><th style="width:12%">Owner</th><th style="width:13%">Deadline</th><th style="width:8%">Status</th><th>Notes</th></tr></thead>
-<tr><td>Google Ads launch ($50/day)</td><td style="font-weight:700;color:#fbbf24">Demond</td><td>Tue Apr 14</td><td></td><td>Marina monitors results and provides feedback</td></tr>
-<tr><td>Create retargeting campaign on Meta</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Tue Apr 14</td><td></td><td>Research how to set up on Meta + execute</td></tr>
-<tr><td>Create webinar content for promotion</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Tue Apr 14</td><td></td><td>Copy + creative direction for all webinar promo posts</td></tr>
-<tr><td>Check webinar email flow with Jerico</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Tue Apr 14</td><td></td><td>Make sure registration > confirmation > reminder sequence works</td></tr>
-<tr><td>Boost best organic post ($15/day)</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Wed Apr 15</td><td></td><td>ID best performer Tue, boost Wed</td></tr>
-<tr><td>Chris LinkedIn posts (3x/week)</td><td style="font-weight:700;color:#1975BB">Beverly</td><td>Tue Apr 14 (start)</td><td></td><td>Beverly creates. Marina reviews/approves. Chris posts.</td></tr>
-<tr><td>Company LinkedIn daily (5x/week)</td><td style="font-weight:700;color:#1975BB">Beverly</td><td>Tue Apr 14 (start)</td><td></td><td>LinkedIn-native formats. Ongoing.</td></tr>
-<tr><td>YouTube daily: webinar cuts + showcases</td><td style="font-weight:700;color:#1975BB">Beverly</td><td>Tue Apr 14 (start)</td><td></td><td>Ongoing daily.</td></tr>
-<tr><td>Facebook + Instagram (3x/week repurposed)</td><td style="font-weight:700;color:#1975BB">Beverly</td><td>Tue Apr 14 (start)</td><td></td><td>Repurpose from LI + YT. Mon/Wed/Fri.</td></tr>
-<tr><td>Community posts (3x/week: Mon/Wed/Fri)</td><td style="font-weight:700;color:#1975BB">Beverly</td><td>Tue Apr 14 (start)</td><td></td><td>Mon=Value, Wed=Blog Deep Dive, Fri=Expert Tip</td></tr>
-<tr><td>LinkedIn outbound starts (10-20/week)</td><td style="font-weight:700;color:#0e9aa7">Jerico</td><td>Tue Apr 14 (start)</td><td></td><td>Using Marina's brief + templates. Track on LinkedIn.</td></tr>
-<tr><td>DM everyone who interacts with posts</td><td style="font-weight:700;color:#0e9aa7">Jerico</td><td>Ongoing</td><td></td><td>Personal webinar invitation. Track responses.</td></tr>
-<tr><td>Routine: approve content daily</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Daily</td><td></td><td>Quick review of Beverly's scheduled posts. Improve process later.</td></tr>
+<tr><td>Google Ads launch ($50/day)</td><td style="font-weight:700;color:#fbbf24">Demond</td><td>Tue Apr 14</td><td><span class="st st-done">DONE</span></td><td>Live. Marina monitors results and provides feedback.</td></tr>
+<tr><td>Create retargeting campaign on Meta</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Tue Apr 14</td><td><span class="st st-done">DONE</span></td><td>Set up and executed.</td></tr>
+<tr><td>Create webinar content for promotion</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Tue Apr 14</td><td><span class="st st-done">DONE</span></td><td>Copy + creative direction created for all promo posts.</td></tr>
+<tr><td>Check webinar email flow</td><td style="font-weight:700;color:#e1306c">Marina</td><td>—</td><td><span class="st st-next">DO FOR MAY</span></td><td>Not done for April. Must set up registration → confirmation → reminder sequence for May 26.</td></tr>
+<tr><td>Boost best organic post ($15/day)</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Wed Apr 15</td><td><span class="st st-ongoing">ONGOING</span></td><td>ID best performer, boost. Continue weekly.</td></tr>
+<tr><td>Chris LinkedIn posts (3x/week)</td><td style="font-weight:700;color:#1975BB">Beverly</td><td>—</td><td><span class="st st-paused">PAUSED</span></td><td>Paused due to friction with access/posting. Revisit later.</td></tr>
+<tr><td>Company LinkedIn daily (5x/week)</td><td style="font-weight:700;color:#1975BB">Beverly</td><td>Ongoing</td><td><span class="st st-ongoing">ONGOING</span></td><td>LinkedIn-native formats. Running.</td></tr>
+<tr><td>YouTube daily: webinar cuts + showcases</td><td style="font-weight:700;color:#1975BB">Beverly</td><td>Ongoing</td><td><span class="st st-ongoing">ONGOING</span></td><td>Running.</td></tr>
+<tr><td>Facebook + Instagram (3x/week repurposed)</td><td style="font-weight:700;color:#1975BB">Beverly</td><td>Ongoing</td><td><span class="st st-ongoing">ONGOING</span></td><td>Repurpose from LI + YT. Running.</td></tr>
+<tr><td>Community posts (3x/week: Mon/Wed/Fri)</td><td style="font-weight:700;color:#1975BB">Beverly</td><td>Ongoing</td><td><span class="st st-ongoing">ONGOING</span></td><td>Running.</td></tr>
+<tr><td>LinkedIn outbound (10-20/week)</td><td style="font-weight:700;color:#0e9aa7"><s>Jerico</s></td><td>—</td><td><span class="st st-paused">PAUSED</span></td><td>Jerico out. Outbound stopped. Revisit when team capacity allows.</td></tr>
+<tr><td>DM everyone who interacts with posts</td><td style="font-weight:700;color:#0e9aa7"><s>Jerico</s></td><td>—</td><td><span class="st st-paused">PAUSED</span></td><td>Jerico out. Paused.</td></tr>
+<tr><td>Routine: approve content daily</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Daily</td><td><span class="st st-ongoing">ONGOING</span></td><td>Quick review of Beverly's scheduled posts.</td></tr>
 </table>
 
 <h3 style="margin-top:16px;color:#e1306c">Phase 3: Webinar Countdown (Mon Apr 20 - Tue Apr 21)</h3>
 <table>
 <thead><tr><th style="width:35%">Task</th><th style="width:12%">Owner</th><th style="width:13%">Deadline</th><th style="width:8%">Status</th><th>Notes</th></tr></thead>
-<tr><td>Create email reminder content (#1, #2, #3)</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Thu Apr 16</td><td></td><td>Marina writes. Jerico sets up + sends.</td></tr>
-<tr><td>Create email #2 for HubSpot non-openers</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Thu Apr 16</td><td></td><td>Marina writes. Jerico sends.</td></tr>
-<tr><td>Ads review + optimize</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Wed Apr 15, Fri Apr 17</td><td></td><td>Meta CPR + Google results (from Demond). Adjust budgets.</td></tr>
-<tr><td>Send email #2 to non-openers</td><td style="font-weight:700;color:#0e9aa7">Jerico</td><td>Fri Apr 17</td><td></td><td>Marina approves, Jerico sends</td></tr>
-<tr><td>Set up + send email reminder #1 (3 days before)</td><td style="font-weight:700;color:#0e9aa7">Jerico</td><td>Fri Apr 17</td><td></td><td>Marina checks before send. 3 days = Friday.</td></tr>
-<tr><td>Countdown content daily across all channels</td><td style="font-weight:700;color:#1975BB">Beverly</td><td>Fri Apr 17 - Tue Apr 21</td><td></td><td>"4 days" > "tomorrow" > "LIVE today"</td></tr>
-<tr><td>Free Diagnostic promotion post</td><td style="font-weight:700;color:#1975BB">Beverly</td><td>Fri Apr 17</td><td></td><td>Alternative CTA for people not ready for webinar</td></tr>
-<tr><td>Send email reminder #2 (1 day before)</td><td style="font-weight:700;color:#0e9aa7">Jerico</td><td>Mon Apr 20</td><td></td><td>Marina checks before send</td></tr>
-<tr><td>Send email reminder #3 (3 hours before)</td><td style="font-weight:700;color:#0e9aa7">Jerico</td><td>Tue Apr 21 9AM</td><td></td><td>Marina checks before send</td></tr>
-<tr><td>DM all new interactions from countdown week</td><td style="font-weight:700;color:#0e9aa7">Jerico</td><td>Fri Apr 17, Tue Apr 21</td><td></td><td>Batch DMs: personal webinar invitations</td></tr>
-<tr><td>Update registration tracking daily</td><td style="font-weight:700;color:#0e9aa7">Jerico</td><td>Daily</td><td></td><td>How many regs? From which source? Report to Marina.</td></tr>
+<tr><td>Create email reminder content (#1, #2, #3)</td><td style="font-weight:700;color:#e1306c">Marina</td><td>—</td><td><span class="st st-next">DO FOR MAY</span></td><td>Not done for April. Must create 3 reminders (3d, 1d, 3h) for May 26 webinar.</td></tr>
+<tr><td>Create email #2 for HubSpot non-openers</td><td style="font-weight:700;color:#e1306c">Marina</td><td>—</td><td><span class="st st-next">DO FOR MAY</span></td><td>Not done for April. Include in May email sequence.</td></tr>
+<tr><td>Ads review + optimize</td><td style="font-weight:700;color:#e1306c">Marina</td><td>—</td><td><span class="st st-next">DO FOR MAY</span></td><td>Campaigns currently paused. Review what to improve before relaunching for May webinar.</td></tr>
+<tr><td>Send email reminders (3d, 1d, 3h)</td><td style="font-weight:700;color:#e1306c">Marina</td><td>—</td><td><span class="st st-next">DO FOR MAY</span></td><td><s>Jerico</s> → Marina handles HubSpot directly for May 26.</td></tr>
+<tr><td>Countdown content daily across all channels</td><td style="font-weight:700;color:#1975BB">Beverly</td><td>—</td><td><span class="st st-next">DO FOR MAY</span></td><td>"4 days" → "tomorrow" → "LIVE today" for May 26 webinar.</td></tr>
+<tr><td>Free Diagnostic promotion post</td><td style="font-weight:700;color:#1975BB">Beverly</td><td>—</td><td><span class="st st-notdone">DROPPED</span></td><td>Did not run for April. Reconsider for May if diagnostic is ready.</td></tr>
+<tr><td>DM all new interactions from countdown week</td><td style="font-weight:700;color:#0e9aa7"><s>Jerico</s></td><td>—</td><td><span class="st st-paused">PAUSED</span></td><td>Jerico out. No capacity for manual DMs currently.</td></tr>
+<tr><td>Update registration tracking daily</td><td style="font-weight:700;color:#e1306c">Marina</td><td>—</td><td><span class="st st-next">DO FOR MAY</span></td><td><s>Jerico</s> → Marina tracks regs by source for May.</td></tr>
 </table>
 
 <h3 style="margin-top:16px;color:#0e9aa7">Phase 4: Convert + Optimize (Tue Apr 21 - Thu May 7)</h3>
 <table>
 <thead><tr><th style="width:35%">Task</th><th style="width:12%">Owner</th><th style="width:13%">Deadline</th><th style="width:8%">Status</th><th>Notes</th></tr></thead>
-<tr><td>WEBINAR execution (12PM EST)</td><td style="font-weight:700;color:#e1306c">Marina + Chris</td><td>Tue Apr 21</td><td></td><td>Marina supports. Chris presents.</td></tr>
-<tr><td>Create post-webinar email content (recording + follow-up + community invite)</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Mon Apr 20 (pre-write)</td><td></td><td>Pre-write before webinar. Jerico sends within 24h.</td></tr>
-<tr><td>Send post-webinar emails</td><td style="font-weight:700;color:#0e9aa7">Jerico</td><td>Wed Apr 22</td><td></td><td>Recording to no-shows. Community invite to all. Launch Box offer to attendees.</td></tr>
-<tr><td>Coordinate lead tracking with Jerico</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Wed Apr 22</td><td></td><td>Verify: regs by source, attendance, follow-up status. Must be airtight.</td></tr>
-<tr><td>Track webinar data: regs by source, attendance</td><td style="font-weight:700;color:#0e9aa7">Jerico</td><td>Thu Apr 23</td><td></td><td>Full UTM breakdown. Report to Marina.</td></tr>
-<tr><td>Set up retargeting: attendees > Launch Box</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Thu Apr 23</td><td></td><td>7-day retargeting window</td></tr>
-<tr><td>HubSpot pipeline: finalize + test end-to-end</td><td style="font-weight:700;color:#0e9aa7">Jerico</td><td>Fri Apr 17</td><td></td><td>Marina defines stages. Jerico builds. Must be ready before webinar.</td></tr>
-<tr><td>Ads review: Google vs Meta lead quality check</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Fri Apr 24</td><td></td><td>2-week data. Demond provides Google data.</td></tr>
-<tr><td>Conversions API connection</td><td style="font-weight:700;color:#fbbf24">Demond</td><td>Fri Apr 24</td><td></td><td>Meta recommendation. 19% lower CPL. Marina requests.</td></tr>
-<tr><td>Post-webinar content: recap, cuts, carousels</td><td style="font-weight:700;color:#1975BB">Beverly</td><td>Wed Apr 22 - Fri Apr 24</td><td></td><td>Fresh webinar cuts for YouTube. Recap carousels for LI.</td></tr>
-<tr><td>Shift content to value/community/diagnostic</td><td style="font-weight:700;color:#1975BB">Beverly</td><td>Tue Apr 28+</td><td></td><td>Less webinar urgency. More product showcases, reach content.</td></tr>
-<tr><td>Monthly report to leaders</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Thu Apr 30</td><td></td><td>March + April results. Jerico helps download data.</td></tr>
-<tr><td>Plan May webinar (topic, date, changes)</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Fri May 1</td><td></td><td>Apply all April learnings</td></tr>
+<tr><td>WEBINAR execution (12PM EST)</td><td style="font-weight:700;color:#e1306c">Marina + Chris</td><td>Tue Apr 21</td><td><span class="st st-done">DONE</span></td><td>April 21 webinar executed.</td></tr>
+<tr><td>Create post-webinar email content</td><td style="font-weight:700;color:#e1306c">Marina</td><td>—</td><td><span class="st st-next">DO FOR MAY</span></td><td>Pre-write recording + follow-up + community invite before May 26.</td></tr>
+<tr><td>Send post-webinar emails</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Wed Apr 22</td><td><span class="st st-done">DONE</span></td><td>Recording to no-shows. Community invite. Launch Box offer.</td></tr>
+<tr><td>Track webinar data: regs by source, attendance</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Thu Apr 23</td><td><span class="st st-done">DONE</span></td><td>UTM breakdown completed.</td></tr>
+<tr><td>Set up retargeting: attendees → Launch Box</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Thu Apr 23</td><td><span class="st st-paused">PAUSED</span></td><td>Campaigns currently paused. Reactivate for May cycle.</td></tr>
+<tr><td>HubSpot pipeline: finalize + test end-to-end</td><td style="font-weight:700;color:#e1306c">Marina</td><td>TBD</td><td><span class="st st-notdone">NOT DONE</span></td><td><s>Jerico</s> → Marina. Must be ready before May 26 webinar.</td></tr>
+<tr><td>Ads review: Google vs Meta lead quality check</td><td style="font-weight:700;color:#e1306c">Marina</td><td>—</td><td><span class="st st-next">PENDING</span></td><td>Need Google data from Demond. Campaigns paused — review before relaunching.</td></tr>
+<tr><td>Conversions API connection</td><td style="font-weight:700;color:#fbbf24">Demond</td><td>TBD</td><td><span class="st st-notdone">NOT DONE</span></td><td>Still pending. 19% lower CPL. Follow up with Demond.</td></tr>
+<tr><td>Post-webinar content: recap, cuts, carousels</td><td style="font-weight:700;color:#1975BB">Beverly</td><td>Wed Apr 22 - Fri Apr 24</td><td><span class="st st-ongoing">ONGOING</span></td><td>Webinar cuts for YouTube + recap carousels for LI.</td></tr>
+<tr><td>Shift content to value/community/diagnostic</td><td style="font-weight:700;color:#1975BB">Beverly</td><td>Tue Apr 28+</td><td><span class="st st-ongoing">ONGOING</span></td><td>Less webinar urgency. More product showcases, reach content.</td></tr>
+<tr><td>Monthly report to leaders</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Thu Apr 30</td><td><span class="st st-notdone">NOT DONE</span></td><td>March + April results. Deadline approaching — Apr 30.</td></tr>
+<tr><td>Plan May webinar (topic, date, changes)</td><td style="font-weight:700;color:#e1306c">Marina</td><td>ASAP</td><td><span class="st st-notdone">NOT DONE</span></td><td>May 26 (4th Tuesday). Topic: "How to Build Predictable Cash Flow in RE — Even Without Prior Experience." Apply April learnings.</td></tr>
 </table>
 
 <h3 style="margin-top:16px;color:#6F90C8">Recurring Tasks (ongoing throughout)</h3>
 <table>
 <thead><tr><th style="width:35%">Task</th><th style="width:12%">Owner</th><th style="width:13%">Cadence</th><th style="width:8%">Status</th><th>Notes</th></tr></thead>
-<tr><td>Approve content daily</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Daily</td><td></td><td>Quick review of Beverly's scheduled posts. Improve process later.</td></tr>
-<tr><td>Ads review (Meta + Google results)</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Tuesdays</td><td></td><td>Google data from Demond. Meta data direct.</td></tr>
-<tr><td>Weekly report + team check-in</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Fridays</td><td></td><td>Jerico helps download data. 1h meeting with team — review tasks, shifts needed.</td></tr>
-<tr><td>Monthly strategy meeting process (send by email)</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Monthly</td><td></td><td>Define process, send to leadership</td></tr>
-<tr><td>Blog brief for SEO (coordinate with Demond)</td><td style="font-weight:700;color:#e1306c">Marina</td><td>15th of each month</td><td></td><td>Demond requested. Marina creates brief for blog posts. First one: May 15.</td></tr>
-<tr><td>Create content calendar for next month</td><td style="font-weight:700;color:#e1306c">Marina + Beverly</td><td>10th of each month</td><td></td><td>Marina leads strategy + copy direction. Beverly supports with production planning. First one: May 10.</td></tr>
-<tr><td>Daily engagement (comments + DMs)</td><td style="font-weight:700;color:#0e9aa7">Jerico</td><td>Daily</td><td></td><td>Beverly trained. Marina spot-checks quality.</td></tr>
-<tr><td>Account warming</td><td style="font-weight:700;color:#0e9aa7">Jerico</td><td>Daily</td><td></td><td>Beverly trained. Marina spot-checks quality.</td></tr>
-<tr><td>LinkedIn outbound (10-20 connections/week)</td><td style="font-weight:700;color:#0e9aa7">Jerico</td><td>Daily</td><td></td><td>Using Marina's templates. Track responses on LinkedIn.</td></tr>
-<tr><td>Download data for weekly/monthly reports</td><td style="font-weight:700;color:#0e9aa7">Jerico</td><td>Fridays</td><td></td><td>Pull numbers for Marina's reports</td></tr>
-<tr><td>Content production + scheduling (all channels)</td><td style="font-weight:700;color:#1975BB">Beverly</td><td>Daily</td><td></td><td>Company LI, YouTube, FB, IG, Community, Chris LI posts</td></tr>
+<tr><td>Approve content daily</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Daily</td><td><span class="st st-ongoing">ONGOING</span></td><td>Quick review of Beverly's scheduled posts.</td></tr>
+<tr><td>Ads review (Meta + Google results)</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Tuesdays</td><td><span class="st st-paused">PAUSED</span></td><td>Campaigns paused. Resume when relaunched for May.</td></tr>
+<tr><td>Weekly report + team check-in</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Fridays</td><td><span class="st st-ongoing">ONGOING</span></td><td>Marina downloads data directly (no Jerico).</td></tr>
+<tr><td>Monthly strategy meeting process</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Monthly</td><td><span class="st st-ongoing">ONGOING</span></td><td>Define process, send to leadership.</td></tr>
+<tr><td>Blog brief for SEO (coordinate with Demond)</td><td style="font-weight:700;color:#e1306c">Marina</td><td>15th of each month</td><td><span class="st st-ongoing">ONGOING</span></td><td>First one: May 15.</td></tr>
+<tr><td>Create content calendar for next month</td><td style="font-weight:700;color:#e1306c">Marina + Beverly</td><td>10th of each month</td><td><span class="st st-ongoing">ONGOING</span></td><td>Marina leads strategy + copy direction. Beverly supports. Next: May 10.</td></tr>
+<tr><td>Daily engagement (comments + DMs)</td><td style="font-weight:700;color:#1975BB">Beverly</td><td>Daily</td><td><span class="st st-ongoing">CHECK</span></td><td><s>Jerico</s> → Beverly. Verify consistency.</td></tr>
+<tr><td>Account warming</td><td style="font-weight:700;color:#1975BB">Beverly</td><td>Daily</td><td><span class="st st-ongoing">CHECK</span></td><td><s>Jerico</s> → Beverly. Verify consistency.</td></tr>
+<tr><td>LinkedIn outbound (10-20 connections/week)</td><td style="font-weight:700;color:#0e9aa7"><s>Jerico</s></td><td>—</td><td><span class="st st-paused">PAUSED</span></td><td>No capacity. Revisit later.</td></tr>
+<tr><td>Download data for weekly/monthly reports</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Fridays</td><td><span class="st st-ongoing">ONGOING</span></td><td><s>Jerico</s> → Marina pulls data directly.</td></tr>
+<tr><td>Content production + scheduling (all channels)</td><td style="font-weight:700;color:#1975BB">Beverly</td><td>Daily</td><td><span class="st st-ongoing">ONGOING</span></td><td>Company LI, YouTube, FB, IG, Community.</td></tr>
 </table>
 
 <div style="display:flex;gap:15px;margin:16px 0;font-size:11px;flex-wrap:wrap">
-<div><span style="color:#e1306c;font-weight:700">● Marina</span> — Strategy, ads, campaign creation, copy, coordination, reporting, approvals</div>
-<div><span style="color:#1975BB;font-weight:700">● Beverly</span> — Content production, design, scheduling, training Jerico, Chris LI posts</div>
-<div><span style="color:#0e9aa7;font-weight:700">● Jerico</span> — CRM, engagement, DMs, outbound, email ops, lead tracking, data pulls</div>
+<div><span style="color:#e1306c;font-weight:700">● Marina</span> — Strategy, ads, campaign creation, copy, coordination, reporting, approvals, HubSpot ops</div>
+<div><span style="color:#1975BB;font-weight:700">● Beverly</span> — Content production, design, scheduling, engagement, account warming</div>
+<div><span style="color:#0e9aa7;font-weight:700;text-decoration:line-through">● Jerico</span> <span style="color:#ff9999;font-size:10px">(OUT — tasks reassigned to Marina + Beverly)</span></div>
 <div><span style="color:#fbbf24;font-weight:700">● Demond</span> — Pixel, Google Ads, Conversions API, technical integrations</div>
 </div>
+
+<h2 style="color:#B3C234;border-bottom-color:#B3C23430">April Review — Status Summary (Updated Apr 27)</h2>
+
+<div class="two-col">
+<div>
+<h3 style="color:#B3C234">Completed (11)</h3>
+<ul>
+<li>Meta pixel on Zoom/HubSpot</li>
+<li>UTM spreadsheet + tagged links</li>
+<li>Meta campaign → Conversions objective</li>
+<li>SMS campaign copy</li>
+<li>SMB landing page new layout</li>
+<li>Google Ads launch ($50/day)</li>
+<li>Meta retargeting campaign</li>
+<li>Webinar promo content</li>
+<li>April 21 webinar execution</li>
+<li>Post-webinar emails sent</li>
+<li>Webinar data tracking (regs by source)</li>
+</ul>
+</div>
+<div>
+<h3 style="color:#fbbf24">Paused (6)</h3>
+<ul>
+<li>Chris's LinkedIn posts (friction)</li>
+<li>LinkedIn outbound (Jerico out)</li>
+<li>DMs to post engagers (Jerico out)</li>
+<li>Meta retargeting campaigns</li>
+<li>Ads review cycle</li>
+<li>LinkedIn outbound brief (done but stopped)</li>
+</ul>
+<h3 style="color:#CC0000;margin-top:12px">Not Done (4)</h3>
+<ul>
+<li>Lead qualification automation in HubSpot</li>
+<li>HubSpot pipeline (end-to-end)</li>
+<li>Monthly report to leaders (due Apr 30)</li>
+<li>Plan May webinar</li>
+</ul>
+</div>
+</div>
+
+<div class="highlight warn" style="margin-top:16px">
+<p><strong>Key Change: Jerico is OUT.</strong> All CRM, engagement, DM, outbound, and email ops tasks reassigned to Marina (HubSpot, reporting, lead qualification) and Beverly (daily engagement, account warming). This reduces team capacity — prioritize ruthlessly.</p>
+</div>
+
+<h3 style="color:#0e9aa7;margin-top:20px">Must Do Before May 26 Webinar</h3>
+<table>
+<thead><tr><th style="width:5%">#</th><th style="width:45%">Task</th><th style="width:15%">Owner</th><th>Deadline</th></tr></thead>
+<tr><td>1</td><td>Monthly report to leaders (March + April)</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Apr 30</td></tr>
+<tr><td>2</td><td>Review + relaunch Meta campaigns (optimize from April data)</td><td style="font-weight:700;color:#e1306c">Marina</td><td>May 5</td></tr>
+<tr><td>3</td><td>Create May content calendar</td><td style="font-weight:700;color:#e1306c">Marina + Beverly</td><td>May 10</td></tr>
+<tr><td>4</td><td>Set up full webinar email flow in HubSpot (invite + 3 reminders + post-webinar)</td><td style="font-weight:700;color:#e1306c">Marina</td><td>May 12</td></tr>
+<tr><td>5</td><td>Blog brief for SEO</td><td style="font-weight:700;color:#e1306c">Marina</td><td>May 15</td></tr>
+<tr><td>6</td><td>HubSpot pipeline: finalize + test</td><td style="font-weight:700;color:#e1306c">Marina</td><td>May 19</td></tr>
+<tr><td>7</td><td>Launch webinar countdown content</td><td style="font-weight:700;color:#1975BB">Beverly</td><td>May 19-26</td></tr>
+<tr><td>8</td><td>Follow up: Conversions API with Demond</td><td style="font-weight:700;color:#e1306c">Marina</td><td>May 12</td></tr>
+<tr><td>9</td><td>Verify Beverly doing daily engagement + account warming</td><td style="font-weight:700;color:#e1306c">Marina</td><td>This week</td></tr>
+<tr><td>10</td><td>GA4/Google Ads conversion events review (email sent to Anishkar)</td><td style="font-weight:700;color:#e1306c">Marina</td><td>Waiting response</td></tr>
+</table>
 
 <h3>30-Day Targets</h3>
 <div class="kpi-grid">
@@ -607,18 +668,18 @@ li{margin:3px 0}
 <!-- ==================== TEAM & FOCUS TAB ==================== -->
 <div id="tab-team" class="tab-content">
 
-<h2>Weekly Rhythm</h2>
+<h2>Weekly Rhythm <span style="font-size:12px;color:#fbbf24">(Updated Apr 27 — reflects Jerico out)</span></h2>
 <table>
-<thead><tr><th>Day</th><th>Marina (Strategy)</th><th>Beverly (Operations)</th></tr></thead>
-<tr><td style="font-weight:600">Monday</td><td>Batch content for week. Chris's LI posts draft. Schedule.</td><td>Schedule company LI + FB + IG. Cut YouTube clips (Opus Clip).</td></tr>
-<tr><td style="font-weight:600">Tuesday</td><td>Ads review — Meta CPR + Google CPL. ID best post for boosting.</td><td>Account warming. Community prompt. YouTube upload.</td></tr>
-<tr><td style="font-weight:600">Wednesday</td><td>Webinar promotion push. LinkedIn outbound.</td><td>Account warming. YouTube upload. Community engagement.</td></tr>
-<tr><td style="font-weight:600">Thursday</td><td>Engage — reply to all comments on LI + FB.</td><td>Account warming. YouTube upload. Community prompt.</td></tr>
-<tr><td style="font-weight:600">Friday</td><td>30-min review — what worked, what changes next week.</td><td>YouTube upload. Prep next week's Opus Clip batch.</td></tr>
+<thead><tr><th>Day</th><th>Marina (Strategy + Ops)</th><th>Beverly (Content + Engagement)</th></tr></thead>
+<tr><td style="font-weight:600">Monday</td><td>Batch content for week. Review Beverly's queue. HubSpot check.</td><td>Schedule company LI + FB + IG. Cut YouTube clips. Daily engagement.</td></tr>
+<tr><td style="font-weight:600">Tuesday</td><td>Ads review (when campaigns active). ID best post for boosting.</td><td>Account warming. Community prompt. YouTube upload. Engagement.</td></tr>
+<tr><td style="font-weight:600">Wednesday</td><td>Webinar promotion push. HubSpot email ops.</td><td>Account warming. YouTube upload. Community engagement.</td></tr>
+<tr><td style="font-weight:600">Thursday</td><td>Engage — reply to all comments on LI + FB. Lead tracking.</td><td>Account warming. YouTube upload. Community prompt. Engagement.</td></tr>
+<tr><td style="font-weight:600">Friday</td><td>30-min review. Pull data for reports. Plan next week.</td><td>YouTube upload. Prep next week's Opus Clip batch.</td></tr>
 </table>
 
 <h2>A Note on Focus</h2>
-<p>This plan is designed for a <strong>2-person team</strong> (~12-16 hours/week recurring + 12-16 hours setup in Phase 1).</p>
+<p>This plan was originally designed for a 3-person team (Marina, Beverly, Jerico). <strong>With Jerico out, we are now a 2-person team.</strong> Marina absorbs HubSpot ops, lead tracking, email setup, and data pulls. Beverly absorbs daily engagement and account warming. Capacity is tighter — prioritize ruthlessly.</p>
 
 <div class="two-col">
 <div>
@@ -660,7 +721,7 @@ li{margin:3px 0}
 
 <!-- FOOTER -->
 <div class="footer">
-StealthEnomics — 30-Day Marketing Strategy &nbsp;|&nbsp; April 8 – May 7, 2026 &nbsp;|&nbsp; Prepared by Marina Scheffer de Araujo
+StealthEnomics — 30-Day Marketing Strategy &nbsp;|&nbsp; April 8 – May 7, 2026 &nbsp;|&nbsp; Prepared by Marina Scheffer de Araujo &nbsp;|&nbsp; <span style="color:#fbbf24">Last updated: April 27, 2026</span>
 </div>
 
 </div>
