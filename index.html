@@ -60,6 +60,7 @@ h1,h2,h3,.st,.kc .l,.tab{font-family:'Montserrat',sans-serif}
 <div class="fil">
   <button class="fb ac" onclick="setR(this,'week')">This Week</button>
   <button class="fb" onclick="setR(this,'month')">This Month</button>
+  <button class="fb" onclick="setR(this,'lastmonth')">Last Month</button>
   <button class="fb" onclick="setR(this,'quarter')">Last 90 Days</button>
   <button class="fb" onclick="setR(this,'all')">All Time</button>
   <button class="fb" onclick="toggleC()">Custom</button>
@@ -115,6 +116,12 @@ function getRange(){
   var now=new Date();var s,e=now;
   if(activeRange==='week'){s=new Date(now);s.setDate(s.getDate()-7);}
   else if(activeRange==='month'){s=new Date(now);s.setDate(s.getDate()-30);}
+  else if(activeRange==='lastmonth'){
+    // Previous calendar month (e.g., April 1-30 when viewing in May)
+    var firstThisMonth=new Date(now.getFullYear(),now.getMonth(),1);
+    e=new Date(firstThisMonth);e.setDate(0); // last day of prev month
+    s=new Date(e.getFullYear(),e.getMonth(),1); // first day of prev month
+  }
   else if(activeRange==='quarter'){s=new Date(now);s.setDate(s.getDate()-90);}
   else if(activeRange==='all'){s=new Date('2025-01-01');}
   else{var a=document.getElementById('df').value,b=document.getElementById('dt').value;if(a&&b){s=new Date(a);e=new Date(b);}else{s=new Date('2025-01-01');}}
@@ -191,7 +198,7 @@ function renderAll(){
   prevPosts.forEach(function(p){if(byPP[p.platform]){byPP[p.platform].r+=p.reach;byPP[p.platform].e+=p.engagement;byPP[p.platform].n++;}});
   var totP={r:0,e:0,n:0};['Facebook','Instagram','LinkedIn','YouTube'].forEach(function(k){var v=byPP[k];totP.r+=v.r;totP.e+=v.e;totP.n+=v.n;});
   var hasPrev=range.label!=='all'&&prevPosts.length>0;
-  var periodLabel=range.label==='week'?'vs prev week':range.label==='month'?'vs prev month':range.label==='quarter'?'vs prev 90 days':'vs prev period';
+  var periodLabel=range.label==='week'?'vs prev week':range.label==='month'?'vs prev month':range.label==='lastmonth'?'vs month before':range.label==='quarter'?'vs prev 90 days':'vs prev period';
 
   var tf=k.followers.total,tfp=k.followers_prev.total;
 
@@ -824,17 +831,20 @@ function renderAdsTab(container, forceMonth){
     tbody.appendChild(tr);
   });
 
-  // Totals row
+  // Totals row — only sum LEAD-GEN campaigns to avoid mixing engagement/LPV/leads
   if(tbody){
+    var leadCamps=camps.filter(function(c){var n=c.name.toLowerCase();return n.indexOf('lead')>=0||n.indexOf('instant')>=0||n.indexOf('broker')>=0;});
     var tSpend=camps.reduce(function(s,c){return s+c.spend;},0);
-    var tResults=camps.reduce(function(s,c){return s+c.results;},0);
+    var tLeadResults=leadCamps.reduce(function(s,c){return s+c.results;},0);
+    var tLeadSpend=leadCamps.reduce(function(s,c){return s+c.spend;},0);
     var tClicks=camps.reduce(function(s,c){return s+c.clicks;},0);
-    var tCPR=tResults>0?tSpend/tResults:0;
-    var totRow='<td style="font-weight:700">TOTAL</td><td class="n" style="font-weight:700">$'+tSpend.toLocaleString()+'</td><td class="n" style="font-weight:700">'+tResults.toLocaleString()+'</td><td class="n" style="font-weight:700">$'+tCPR.toFixed(2)+'</td><td class="n" style="font-weight:700">'+tClicks.toLocaleString()+'</td>';
+    var tCPR=tLeadResults>0?tLeadSpend/tLeadResults:0;
+    var totRow='<td style="font-weight:700">TOTAL <span class="sub" style="font-weight:400">(leads only)</span></td><td class="n" style="font-weight:700">$'+tSpend.toLocaleString()+'</td><td class="n" style="font-weight:700">'+tLeadResults.toLocaleString()+'</td><td class="n" style="font-weight:700">$'+tCPR.toFixed(2)+'</td><td class="n" style="font-weight:700">'+tClicks.toLocaleString()+'</td>';
     if(hasPrevAds){
       var pTotSpend=prevCamps.reduce(function(s,c){return s+c.spend;},0);
-      var pTotResults=prevCamps.reduce(function(s,c){return s+c.results;},0);
-      var tSpCh=pch(pTotSpend,tSpend);var tReCh=pch(pTotResults,tResults);
+      var pLeadCamps=prevCamps.filter(function(c){var n=c.name.toLowerCase();return n.indexOf('lead')>=0||n.indexOf('instant')>=0||n.indexOf('broker')>=0;});
+      var pTotLeadResults=pLeadCamps.reduce(function(s,c){return s+c.results;},0);
+      var tSpCh=pch(pTotSpend,tSpend);var tReCh=pch(pTotLeadResults,tLeadResults);
       totRow+='<td class="n '+tSpCh.c+'" style="font-size:9px;font-weight:700">'+arw(tSpCh.c)+' '+tSpCh.t+'</td>';
       totRow+='<td class="n '+tReCh.c+'" style="font-size:9px;font-weight:700">'+arw(tReCh.c)+' '+tReCh.t+'</td>';
     }
@@ -1098,8 +1108,15 @@ function renderYouTubeTab(container){
   var ytPrevPosts=(D.all_posts||[]).filter(function(p){return p.platform==='YouTube'&&p.date>=range3.ps&&p.date<=range3.pe;});
   var currViews=ytPosts.reduce(function(s,p){return s+p.reach;},0);
   var prevViews=ytPrevPosts.reduce(function(s,p){return s+p.reach;},0);
+  // Per-post yt_organic_views/yt_paid_views are not populated. Fall back to monthly aggregate split.
   var currOrganic=ytPosts.reduce(function(s,p){return s+(p.yt_organic_views||0);},0);
   var currPaid=ytPosts.reduce(function(s,p){return s+(p.yt_paid_views||0);},0);
+  // If both are 0 but we have views, use the global organic/paid pct from yt object
+  if(currOrganic===0&&currPaid===0&&currViews>0&&yt.total_views){
+    var orgPctGlobal=yt.total_views>0?(yt.organic_views||0)/yt.total_views:0;
+    currOrganic=Math.round(currViews*orgPctGlobal);
+    currPaid=currViews-currOrganic;
+  }
   var currPaidPct=currViews>0?(currPaid/currViews*100).toFixed(0):0;
 
   var h='<h2 style="font-family:Montserrat;font-size:16px;margin-bottom:14px"><span style="color:#FF0000">&#9654;</span> YouTube Deep Dive</h2>';
@@ -1207,6 +1224,11 @@ function renderCommunityTab(container){
   h+=(onTrack90?'&#9733; On track':'&#9888; Behind target')+' — '+daysSinceLaunch+' days since launch ('+monthsIn+' months). ';
   if(!onTrack90&&daysSinceLaunch<90)h+='Need '+neededRate90+' new members/day to hit 250 by day 90.';
   else if(onTrack90)h+='Current pace is sufficient to reach 250 members in 90 days.';
+  h+='</div>';
+
+  // Retargeting paused warning
+  h+='<div class="conc warn" style="margin-bottom:14px;font-size:11px;background:#fbbf2415;border-left-color:#fbbf24">';
+  h+='&#9888; <strong>Retargeting campaign paused:</strong> The Meta retargeting campaign that was driving most of the community member growth is currently paused. Without it, expect growth to slow significantly. Member-acquisition target may be at risk if not reactivated soon.';
   h+='</div>';
 
   // KPI Cards - Targets vs Actual

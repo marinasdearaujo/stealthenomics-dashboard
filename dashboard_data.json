@@ -7377,14 +7377,6 @@
   },
   "meta_recommendations": [
     {
-      "title": "Connect CRM with Conversions API",
-      "detail": "Connect your CRM with the Conversions API to help optimize the quality of your leads, which can lead to more conversions. This can lower your cost per quality lead by 19%.",
-      "points": 4,
-      "outcome": "19% lower cost per quality lead",
-      "applies_to": "Account level (Data source: StealthEnomics)",
-      "count": 1
-    },
-    {
       "title": "Optimize Reels format (9:16 vertical video with audio)",
       "detail": "Including a fullscreen vertical video (9:16) with audio in your Reels ads can improve performance.",
       "points": 2,
