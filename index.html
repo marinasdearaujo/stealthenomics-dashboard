@@ -1007,28 +1007,25 @@ function renderAdsTab(container, forceMonth){
   var top2Pct2=totalSpend>0?((top2Spend2[0].spend+(top2Spend2[1]?top2Spend2[1].spend:0))/totalSpend*100).toFixed(0):0;
   aText+='<div class="conc" style="margin-bottom:8px">&#128200; <strong>Budget concentration:</strong> Top 2 campaigns account for '+top2Pct2+'% of total spend. '+(top2Pct2>80?'High concentration — if one underperforms, impact is severe. Diversify.':'Reasonably distributed.')+'</div>';
 
-  // Engagement vs Lead gen split
-  var engCamps=camps.filter(function(c){return c.name.toLowerCase().indexOf('engagement')>=0;});
-  var leadCamps3=camps.filter(function(c){return c.name.toLowerCase().indexOf('lead')>=0||c.name.toLowerCase().indexOf('instant')>=0;});
-  var webinarCamps=camps.filter(function(c){return c.name.toLowerCase().indexOf('webinar')>=0;});
-  if(engCamps.length>0||leadCamps3.length>0||webinarCamps.length>0){
+  // Engagement vs Lead gen split — by result_type, not name
+  var engCamps=camps.filter(function(c){var rt=(c.result_type||'');return rt.indexOf('post_engagement')>=0||rt.indexOf('profile_visits')>=0;});
+  var leadCamps3=camps.filter(function(c){var rt=(c.result_type||'');return rt.indexOf('leadgen')>=0||rt.indexOf('complete_registration')>=0;});
+  var trafficCamps3=camps.filter(function(c){var rt=(c.result_type||'');return rt.indexOf('landing_page_view')>=0;});
+  if(engCamps.length>0||leadCamps3.length>0||trafficCamps3.length>0){
     var engS=engCamps.reduce(function(s,c){return s+c.spend;},0);
     var leadS=leadCamps3.reduce(function(s,c){return s+c.spend;},0);
-    var webS=webinarCamps.reduce(function(s,c){return s+c.spend;},0);
+    var trafS=trafficCamps3.reduce(function(s,c){return s+c.spend;},0);
     aText+='<div class="conc" style="margin-bottom:8px">&#127919; <strong>Strategy split:</strong>';
     if(leadS>0)aText+=' Lead gen: '+((leadS/totalSpend)*100).toFixed(0)+'% ($'+fnum(leadS)+')';
-    if(webS>0)aText+=' | Webinar/traffic: '+((webS/totalSpend)*100).toFixed(0)+'% ($'+fnum(webS)+')';
+    if(trafS>0)aText+=' | Traffic/LPV: '+((trafS/totalSpend)*100).toFixed(0)+'% ($'+fnum(trafS)+')';
     if(engS>0)aText+=' | Engagement: '+((engS/totalSpend)*100).toFixed(0)+'% ($'+fnum(engS)+')';
     aText+='</div>';
   }
 
-  // Efficiency comparison
+  // Efficiency comparison — only meaningful within same result_type, but show overall best/worst as a guide
   if(sortedCamps.length>1){
-    aText+='<div class="conc" style="margin-bottom:8px">&#128176; <strong>Efficiency range:</strong> Best CPR: $'+sortedCamps[0].cpr.toFixed(2)+' ('+sortedCamps[0].name.substring(0,25)+') → Worst: $'+sortedCamps[sortedCamps.length-1].cpr.toFixed(2)+' ('+sortedCamps[sortedCamps.length-1].name.substring(0,25)+'). That is a <strong>'+(sortedCamps[sortedCamps.length-1].cpr/sortedCamps[0].cpr).toFixed(0)+'x difference</strong>. Reallocating budget from worst to best could significantly improve overall ROI.</div>';
+    aText+='<div class="conc" style="margin-bottom:8px">&#128176; <strong>Efficiency note:</strong> CPR varies widely across result types (a $0.01/engagement is not comparable to a $30/lead). Compare campaigns within the same goal type for meaningful efficiency analysis.</div>';
   }
-
-  // Monthly note
-  aText+='<div class="conc" style="margin-bottom:8px;opacity:0.6">&#128197; Monthly comparison will be available after the next weekly data download. Current data covers one reporting period.</div>';
 
   analysis.innerHTML=aText;
 }
