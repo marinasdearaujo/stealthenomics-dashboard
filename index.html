@@ -715,26 +715,34 @@ function renderAdsTab(container, forceMonth){
 
   if(camps.length===0&&!forceMonth){container.innerHTML='<p style="color:var(--dim);padding:20px">No campaign data for this period.</p>';return;}
 
-  // Compute current period stats
+  // Compute current period stats — split lead forms vs webinar regs (Meta tracks both as conversions)
   var totalSpend=0,totalImps=0,totalReach=0,totalClicks=0;
-  var leadResults=0,leadSpend=0,engResults=0,engSpend=0,trafficResults=0,trafficSpend=0;
+  var leadFormResults=0,leadFormSpend=0,webinarRegResults=0,webinarRegSpend=0;
+  var engResults=0,engSpend=0,trafficResults=0,trafficSpend=0;
   camps.forEach(function(c){
     totalSpend+=c.spend;totalImps+=c.impressions;totalReach+=c.reach;totalClicks+=c.clicks;
-    var nm=c.name.toLowerCase();
-    if((c.result_type||'').indexOf('leadgen')>=0||(c.result_type||'').indexOf('complete_registration')>=0){leadResults+=c.results;leadSpend+=c.spend;}
-    else if((c.result_type||'').indexOf('post_engagement')>=0||(c.result_type||'').indexOf('profile_visits')>=0){engResults+=c.results;engSpend+=c.spend;}
-    else if((c.result_type||'').length>0){trafficResults+=c.results;trafficSpend+=c.spend;}
+    var rt=(c.result_type||'');
+    if(rt.indexOf('leadgen')>=0){leadFormResults+=c.results;leadFormSpend+=c.spend;}
+    else if(rt.indexOf('complete_registration')>=0){webinarRegResults+=c.results;webinarRegSpend+=c.spend;}
+    else if(rt.indexOf('post_engagement')>=0||rt.indexOf('profile_visits')>=0){engResults+=c.results;engSpend+=c.spend;}
+    else if(rt.length>0){trafficResults+=c.results;trafficSpend+=c.spend;}
   });
+  var leadResults=leadFormResults+webinarRegResults;
+  var leadSpend=leadFormSpend+webinarRegSpend;
 
   // Compute previous period stats
-  var pTotalSpend=0,pLeadResults=0,pLeadSpend=0,pEngResults=0,pTrafficResults=0;
+  var pTotalSpend=0,pLeadFormResults=0,pLeadFormSpend=0,pWebinarRegResults=0,pWebinarRegSpend=0;
+  var pEngResults=0,pTrafficResults=0;
   prevCamps.forEach(function(c){
     pTotalSpend+=c.spend;
-    var nm=c.name.toLowerCase();
-    if(nm.indexOf('lead')>=0||nm.indexOf('instant')>=0||nm.indexOf('broker')>=0){pLeadResults+=c.results;pLeadSpend+=c.spend;}
-    else if(nm.indexOf('engagement')>=0){pEngResults+=c.results;}
-    else if((c.result_type||'').length>0){pTrafficResults+=c.results;}
+    var rt=(c.result_type||'');
+    if(rt.indexOf('leadgen')>=0){pLeadFormResults+=c.results;pLeadFormSpend+=c.spend;}
+    else if(rt.indexOf('complete_registration')>=0){pWebinarRegResults+=c.results;pWebinarRegSpend+=c.spend;}
+    else if(rt.indexOf('post_engagement')>=0||rt.indexOf('profile_visits')>=0){pEngResults+=c.results;}
+    else if(rt.length>0){pTrafficResults+=c.results;}
   });
+  var pLeadResults=pLeadFormResults+pWebinarRegResults;
+  var pLeadSpend=pLeadFormSpend+pWebinarRegSpend;
 
   var totalLeadCPR=leadResults>0?leadSpend/leadResults:0;
   var pLeadCPR=pLeadResults>0?pLeadSpend/pLeadResults:0;
@@ -759,13 +767,19 @@ function renderAdsTab(container, forceMonth){
     h+='<div class="kc"><div class="l">'+k2.l+'</div><div class="v">'+(k2.pfx||'')+fnum(k2.c)+'</div>'+(hasPrevAds?'<div class="ch '+ch2.c+'">'+arw(ch2.c)+' '+ch2.t+' vs '+prevLabel2+'</div>':'')+'</div>';
   });
   h+='</div>';
-  h+='<div class="kg" style="grid-template-columns:repeat(3,1fr);margin-bottom:16px">';
-  var leadCh=hasPrevAds?pch(pLeadResults,leadResults):{t:'',c:'fl'};
-  var cplCh=hasPrevAds&&pLeadCPR>0?pch(pLeadCPR,totalLeadCPR):{t:'',c:'fl'};
-  h+='<div class="kc" style="border-color:var(--green)"><div class="l">Leads Generated</div><div class="v">'+fnum(leadResults)+'</div><div class="ch '+(hasPrevAds?leadCh.c:'')+'">$'+totalLeadCPR.toFixed(2)+'/lead'+(hasPrevAds?' | '+leadCh.t+' vs '+prevLabel2:'')+'</div></div>';
-  h+='<div class="kc"><div class="l">Engagement Results</div><div class="v">'+fnum(engResults)+'</div><div class="ch" style="color:var(--dim)">Post reactions, not leads</div></div>';
+  h+='<div class="kg" style="grid-template-columns:repeat(4,1fr);margin-bottom:8px">';
+  var leadFormCPR=leadFormResults>0?leadFormSpend/leadFormResults:0;
+  var pLeadFormCPR=pLeadFormResults>0?pLeadFormSpend/pLeadFormResults:0;
+  var leadFormCh=hasPrevAds?pch(pLeadFormResults,leadFormResults):{t:'',c:'fl'};
+  var webinarRegCPR=webinarRegResults>0?webinarRegSpend/webinarRegResults:0;
+  var webinarCh=hasPrevAds?pch(pWebinarRegResults,webinarRegResults):{t:'',c:'fl'};
+  h+='<div class="kc" style="border-color:var(--green)"><div class="l">Lead Form Submissions</div><div class="v">'+fnum(leadFormResults)+'</div><div class="ch '+(hasPrevAds?leadFormCh.c:'')+'">$'+leadFormCPR.toFixed(2)+'/lead'+(hasPrevAds?' | '+leadFormCh.t:'')+'</div></div>';
+  h+='<div class="kc" style="border-color:#0e9aa7"><div class="l">Webinar Registrations</div><div class="v">'+fnum(webinarRegResults)+'</div><div class="ch '+(hasPrevAds?webinarCh.c:'')+'">$'+webinarRegCPR.toFixed(2)+'/reg'+(hasPrevAds?' | '+webinarCh.t:'')+'</div></div>';
+  h+='<div class="kc"><div class="l">Engagement Results</div><div class="v">'+fnum(engResults)+'</div><div class="ch" style="color:var(--dim)">Post engagements / profile visits</div></div>';
   h+='<div class="kc"><div class="l">Traffic / Page Views</div><div class="v">'+fnum(trafficResults)+'</div><div class="ch" style="color:var(--dim)">Landing page views</div></div>';
   h+='</div>';
+  // Explanatory note about Meta vs HubSpot reconciliation
+  h+='<div class="conc" style="margin-bottom:16px;font-size:10px;background:#0a1e3a;border-left-color:#0e9aa7;color:var(--al)"><strong>&#9432; Meta vs HubSpot — why the numbers differ:</strong> Meta counts each conversion event (a lead form submission AND a webinar registration each fire separately, even from the same person). HubSpot deduplicates and only counts new contacts. Common gap: 15-30% — caused by (1) the same person submitting both a lead form and registering, (2) existing contacts re-engaging (not counted as new HubSpot leads), and (3) sync drops between platforms. <strong>For lead-volume tracking, HubSpot is the source of truth. For ad efficiency, Meta numbers are what matters.</strong></div>';
 
   // Spend allocation chart + efficiency chart
   h+='<div class="g2" style="margin-bottom:14px">';
